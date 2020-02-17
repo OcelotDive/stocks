@@ -10,17 +10,21 @@ import { InvestorService } from '../../services/investor.service';
 })
 
 export class MainComponent implements OnInit {
-  nasdaq: Object[];
-
+  chosenQuotes: Object[];
+  majorIndexes: Object[];
 
   constructor(public investorService: InvestorService) {
 
-   this.investorService.getMatchInfo().subscribe((data: any) => {
-      this.nasdaq = data;
-      
-      console.log(this.nasdaq)
+   this.investorService.getChosenInfo().subscribe((data: any) => {
+    this.chosenQuotes= data;
+      console.log(this.chosenQuotes)
     
     }); 
+
+    this.investorService.getMajorIndexes().subscribe((data: any) => {
+       this.majorIndexes = data.majorIndexesList.slice(0,5);
+       console.log(data)
+    })
    
   }
 

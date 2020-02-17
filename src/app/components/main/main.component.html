@@ -4,12 +4,17 @@
 
 <section class="ticker">
     <div class="tickerWrapper">
-        <span class="stockQuote" *ngFor="let stock of nasdaq">{{stock.symbol}} {{stock.price}} <span [class.negativeChange]="stock.change < 0.01" [class.positiveChange]="stock.change > 0.01">{{stock.change}} ({{stock.changesPercentage}}%)</span></span>
+        <span class="stockQuote" *ngFor="let stock of chosenQuotes">{{stock.symbol}} {{stock.price}} <span [class.negativeChange]="stock.change < 0.01" [class.positiveChange]="stock.change > 0.01">{{stock.change}} ({{stock.changesPercentage}}%)</span></span>
     </div>
     <div class="tickerWrapper2">
-        <span class="stockQuote" *ngFor="let stock of nasdaq">{{stock.symbol}} {{stock.price}} <span [class.negativeChange]="stock.change < 0.01" [class.positiveChange]="stock.change > 0.01">{{stock.change}} ({{stock.changesPercentage}}%) </span></span>
-
+        <span class="stockQuote" *ngFor="let stock of chosenQuotes">{{stock.symbol}} {{stock.price}} <span [class.negativeChange]="stock.change < 0.01" [class.positiveChange]="stock.change > 0.01">{{stock.change}} ({{stock.changesPercentage}}%) </span></span>
     </div>
 
+</section>
+<h4>Major Indexes</h4>
+<section class="cardContainer">
+    <div class="card" *ngFor="let major of majorIndexes">
+        <h6>{{major.indexName}}</h6>
+    </div>
 
 </section>

@@ -4,17 +4,20 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class InvestorService {
-    nasdaqUrl: string;
+    chosenUrl: string;
+    majorIndexes: string;
     constructor(private http: HttpClient) {
-        this.nasdaqUrl = 'https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOGL,AMZN,JPM,MSFT,NVDA';
+        this.chosenUrl = 'https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOGL,AMZN,JPM,MSFT,NVDA';
+        this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
         
     }
 
-    getMatchInfo() {
-        return this.http.get(`${this.nasdaqUrl}`);
-            
-}
-
+    getChosenInfo() {
+        return this.http.get(`${this.chosenUrl}`);       
+    }
+    getMajorIndexes() {
+        return this.http.get(`${this.majorIndexes}`);
+    }
 
 
 
