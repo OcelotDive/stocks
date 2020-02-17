@@ -50,29 +50,31 @@
 }
 
 h4 {
-    margin-left: 2%;
-    margin-top: 2%;
+    margin: 2%;
 }
 
 .cardContainer {
-    border: solid 1px red;
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 150px;
     justify-content: space-around;
     flex-shrink: unset;
+    margin-left: 10%;
 }
 
 .card {
-    color: #fff;
+    color: #000;
     display: flex;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 100%;
-    background: #000428;
+    background: #757F9A;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #004e92, #000428);
+    background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #004e92, #000428);
+    background: linear-gradient(to right, #D7DDE8, #757F9A);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
