@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "stocks": {
+    "footypredictor": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,18 +13,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/stocks",
+            "outputPath": "dist/footypredictor",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -41,6 +42,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -62,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "stocks:build"
+            "browserTarget": "footypredictor:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "stocks:build:production"
+              "browserTarget": "footypredictor:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "stocks:build"
+            "browserTarget": "footypredictor:build"
           }
         },
         "test": {
@@ -110,15 +112,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "stocks:serve"
+            "devServerTarget": "footypredictor:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "stocks:serve:production"
+              "devServerTarget": "footypredictor:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "stocks"
+  "defaultProject": "footypredictor"
 }
