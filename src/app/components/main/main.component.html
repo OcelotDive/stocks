@@ -21,7 +21,9 @@
             <div class="subjectListItem" *ngFor="let newsItem of topNewsStories">
                 <img class="subjectImage" src={{newsItem.urlToImage}} />
                 <div class="subjectNewsTitle">
+                    <a href={{newsItem.url}} target="#blank">
                     {{newsItem.title}}
+                    </a>
                 </div>
             </div>
         </div>

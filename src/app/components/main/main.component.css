@@ -11,6 +11,7 @@
     min-height: 100px;
     text-transform: uppercase;
     width: 100%;
+    overflow: hidden;
 }
 
 .ticker,
@@ -89,7 +90,6 @@ h4 {
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
-    border: solid 1px red;
 }
 
 .subjectContainer {
@@ -117,6 +117,10 @@ h4 {
     position: absolute;
     color: #fff;
     text-indent: 20px;
+    display: flex;
+    align-items: center;
+    cursor: -webkit-pointer;
+    cursor: pointer;
 }
 
 .subjectList {
@@ -130,7 +134,7 @@ h4 {
 
 .subjectListItem {
     color: #000;
-    font-size: 14px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -140,11 +144,15 @@ h4 {
 .subjectImage {
     width: 80px;
     height: 80px;
-    border-radius: 10%;
-    margin-left: 1%;
+    margin-left: 1.5%;
+    border-radius: 10px;
 }
 
 .subjectNewsTitle {
     width: calc(100% - 90px);
     margin-left: 10px;
+}
+
+a {
+    color: #000;
 }
