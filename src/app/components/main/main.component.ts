@@ -10,16 +10,11 @@ import { InvestorService } from '../../services/investor.service';
 })
 
 export class MainComponent implements OnInit {
-  public chosenQuotes: Object[];
+  
   public topNewsStories: Object[];
 
   constructor(public investorService: InvestorService) {
-   this.investorService.getChosenInfo().subscribe((data: any) => {
-    this.chosenQuotes = data;
-   console.log(this.chosenQuotes)
-    }); 
-
-
+  
     this.investorService.getTopStories().subscribe((data: any) => {
       this.topNewsStories = data.articles.slice(0,3);
       console.log(data)

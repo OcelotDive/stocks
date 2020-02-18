@@ -14,70 +14,12 @@
     overflow: hidden;
 }
 
-.ticker,
-.tickerWrapper,
-.tickerWrapper2 {
-    align-items: center;
-    background: #0f0c29;
-    display: flex;
-    height: 50px;
-    justify-content: space-around;
-    overflow: hidden;
-    width: 100%;
-}
-
-.tickerWrapper {
-    animation: ticker 45s infinite linear;
-    position: absolute;
-}
-
-.tickerWrapper2 {
-    animation: ticker 45s infinite linear;
-    left: 100%;
-    position: absolute;
-}
-
-.stockQuote {
-    color: #fff;
-    font-size: 16px;
-}
-
-.positiveChange {
-    color: #00FF00;
-}
-
-.negativeChange {
-    color: #FF0000;
-}
-
 h4 {
     margin: 1%;
     margin-left: 20%;
 }
 
-@-webkit-keyframes ticker {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        visibility: visible;
-    }
-    100% {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-    }
-}
 
-@keyframes ticker {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        visibility: visible;
-    }
-    100% {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0);
-    }
-}
 
 .mainPage-sectionContainer {
     position: absolute;
