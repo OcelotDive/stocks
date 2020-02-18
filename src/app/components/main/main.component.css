@@ -81,21 +81,29 @@ h4 {
 .mainPage-sectionContainer {
     position: absolute;
     top: 450px;
-    width: 60%;
+    width: 80%;
     height: 80%;
-    margin-left: 20%;
+    margin-left: 10%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
+    border: solid 1px red;
 }
 
 .subjectContainer {
     position: relative;
-    width: 380px;
-    height: 200px;
+    width: 450px;
+    height: 330px;
     border-radius: 10px;
+    background: #ADA996;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 0.5%;
 }
 
 .subjectHeader {
@@ -109,4 +117,34 @@ h4 {
     position: absolute;
     color: #fff;
     text-indent: 20px;
+}
+
+.subjectList {
+    position: absolute;
+    top: 15%;
+    display: flex;
+    height: 85%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.subjectListItem {
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.subjectImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 10%;
+    margin-left: 1%;
+}
+
+.subjectNewsTitle {
+    width: calc(100% - 90px);
+    margin-left: 10px;
 }

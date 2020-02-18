@@ -16,7 +16,15 @@
 
 <section class="mainPage-sectionContainer">
     <div class="subjectContainer">
-        <div class="subjectHeader">heading</div>
+        <div class="subjectHeader">Top Stories</div>
+        <div class="subjectList">
+            <div class="subjectListItem" *ngFor="let newsItem of topNewsStories">
+                <img class="subjectImage" src={{newsItem.urlToImage}} />
+                <div class="subjectNewsTitle">
+                    {{newsItem.title}}
+                </div>
+            </div>
+        </div>
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader">heading</div>
