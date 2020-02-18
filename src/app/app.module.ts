@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
-import { ClipboardModule } from 'ngx-clipboard';
+
 
 @NgModule({
   declarations: [
