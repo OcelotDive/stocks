@@ -14,9 +14,8 @@ export class CarouselComponent implements OnInit {
   public majorIndexesSecond: Object[];
   public majorIndexesThird: Object[];
 
-  constructor(public investorService: InvestorService) {
- 
 
+  constructor(public investorService: InvestorService) {
     this.investorService.getMajorIndexes().subscribe((data: any) => {
       this.majorIndexes = data.majorIndexesList.slice(0,5);
       this.majorIndexesSecond = data.majorIndexesList.slice(5,10);
