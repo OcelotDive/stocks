@@ -11,25 +11,18 @@ import { InvestorService } from '../../services/investor.service';
 
 export class MainComponent implements OnInit {
   public chosenQuotes: Object[];
-  public majorIndexes: Object[];
-  public majorIndexesSecond: Object[];
-  public majorIndexesThird: Object[];
-  public slideIndex: number;
+  public topNewsStories: Object[];
 
   constructor(public investorService: InvestorService) {
-  
    this.investorService.getChosenInfo().subscribe((data: any) => {
-    this.chosenQuotes= data;
-      console.log(this.chosenQuotes)
-   
-    
+    this.chosenQuotes = data;
+   console.log(this.chosenQuotes)
     }); 
 
-    this.investorService.getMajorIndexes().subscribe((data: any) => {
-       this.majorIndexes = data.majorIndexesList.slice(0,5);
-       this.majorIndexesSecond = data.majorIndexesList.slice(5,10);
-       this.majorIndexesThird = data.majorIndexesList.slice(10,15);
-       console.log(data)
+
+    this.investorService.getTopStories().subscribe((data: any) => {
+      this.topNewsStories = data.articles.slice(0,10);
+      console.log(data)
     })
    
   }

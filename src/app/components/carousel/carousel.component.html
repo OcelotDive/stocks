@@ -1,0 +1,39 @@
+<div class="carousel-container">
+    <ul class="carousel">
+        <input class="carousel__activator" type="radio" id="A" name="activator" checked="checked" />
+        <input class="carousel__activator" type="radio" id="B" name="activator" />
+        <input class="carousel__activator" type="radio" id="C" name="activator" />
+        <li class="carousel__slide">
+            <section class="cardContainer">
+                <div class="card" *ngFor="let major of majorIndexes">
+                    <div class="cardHeader">{{major.indexName}}</div>
+                    <p>{{major.price}}</p>
+                    <p [class.negativeChange]="major.changes < 0.01" [class.positiveChange]="major.changes > 0.01">{{major.changes}}</p>
+                </div>
+            </section>
+        </li>
+        <li class="carousel__slide">
+            <section class="cardContainer">
+                <div class="card" *ngFor="let major of majorIndexesSecond">
+                    <div class="cardHeader">{{major.indexName}}</div>
+                    <p>{{major.price}}</p>
+                    <p [class.negativeChange]="major.changes < 0.01" [class.positiveChange]="major.changes > 0.01">{{major.changes}}</p>
+                </div>
+            </section>
+        </li>
+        <li class="carousel__slide">
+            <section class="cardContainer">
+                <div class="card" *ngFor="let major of majorIndexesThird">
+                    <div class="cardHeader">{{major.indexName}}</div>
+                    <p>{{major.price}}</p>
+                    <p [class.negativeChange]="major.changes < 0.01" [class.positiveChange]="major.changes > 0.01">{{major.changes}}</p>
+                </div>
+            </section>
+        </li>
+    </ul>
+</div>
+<div class="carousel__indicators">
+    <label class="carousel__indicator" for="A"></label>
+    <label class="carousel__indicator" for="B"></label>
+    <label class="carousel__indicator" for="C"></label>
+</div>
