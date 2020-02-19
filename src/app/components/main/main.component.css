@@ -78,7 +78,7 @@ h4 {
 
 .subjectImage {
     border-radius: 10px;
-    height: 80px;
+    height: 60px;
     margin-left: 1.5%;
     width: 80px;
 }
@@ -90,4 +90,30 @@ h4 {
 
 a {
     color: #000;
+}
+
+.forexSubjectList {
+    display: flex;
+    flex-direction: column;
+    height: 85%;
+    justify-content: space-around;
+    position: absolute;
+    top: 15%;
+    width: 100%;
+}
+
+.subjectforexTitle {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 0 2% 0 2%;
+    width: 100%;
+}
+
+.positiveChange {
+    color: #00FF00;
+}
+
+.negativeChange {
+    color: #FF0000;
 }

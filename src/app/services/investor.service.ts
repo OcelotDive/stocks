@@ -6,13 +6,15 @@ import { map } from 'rxjs/operators';
 export class InvestorService {
   public  chosenUrl: string;
   public majorIndexes: string;
-  public newsSource: string = 'the-wall-street-journal';
+  public newsSource: string = ' the-wall-street-journal';
   public newsStories: string;
+  public forex: string;
   public key: string;
 
     constructor(private http: HttpClient) {
         this.chosenUrl = 'https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOGL,AMZN,JPM,MSFT,NVDA';
         this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
+        this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.newsStories = 'https://newsapi.org/v1/articles?source=';
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';
         
@@ -30,6 +32,9 @@ export class InvestorService {
     getTopStoriesFull(newsSourceChange: string) {
         this.newsSource = newsSourceChange;
         return this.http.get(`${this.newsStories}${this.newsSource}${this.key}`)
+    }
+    getForex() {
+        return this.http.get(`${this.forex}`)
     }
 
 

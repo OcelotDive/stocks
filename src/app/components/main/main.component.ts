@@ -12,12 +12,19 @@ import { InvestorService } from '../../services/investor.service';
 export class MainComponent implements OnInit {
   
   public topNewsStories: Object[];
+  public forexPrices: Object[];
 
   constructor(public investorService: InvestorService) {
   
     this.investorService.getTopStories().subscribe((data: any) => {
       this.topNewsStories = data.articles.slice(0,3);
       console.log(this.topNewsStories)
+    })
+
+    this.investorService.getForex().subscribe((data: any) => {
+      this.forexPrices = data.forexList.slice(0,8);
+      console.log(data);
+      
     })
    
   }
