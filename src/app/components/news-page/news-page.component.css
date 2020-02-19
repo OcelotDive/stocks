@@ -1,0 +1,46 @@
+.mainHeader {
+    align-items: center;
+    background: #FFF;
+    box-shadow: #000 5px 5px 5px;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 900;
+    height: 100px;
+    min-height: 100px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+h4 {
+    margin: 1%;
+    margin-left: 20%;
+}
+
+.storyContainer {
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.storyCard {
+    display: flex;
+    width: 100%;
+    background: aliceblue;
+    border-bottom: 10px solid #fff;
+    padding: 10px;
+}
+
+.storyImage_newsPage {
+    width: 35%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+.newsTitleAndBodyContainer {
+    padding-left: 10px;
+}

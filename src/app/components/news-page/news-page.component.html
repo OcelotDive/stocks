@@ -1,1 +1,22 @@
-<p>news-page works!</p>
+<header class="mainHeader">
+
+</header>
+<app-ticker></app-ticker>
+<h4>Market News</h4>
+<ul>
+    <section class="storyContainer">
+        <div class="storyCard" *ngFor="let story of storyList">
+            <img src={{story.urlToImage}} class="storyImage_newsPage" />
+            <div class="newsTitleAndBodyContainer">
+                <div class="subjectNewsTitle">
+                    <a href={{story.url}} target="#blank">
+                {{story.title}}
+                </a>
+                </div>
+                <div class="storyBody">
+                    {{story.description}}
+                </div>
+            </div>
+        </div>
+    </section>
+</ul>

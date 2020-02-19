@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { InvestorService } from '../../services/investor.service';
 
 
@@ -17,7 +17,7 @@ export class MainComponent implements OnInit {
   
     this.investorService.getTopStories().subscribe((data: any) => {
       this.topNewsStories = data.articles.slice(0,3);
-      console.log(data)
+      console.log(this.topNewsStories)
     })
    
   }
