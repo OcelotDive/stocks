@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { TickerComponent } from './components/ticker/ticker.component';
+import { NewsPageComponent } from './components/news-page/news-page.component'
 import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
 
 
@@ -15,6 +17,8 @@ import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
     AppComponent,
     MainComponent,
     CarouselComponent,
+    TickerComponent,
+    NewsPageComponent,
     SearchByColourPipe,
 
     
@@ -25,7 +29,9 @@ import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
     HttpClientModule,
     RouterModule.forRoot([
                     
-    //  {path: '', redirectTo: 'investorList', pathMatch: 'full' },
+     {path: '', redirectTo: 'main', pathMatch: 'full' },
+     {path: 'main', component: MainComponent},
+     {path: 'main/newslist', component: NewsPageComponent}
     
     ])
   ],
