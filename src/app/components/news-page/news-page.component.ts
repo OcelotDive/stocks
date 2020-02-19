@@ -10,6 +10,10 @@ import { InvestorService } from '../../services/investor.service';
 
 export class NewsPageComponent implements OnInit {
   public storyList: Object[];
+  
+
+
+
   testData=  [{  author: "Eliza Collins",
   title: "What to Watch for in the Nevada Democratic Debate",
   description: "Michael Bloomberg’s rise in polls moves him to the stage at a critical time for several candidates",
@@ -23,10 +27,16 @@ export class NewsPageComponent implements OnInit {
       this.storyList = data.articles;
       console.log(data.articles)
 
-    
-
     })
    
+  }
+
+  onRadioChange(inputValue: any) {
+    this.investorService.getTopStoriesFull(inputValue.value).subscribe((data: any) => {
+      this.storyList = data.articles;
+      console.log(data.articles)
+
+    })
   }
 
    

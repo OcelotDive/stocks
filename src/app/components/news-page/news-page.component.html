@@ -3,20 +3,32 @@
 </header>
 <app-ticker></app-ticker>
 <h4>Market News</h4>
-<ul>
-    <section class="storyContainer">
-        <div class="storyCard" *ngFor="let story of storyList">
-            <img src={{story.urlToImage}} class="storyImage_newsPage" />
-            <div class="newsTitleAndBodyContainer">
-                <div class="subjectNewsTitle">
-                    <a href={{story.url}} target="#blank">
+<section class="checkContainer">
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="the-wall-street-journal" checked="true" #option1 (change)="onRadioChange(option1)">
+        <label class="form-check-label" for="inlineRadio1">Wall St Journal</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="financial-times" #option2 (change)="onRadioChange(option2)">
+        <label class="form-check-label" for="inlineRadio2">Financial Times</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="techradar" #option3 (change)="onRadioChange(option3)">
+        <label class="form-check-label" for="inlineRadio3">Tech Radar</label>
+    </div>
+</section>
+<section class="storyContainer">
+    <div class="storyCard" *ngFor="let story of storyList">
+        <img src={{story.urlToImage}} class="storyImage_newsPage" />
+        <div class="newsTitleAndBodyContainer">
+            <div class="subjectNewsTitle">
+                <a href={{story.url}} target="#blank">
                 {{story.title}}
                 </a>
-                </div>
-                <div class="storyBody">
-                    {{story.description}}
-                </div>
+            </div>
+            <div class="storyBody">
+                {{story.description}}
             </div>
         </div>
-    </section>
-</ul>
+    </div>
+</section>

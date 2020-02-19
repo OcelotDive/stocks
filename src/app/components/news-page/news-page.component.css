@@ -18,6 +18,11 @@ h4 {
     margin-left: 20%;
 }
 
+.checkContainer {
+    margin-left: 40%;
+    margin-bottom: 1%;
+}
+
 .storyContainer {
     width: 70%;
     height: auto;
@@ -30,7 +35,9 @@ h4 {
 .storyCard {
     display: flex;
     width: 100%;
-    background: aliceblue;
+    background: #ADA996;
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
     border-bottom: 10px solid #fff;
     padding: 10px;
 }

@@ -8,10 +8,13 @@ export class InvestorService {
   public majorIndexes: string;
   public newsSource: string = 'the-wall-street-journal';
   public newsStories: string;
+  public key: string;
+
     constructor(private http: HttpClient) {
         this.chosenUrl = 'https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOGL,AMZN,JPM,MSFT,NVDA';
         this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
-        this.newsStories = 'https://newsapi.org/v1/articles?source=' + this.newsSource + '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';
+        this.newsStories = 'https://newsapi.org/v1/articles?source=';
+        this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';
         
     }
 
@@ -22,8 +25,13 @@ export class InvestorService {
         return this.http.get(`${this.majorIndexes}`);
     }
     getTopStories() {
-        return this.http.get(`${this.newsStories}`)
+        return this.http.get(`${this.newsStories}${this.newsSource}${this.key}`)
     }
+    getTopStoriesFull(newsSourceChange: string) {
+        this.newsSource = newsSourceChange;
+        return this.http.get(`${this.newsStories}${this.newsSource}${this.key}`)
+    }
+
 
 
 
