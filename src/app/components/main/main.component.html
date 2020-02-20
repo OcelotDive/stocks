@@ -22,8 +22,8 @@
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader" routerLink="forex" routerLinkActive="active">Forex</div>
-        <div class="forexSubjectList">
-            <div class="subjectforexTitle" *ngFor="let currency of forexPrices">
+        <div class="forexAndCryptoSubjectList">
+            <div class="subjectforexAndCryptoTitle" *ngFor="let currency of forexPrices">
                 <img src="./assets/flag/{{currency.ticker.replace('/', '')}}.png" class="mainPageFlagImage">
                 <div> {{currency.ticker}}</div>
                 <div> {{currency.ask | slice: 0:5}}</div>
@@ -32,7 +32,15 @@
         </div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader">heading</div>
+        <div class="subjectHeader" routerLink="cryptocurrencies" routerLinkActive="active">Cryptocurrency</div>
+        <div class="forexAndCryptoSubjectList">
+            <div class="subjectforexAndCryptoTitle" *ngFor="let currency of cryptoPrices">
+                <img src="./assets/crypto/{{currency.ticker.toLowerCase()}}.svg" class="mainPageFlagImage">
+                <div> {{currency.ticker}}</div>
+                <div> {{currency.price | number: '1.2-3'}}</div>
+                <div [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(3)}}</div>
+            </div>
+        </div>
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader">heading</div>

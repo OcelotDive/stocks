@@ -9,7 +9,6 @@ import { InvestorService } from '../../services/investor.service';
 })
 export class ForexComponent implements OnInit {
   public forexFullList: Object[];
-  public imageUrl: string = 'https://financialmodelingprep.com/api/v3/currencies/';
   constructor(public investorService: InvestorService) {
 
     this.investorService.getForex().subscribe((data: any) => {

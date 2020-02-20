@@ -11,6 +11,7 @@ import { TickerComponent } from './components/ticker/ticker.component';
 import { NewsPageComponent } from './components/news-page/news-page.component';
 import { ForexComponent } from './components/forex/forex.component';
 import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
+import { CryptocurrenciesComponent } from './components/cryptocurrencies/cryptocurrencies.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
     NewsPageComponent,
     ForexComponent,
     SearchByColourPipe,
+    CryptocurrenciesComponent,
 
     
   ],
@@ -34,7 +36,8 @@ import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
      {path: '', redirectTo: 'main', pathMatch: 'full' },
      {path: 'main', component: MainComponent},
      {path: 'main/newslist', component: NewsPageComponent},
-     {path: 'main/forex', component: ForexComponent}
+     {path: 'main/forex', component: ForexComponent},
+     {path: 'main/cryptocurrencies', component: CryptocurrenciesComponent},
     
     ])
   ],

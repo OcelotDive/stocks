@@ -93,11 +93,11 @@ a {
 }
 
 .mainPageFlagImage {
-    width: 40px;
     height: 30px;
+    width: 40px;
 }
 
-.forexSubjectList {
+.forexAndCryptoSubjectList {
     display: flex;
     flex-direction: column;
     height: 85%;
@@ -107,7 +107,7 @@ a {
     width: 100%;
 }
 
-.subjectforexTitle {
+.subjectforexAndCryptoTitle {
     display: flex;
     position: relative;
     justify-content: space-between;
