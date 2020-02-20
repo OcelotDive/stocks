@@ -23,8 +23,7 @@ export class MainComponent implements OnInit {
 
     this.investorService.getForex().subscribe((data: any) => {
       this.forexPrices = data.forexList.slice(0,8);
-      console.log(data);
-      
+      console.log(data); 
     })
    
   }

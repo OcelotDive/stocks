@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpareComponent } from './spare.component';
+import { ForexComponent } from './forex.component';
 
-describe('SpareComponent', () => {
-  let component: SpareComponent;
-  let fixture: ComponentFixture<SpareComponent>;
+describe('ForexComponent', () => {
+  let component: ForexComponent;
+  let fixture: ComponentFixture<ForexComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpareComponent ]
+      declarations: [ ForexComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpareComponent);
+    fixture = TestBed.createComponent(ForexComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

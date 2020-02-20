@@ -21,9 +21,10 @@
         </div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader">Forex</div>
+        <div class="subjectHeader" routerLink="forex" routerLinkActive="active">Forex</div>
         <div class="forexSubjectList">
             <div class="subjectforexTitle" *ngFor="let currency of forexPrices">
+                <img src="./assets/flag/{{currency.ticker.replace('/', '')}}.png" class="mainPageFlagImage">
                 <div> {{currency.ticker}}</div>
                 <div> {{currency.ask | slice: 0:5}}</div>
                 <div [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(3)}}</div>

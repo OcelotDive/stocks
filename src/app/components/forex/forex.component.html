@@ -1,0 +1,24 @@
+<header class="mainHeader">
+
+</header>
+<app-ticker></app-ticker>
+<h4>World Currencies - Foreign Exchange Rates</h4>
+
+<section class="tableContainer">
+    <table>
+        <tr>
+            <th></th>
+            <th>PAIR</th>
+            <th>PRICE</th>
+            <th>CHANGE</th>
+            <th>CHANGE(%)</th>
+        </tr>
+        <tr *ngFor="let currency of forexFullList">
+            <img src="./assets/flag/{{currency.ticker.replace('/', '')}}.png">
+            <td>{{currency.ticker}}</td>
+            <td>{{currency.ask}}</td>
+            <td [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(4)}}</td>
+            <td [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{((currency.changes.toFixed(4) / (currency.ask)) * 100).toFixed(2)}}%</td>
+        </tr>
+    </table>
+</section>

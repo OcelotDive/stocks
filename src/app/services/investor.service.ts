@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 export class InvestorService {
   public  chosenUrl: string;
   public majorIndexes: string;
-  public newsSource: string = ' the-wall-street-journal';
+  public newsSource: string = 'the-wall-street-journal';
   public newsStories: string;
   public forex: string;
   public key: string;
@@ -16,8 +16,7 @@ export class InvestorService {
         this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.newsStories = 'https://newsapi.org/v1/articles?source=';
-        this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';
-        
+        this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
     getChosenInfo() {

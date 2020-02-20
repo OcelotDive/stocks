@@ -92,6 +92,11 @@ a {
     color: #000;
 }
 
+.mainPageFlagImage {
+    width: 40px;
+    height: 30px;
+}
+
 .forexSubjectList {
     display: flex;
     flex-direction: column;

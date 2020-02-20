@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { TickerComponent } from './components/ticker/ticker.component';
-import { NewsPageComponent } from './components/news-page/news-page.component'
+import { NewsPageComponent } from './components/news-page/news-page.component';
+import { ForexComponent } from './components/forex/forex.component';
 import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
 
 
@@ -19,6 +20,7 @@ import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
     CarouselComponent,
     TickerComponent,
     NewsPageComponent,
+    ForexComponent,
     SearchByColourPipe,
 
     
@@ -31,7 +33,8 @@ import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
                     
      {path: '', redirectTo: 'main', pathMatch: 'full' },
      {path: 'main', component: MainComponent},
-     {path: 'main/newslist', component: NewsPageComponent}
+     {path: 'main/newslist', component: NewsPageComponent},
+     {path: 'main/forex', component: ForexComponent}
     
     ])
   ],
