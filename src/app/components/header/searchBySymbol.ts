@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'searchByColour'
+  name: 'searchBySymbol'
 })
-export class SearchByColourPipe implements PipeTransform {
+export class SearchBySymbolPipe implements PipeTransform {
 
   transform(colours: Colour[], searchText: string): Colour[] {
     if (!searchText) return colours;

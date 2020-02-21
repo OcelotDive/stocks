@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class InvestorService {
+  public companyStockList: string;
   public  chosenUrl: string;
   public majorIndexes: string;
   public newsSource: string = ' the-wall-street-journal';
@@ -13,12 +14,17 @@ export class InvestorService {
   public key: string;
 
     constructor(private http: HttpClient) {
+        this.companyStockList = 'https://financialmodelingprep.com/api/v3/company/stock/list';
         this.chosenUrl = 'https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOGL,AMZN,JPM,MSFT,NVDA';
         this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.cryptos = 'https://financialmodelingprep.com/api/v3/cryptocurrencies';
         this.newsStories = 'https://newsapi.org/v1/articles?source=';
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
+    }
+
+    getSymbolsList() {
+        return this.http.get(`${this.companyStockList}`)
     }
 
     getChosenInfo() {

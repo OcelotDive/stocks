@@ -10,7 +10,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { TickerComponent } from './components/ticker/ticker.component';
 import { NewsPageComponent } from './components/news-page/news-page.component';
 import { ForexComponent } from './components/forex/forex.component';
-import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
+import { SearchBySymbolPipe } from './components/header/searchBySymbol';
 import { CryptocurrenciesComponent } from './components/cryptocurrencies/cryptocurrencies.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -24,7 +24,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     TickerComponent,
     NewsPageComponent,
     ForexComponent,
-    SearchByColourPipe,
+    SearchBySymbolPipe,
     CryptocurrenciesComponent,
     HeaderComponent,
 
