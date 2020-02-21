@@ -5,18 +5,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchBySymbolPipe implements PipeTransform {
 
-  transform(colours: Colour[], searchText: string): Colour[] {
-    if (!searchText) return colours;
+  transform(companies: Company[], searchText: string): Company[] {
+    if (!searchText) return null;
     searchText = searchText.toLowerCase();
     
-    return colours.filter(col => col.name.toLowerCase()
+    return companies.filter(comp => comp.name.toLowerCase()
         .indexOf(searchText.toLowerCase()) !== -1);
   }
 
 }
 
-interface Colour  {
+interface Company  {
+  symbol: string,
   name: string,
-  hex: string
+  price: number,
+  exchange: string
 
 }
