@@ -12,8 +12,10 @@
     height: 100px;
     min-height: 100px;
     overflow: hidden;
+    padding: 0 20px 9 20px;
     text-transform: uppercase;
     width: 100%;
+    flex-wrap: nowrap;
 }
 
 .active-cyan-2 input[type=text]:focus:not([readonly]) {
@@ -29,4 +31,13 @@
 .active-cyan .fa,
 .active-cyan-2 .fa {
     color: #4dd0e1;
+}
+
+.searchModal {
+    width: 192px;
+    background: #fff;
+    position: absolute;
+    top: 65px;
+    right: 45px;
+    z-index: 9999;
 }
