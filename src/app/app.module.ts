@@ -13,6 +13,7 @@ import { ForexComponent } from './components/forex/forex.component';
 import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
 import { CryptocurrenciesComponent } from './components/cryptocurrencies/cryptocurrencies.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HeaderComponent } from './components/header/header.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MDBBootstrapModule,
     RouterModule.forRoot([
                     
      {path: '', redirectTo: 'main', pathMatch: 'full' },
