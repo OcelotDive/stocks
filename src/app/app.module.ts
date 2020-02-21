@@ -12,6 +12,7 @@ import { NewsPageComponent } from './components/news-page/news-page.component';
 import { ForexComponent } from './components/forex/forex.component';
 import { SearchByColourPipe } from './components/main/search-by-colour.pipe';
 import { CryptocurrenciesComponent } from './components/cryptocurrencies/cryptocurrencies.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CryptocurrenciesComponent } from './components/cryptocurrencies/cryptoc
     ForexComponent,
     SearchByColourPipe,
     CryptocurrenciesComponent,
+    HeaderComponent,
 
     
   ],
