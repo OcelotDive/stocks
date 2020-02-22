@@ -9,7 +9,7 @@ export class SearchBySymbolPipe implements PipeTransform {
     if (!searchText) return null;
     searchText = searchText.toLowerCase();
     
-    return companies.filter(comp => comp.name.toLowerCase()
+    return companies.filter(comp => comp.name !== undefined && comp.name.toLowerCase()
         .indexOf(searchText.toLowerCase()) !== -1);
   }
 

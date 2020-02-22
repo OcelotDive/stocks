@@ -5,6 +5,6 @@
 
     </form>
     <ul class="searchModal custom-select" *ngIf="companySearchText.length > 2">
-        <li *ngFor="let comp of companyStockList | searchBySymbol : companySearchText">{{companySearchText}}</li>
+        <li *ngFor="let comp of companyStockList | searchBySymbol : companySearchText">{{comp.name}}</li>
     </ul>
 </header>
