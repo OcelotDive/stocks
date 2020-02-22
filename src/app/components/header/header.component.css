@@ -34,11 +34,19 @@
 }
 
 .searchModal {
-    width: 192px;
+    width: 250px;
     height: 200px;
-    background: #fff;
+    background: #ADA996;
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
     position: absolute;
     top: 65px;
     right: 45px;
     z-index: 9999;
+    font-size: 11px; 
+    color: #000;
+}
+
+.seachModalLI {
+    border-bottom: 1px solid #ADA996;
 }
