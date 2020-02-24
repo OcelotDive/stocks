@@ -1,0 +1,17 @@
+h1,
+.companyTitle {
+    margin: 1%;
+    margin-left: 5%;
+    overflow: hidden;
+}
+
+.companyTitle {
+    display: flex;
+    align-items: baseline;
+}
+
+.companyImage {
+    border: 1px solid #dedfe1;
+    border-radius: 5px;
+    margin-right: 20px;
+}
