@@ -10,6 +10,7 @@ import { InvestorService } from '../../services/investor.service';
 export class HeaderComponent implements OnInit {
   public companyStockList: Object[];
   public companySearchText: string = "";
+  public companyLookUp: string ="";
   constructor(public investorService: InvestorService) {
     
     this.investorService.getSymbolsList().subscribe((data: any) => {
@@ -20,13 +21,11 @@ export class HeaderComponent implements OnInit {
 
    }
 
-   onEnterDown(searchValue: string) {
-     this.companySearchText = "";
-      searchValue = searchValue.toUpperCase();
-    const findArray = this.companyStockList.find(stock => stock["symbol"] === searchValue);
-    console.warn(findArray);
-
+   handleCompanyClick(symbol: string) {
+    this.companyLookUp = symbol;
    }
+
+
 
   ngOnInit() {
    

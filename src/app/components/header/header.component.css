@@ -34,16 +34,16 @@
 }
 
 .searchModal {
-    width: 250px;
+    width: 300px;
     height: 200px;
     background: #ADA996;
     background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
     background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
     position: absolute;
-    top: 65px;
+    top: 68px;
     right: 45px;
     z-index: 9999;
-    font-size: 11px; 
+    font-size: 14px;
     color: #000;
 }
 

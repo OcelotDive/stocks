@@ -5,6 +5,7 @@
 
     </form>
     <ul class="searchModal custom-select" *ngIf="companySearchText.length > 2">
-        <li class="seachModalLI" *ngFor="let comp of companyStockList | searchBySymbol : companySearchText"><a>({{comp.symbol}}){{comp.name}}</a></li>
+        <li class="seachModalLI" (click)="handleCompanyClick(comp.symbol)" routerLink="companyprofile" routerLinkActive="active" *ngFor="let comp of companyStockList | searchBySymbol : companySearchText"><a>({{comp.symbol}}){{comp.name}}</a></li>
     </ul>
 </header>
+<router-outlet></router-outlet>
