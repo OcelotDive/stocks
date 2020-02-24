@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestorService } from '../../services/investor.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-company',
@@ -8,12 +9,17 @@ import { InvestorService } from '../../services/investor.service';
   providers: [InvestorService]
 })
 export class CompanyComponent implements OnInit {
+  public companyName: string;
 
-  constructor(public investorService: InvestorService) { 
+  constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  
+    this.route.params.subscribe(routeParams => {
+      this.companyName = routeParams.symbolId;
+    });
   }
 
 }
