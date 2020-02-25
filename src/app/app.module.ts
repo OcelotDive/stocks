@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ChartsModule } from 'ng2-charts';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,7 @@ import { CompanyComponent } from './components/company/company.component';
     FormsModule,
     HttpClientModule,
     MDBBootstrapModule,
+    ChartsModule,
     RouterModule.forRoot([
                     
      {path: '', redirectTo: 'main', pathMatch: 'full' },

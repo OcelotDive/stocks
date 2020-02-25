@@ -35,6 +35,8 @@
                 margin-left: 5%;
                 position: relative;
                 width: 90%;
+                display: flex;
+                justify-content: fl
             }
             
             .companyDataContainer {
@@ -43,6 +45,7 @@
                 display: flex;
                 position: relative;
                 width: 60%;
+                margin-right: 2%;
             }
             
             .headerSection {
@@ -82,6 +85,17 @@
             
             .dataName {
                 font-weight: 900;
+            }
+            
+            .chartContainer {
+                width: 40%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .chart {
+                width: 80%;
             }
             
             @media only screen and (max-width: 950px) {
