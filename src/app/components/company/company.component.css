@@ -89,18 +89,23 @@
             
             .chartContainer {
                 width: 40%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
             
             .chart {
-                width: 80%;
+                width: 700px;
             }
             
             @media only screen and (max-width: 950px) {
                 .companySector,
                 .companyDescription {
                     display: none;
+                }
+                .mainContent {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .chartContainer {
+                    width: 60%;
                 }
             }
