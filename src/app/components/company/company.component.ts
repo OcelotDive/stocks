@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CompanyComponent implements OnInit {
   public companySymbol: string;
   public companyProfile: Object[];
+  public keyMetrics: Object[];
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
    
@@ -19,8 +20,18 @@ export class CompanyComponent implements OnInit {
 
       this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
         this.companyProfile = [data];
-        console.log(data)
+       // console.log(data)
       });
+
+      this.investorService.getFinancialRatios(this.companySymbol).subscribe((data: any) => {
+       // console.log(data)
+      })
+
+      this.investorService.getKeyMetrics(this.companySymbol).subscribe((data: any) => {
+        this.keyMetrics = data.metrics[0];
+        console.log(this.keyMetrics)
+      })
+
     });  
   }
 

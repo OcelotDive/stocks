@@ -23,6 +23,7 @@
 
 .stockQuote {
     color: #fff;
+    cursor: pointer;
     font-size: 16px;
 }
 

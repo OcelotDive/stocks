@@ -6,5 +6,86 @@
 <div class="companyTitle" *ngFor="let company of companyProfile">
     <img class="companyImage" src={{company.profile.image}} width="50" />
     <h4 class="companyName">{{company.profile.companyName}}</h4>
-    <h6>{{company.profile.industry}}</h6>
+    <h6 class="companySector"><small>{{company.profile.industry}}</small></h6>
+    <h6 class="companySector"><small><small>CEO: {{company.profile.ceo}}</small></small>
+    </h6>
+    <h6 class="companySector"><small><small>Exq: {{company.profile.exchange}}</small></small>
+    </h6>
 </div>
+<div class="companyDescription" *ngFor="let company of companyProfile">{{company.profile.description}}</div>
+
+<section class="mainContent">
+    <div class="companyDataContainer">
+
+        <section class="companyDataSectionOne">
+            <div class="headerSection"></div>
+            <div class="infoBar">
+                <div class="dataName">Symbol</div>
+                <div class="dataInfo">{{companyProfile[0].symbol}}</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Price</div>
+                <div class="dataInfo">{{companyProfile[0].profile.price}}$</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Beta</div>
+                <div class="dataInfo">{{companyProfile[0].profile.beta | slice: 0 : 5}}</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Volume Avg</div>
+                <div class="dataInfo">{{(companyProfile[0].profile.volAvg / 1000000).toFixed(2)}}M</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Market Cap</div>
+                <div class="dataInfo">{{(companyProfile[0].profile.mktCap / 1000000000).toFixed(2)}}B</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Last Div</div>
+                <div class="dataInfo">{{(companyProfile[0].profile.lastDiv)}}</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Div Yield</div>
+                <div class="dataInfo">{{keyMetrics['Dividend Yield']}}</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">PE Ratio</div>
+                <div class="dataInfo">{{keyMetrics['PE ratio'] | slice: 0 : 5}}</div>
+            </div>
+        </section>
+        <section class="companyDataSectionOne">
+            <div class="headerSection"></div>
+            <div class="infoBar">
+                <div class="dataName">PB Ratio</div>
+                <div class="dataInfo">{{keyMetrics['PB ratio'] | slice: 0 : 5}}</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Earnings Yield</div>
+                <div class="dataInfo">{{keyMetrics['Earnings Yield'] | slice: 0 : 5}}</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Debt/Equity</div>
+                <div class="dataInfo">{{keyMetrics['Debt to Equity'] | slice: 0 : 5}}</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">ROE</div>
+                <div class="dataInfo">{{((keyMetrics['ROE']) * 100).toFixed(2)}}%</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Working Capital</div>
+                <div class="dataInfo">{{(keyMetrics['Working Capital'] / 1000000000).toFixed(2)}}B</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">TA Value</div>
+                <div class="dataInfo">{{(keyMetrics['Tangible Asset Value'] / 1000000000).toFixed(2)}}B</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">N/C Asset Value</div>
+                <div class="dataInfo">{{(keyMetrics['Net Current Asset Value'] / 1000000000).toFixed(2)}}B</div>
+            </div>
+            <div class="infoBar">
+                <div class="dataName">Invested Capital</div>
+                <div class="dataInfo">{{(keyMetrics['Invested Capital'] / 1000000000).toFixed(2)}}B</div>
+            </div>
+        </section>
+    </div>
+</section>

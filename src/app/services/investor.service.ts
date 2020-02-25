@@ -12,6 +12,8 @@ export class InvestorService {
   public forex: string;
   public cryptos: string;
   public  companyProfile: string;
+  public ratioUrl: string;
+  public keyMetrics: string;
   public key: string;
 
     constructor(private http: HttpClient) {
@@ -21,7 +23,9 @@ export class InvestorService {
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.cryptos = 'https://financialmodelingprep.com/api/v3/cryptocurrencies';
         this.newsStories = 'https://newsapi.org/v1/articles?source=';
+        this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/'
         this.companyProfile = 'https://financialmodelingprep.com/api/v3/company/profile/';
+        this.keyMetrics = 'https://financialmodelingprep.com/api/v3/company-key-metrics/'
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
@@ -50,6 +54,12 @@ export class InvestorService {
     }
     getCompanyProfile(symbol: string) {
         return this.http.get(`${this.companyProfile}${symbol}`)
+    }
+    getFinancialRatios(symbol: string) {
+        return this.http.get(`${this.ratioUrl}${symbol}`);
+    }
+    getKeyMetrics(symbol: string) {
+        return this.http.get(`${this.keyMetrics}${symbol}`);
     }
 
 

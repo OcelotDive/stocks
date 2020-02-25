@@ -1,8 +1,9 @@
 <section class="ticker">
     <div class="tickerWrapper">
-        <span class="stockQuote" *ngFor="let stock of chosenQuotes">{{stock.symbol}} {{stock.price}} <span [class.negativeChange]="stock.change < 0.01" [class.positiveChange]="stock.change > 0.01">{{stock.change}} ({{stock.changesPercentage}}%)</span></span>
+        <span class="stockQuote" routerLink="/main/:{{stock.symbol}}" routerLinkActive="active" *ngFor="let stock of chosenQuotes">{{stock.symbol}} {{stock.price}} <span [class.negativeChange]="stock.change < 0.01" [class.positiveChange]="stock.change > 0.01">{{stock.change}} ({{stock.changesPercentage}}%)</span></span>
     </div>
     <div class="tickerWrapper2">
-        <span class="stockQuote" *ngFor="let stock of chosenQuotes">{{stock.symbol}} {{stock.price}} <span [class.negativeChange]="stock.change < 0.01" [class.positiveChange]="stock.change > 0.01">{{stock.change}} ({{stock.changesPercentage}}%) </span></span>
+        <span class="stockQuote" routerLink="/main/:{{stock.symbol}}" routerLinkActive="active" *ngFor="let stock of chosenQuotes">{{stock.symbol}} {{stock.price}} <span [class.negativeChange]="stock.change < 0.01" [class.positiveChange]="stock.change > 0.01">{{stock.change}} ({{stock.changesPercentage}}%) </span></span>
     </div>
 </section>
+<router-outlet></router-outlet>
