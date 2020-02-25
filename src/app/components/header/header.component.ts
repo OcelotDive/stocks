@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
 
    handleCompanyClick(symbol: string) {
     this.companyLookUp = symbol;
+    this.companySearchText = "";
    }
 
 
