@@ -14,34 +14,34 @@
 </div>
 <div class="companyDescription" *ngFor="let company of companyProfile">{{company.profile.description}}</div>
 
-<section class="mainContent">
+<section class="mainContent" *ngFor="let company of companyProfile">
     <div class="companyDataContainer">
 
         <section class="companyDataSectionOne">
             <div class="headerSection">Financial Info</div>
             <div class="infoBar">
                 <div class="dataName">Symbol</div>
-                <div class="dataInfo">{{companyProfile[0].symbol}}</div>
+                <div class="dataInfo">{{company.symbol}}</div>
             </div>
             <div class="infoBar">
                 <div class="dataName">Price</div>
-                <div class="dataInfo">{{companyProfile[0].profile.price}}$</div>
+                <div class="dataInfo">{{company.profile.price}}$</div>
             </div>
             <div class="infoBar">
                 <div class="dataName">Beta</div>
-                <div class="dataInfo">{{companyProfile[0].profile.beta | slice: 0 : 5}}</div>
+                <div class="dataInfo">{{company.profile.beta | slice: 0 : 5}}</div>
             </div>
             <div class="infoBar">
                 <div class="dataName">Volume Avg</div>
-                <div class="dataInfo">{{(companyProfile[0].profile.volAvg / 1000000).toFixed(2)}}M</div>
+                <div class="dataInfo">{{(company.profile.volAvg / 1000000).toFixed(2)}}M</div>
             </div>
             <div class="infoBar">
                 <div class="dataName">Market Cap</div>
-                <div class="dataInfo">{{(companyProfile[0].profile.mktCap / 1000000000).toFixed(2)}}B</div>
+                <div class="dataInfo">{{(company.profile.mktCap / 1000000000).toFixed(2)}}B</div>
             </div>
             <div class="infoBar">
                 <div class="dataName">Last Div</div>
-                <div class="dataInfo">{{(companyProfile[0].profile.lastDiv)}}</div>
+                <div class="dataInfo">{{(company.profile.lastDiv)}}</div>
             </div>
             <div class="infoBar">
                 <div class="dataName">Div Yield</div>

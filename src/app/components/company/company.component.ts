@@ -14,9 +14,9 @@ import { ActivatedRoute } from '@angular/router';
   providers: [InvestorService]
 })
 export class CompanyComponent implements OnInit {
-  public companySymbol: string;
-  public companyProfile: Object[];
-  public keyMetrics: Object[];
+  public companySymbol: string = "";
+  public companyProfile: Object[] = [];
+  public keyMetrics: Object[] = [];
 
 
 
@@ -47,20 +47,21 @@ export class CompanyComponent implements OnInit {
     this.route.params.subscribe(routeParams => {
       this.companySymbol = routeParams.symbolId.substring(1);
 
+      this.investorService.getKeyMetrics(this.companySymbol).subscribe((data: any) => {
+        this.keyMetrics = data.metrics[0];
+      })
+
       this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
         this.companyProfile = [data];
-       // console.log(data)
+        console.log(data)
       });
 
       this.investorService.getFinancialRatios(this.companySymbol).subscribe((data: any) => {
        // console.log(data)
       })
 
-      this.investorService.getKeyMetrics(this.companySymbol).subscribe((data: any) => {
-        this.keyMetrics = data.metrics[0];
-      })
-
     });  
+
   }
 
   ngOnInit(): void {
