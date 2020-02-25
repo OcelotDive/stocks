@@ -6,12 +6,17 @@ h1,
 }
 
 .companyTitle {
-    display: flex;
     align-items: baseline;
+    display: flex;
+    margin-right: 20px;
 }
 
 .companyImage {
     border: 1px solid #dedfe1;
     border-radius: 5px;
+    margin-right: 20px;
+}
+
+.companyName {
     margin-right: 20px;
 }

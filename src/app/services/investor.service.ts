@@ -5,12 +5,13 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class InvestorService {
   public companyStockList: string;
-  public  chosenUrl: string;
+  public chosenUrl: string;
   public majorIndexes: string;
   public newsSource: string = ' the-wall-street-journal';
   public newsStories: string;
   public forex: string;
   public cryptos: string;
+  public  companyProfile: string;
   public key: string;
 
     constructor(private http: HttpClient) {
@@ -20,6 +21,7 @@ export class InvestorService {
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.cryptos = 'https://financialmodelingprep.com/api/v3/cryptocurrencies';
         this.newsStories = 'https://newsapi.org/v1/articles?source=';
+        this.companyProfile = 'https://financialmodelingprep.com/api/v3/company/profile/';
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
@@ -45,6 +47,9 @@ export class InvestorService {
     }
     getCryptos() {
         return this.http.get(`${this.cryptos}`);
+    }
+    getCompanyProfile(symbol: string) {
+        return this.http.get(`${this.companyProfile}${symbol}`)
     }
 
 

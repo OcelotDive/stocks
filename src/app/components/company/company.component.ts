@@ -13,19 +13,19 @@ export class CompanyComponent implements OnInit {
   public companyProfile: Object[];
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
+   
     this.route.params.subscribe(routeParams => {
       this.companySymbol = routeParams.symbolId.substring(1);
-    });
-    this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
-      this.companyProfile = data;
-      console.log(data)
-    })
-    
-    
+
+      this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
+        this.companyProfile = [data];
+        console.log(data)
+      });
+    });  
   }
 
   ngOnInit(): void {
-  
+    
    
   }
 

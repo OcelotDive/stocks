@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { SearchBySymbolPipe } from './components/header/searchBySymbol';
 import { CryptocurrenciesComponent } from './components/cryptocurrencies/cryptocurrencies.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CompanyComponent } from './components/company/company.component';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     SearchBySymbolPipe,
     CryptocurrenciesComponent,
     HeaderComponent,
+    CompanyComponent,
 
     
   ],
@@ -42,6 +45,11 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
      {path: 'main/newslist', component: NewsPageComponent},
      {path: 'main/forex', component: ForexComponent},
      {path: 'main/cryptocurrencies', component: CryptocurrenciesComponent},
+     {path: 'main/:symbolId',  component: CompanyComponent},
+  
+     
+
+     
     
     ])
   ],

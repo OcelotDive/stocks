@@ -3,6 +3,8 @@
 <app-ticker></app-ticker>
 
 <h1>Company Summary</h1>
-<div class="companyTitle"><img class="companyImage" src={{companyProfile.profile.image}} width="50" />
-    <h4 class="companyName">{{companyProfile.profile.companyName}}</h4>
+<div class="companyTitle" *ngFor="let company of companyProfile">
+    <img class="companyImage" src={{company.profile.image}} width="50" />
+    <h4 class="companyName">{{company.profile.companyName}}</h4>
+    <h6>{{company.profile.industry}}</h6>
 </div>
