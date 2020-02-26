@@ -17,6 +17,7 @@ import { CryptocurrenciesComponent } from './components/cryptocurrencies/cryptoc
 import { HeaderComponent } from './components/header/header.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CompanyComponent } from './components/company/company.component';
+import { LinechartComponent } from './components/linechart/linechart.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CompanyComponent } from './components/company/company.component';
     CryptocurrenciesComponent,
     HeaderComponent,
     CompanyComponent,
+    LinechartComponent,
 
     
   ],

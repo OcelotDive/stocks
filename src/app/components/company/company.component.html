@@ -103,17 +103,13 @@
     </div-->
 
     <div class="flex chartContainer">
-        <div class="flex-item">
-
-
+        <div class="flex-item chartButtonGroup">
             <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(5)">5d</button>
             <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(30)">1m</button>
             <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(180)">6m</button>
             <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(365)">1y</button>
             <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(1825)">5y</button>
-            <button mat-button mat-raised-button color="primary" class="chartButton">Recolor</button>
-
-
+            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="changeColor()">Recolor</button>
         </div>
         <div class="flex-item chart">
             <div style="display: block;">
