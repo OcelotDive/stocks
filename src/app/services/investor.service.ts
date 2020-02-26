@@ -14,6 +14,7 @@ export class InvestorService {
   public  companyProfile: string;
   public ratioUrl: string;
   public keyMetrics: string;
+  public historicalStockPrice: string;
   public key: string;
 
     constructor(private http: HttpClient) {
@@ -26,6 +27,7 @@ export class InvestorService {
         this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/'
         this.companyProfile = 'https://financialmodelingprep.com/api/v3/company/profile/';
         this.keyMetrics = 'https://financialmodelingprep.com/api/v3/company-key-metrics/'
+        this.historicalStockPrice = 'https://financialmodelingprep.com/api/v3/historical-price-full/';
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
@@ -60,6 +62,9 @@ export class InvestorService {
     }
     getKeyMetrics(symbol: string) {
         return this.http.get(`${this.keyMetrics}${symbol}`);
+    }
+    getHistoric(symbol: string, numDays: number) {
+        return this.http.get(`${this.historicalStockPrice}${symbol}?timeseries=${numDays}`);
     }
 
 
