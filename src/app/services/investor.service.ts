@@ -63,8 +63,8 @@ export class InvestorService {
     getKeyMetrics(symbol: string) {
         return this.http.get(`${this.keyMetrics}${symbol}`);
     }
-    getHistoric(symbol: string, numDays: number) {
-        return this.http.get(`${this.historicalStockPrice}${symbol}?timeseries=${numDays}`);
+    getHistoric(symbol: string, previousDate: string, currentDate: string) {
+        return this.http.get(`${this.historicalStockPrice}${symbol}?from=${previousDate}&to=${currentDate}`);
     }
 
 

@@ -69,7 +69,7 @@ export class CompanyComponent implements OnInit {
     },
   };
   public lineChartColors: Color[] = [
-    { // grey
+    { 
       backgroundColor: 'rgba(3, 252, 28,0.2)',
       borderColor: 'rgba(3, 252, 28,1)',
       pointBackgroundColor: 'rgba(3, 252, 28,1)',
@@ -77,7 +77,7 @@ export class CompanyComponent implements OnInit {
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(3, 252, 28,0.8)'
     },
-    { // dark grey
+    { 
       backgroundColor: 'rgba(3, 148, 252,0.2)',
       borderColor: 'rgba(3, 148, 252,1)',
       pointBackgroundColor: 'rgba(3, 148, 252,1)',
@@ -85,7 +85,7 @@ export class CompanyComponent implements OnInit {
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(3, 148, 252,1)'
     },
-    { // red
+    { 
       backgroundColor: 'rgba(255,0,0,0.3)',
       borderColor: 'red',
       pointBackgroundColor: 'rgba(148,159,177,1)',
@@ -154,18 +154,24 @@ export class CompanyComponent implements OnInit {
   public setInterval(days: number) {
       this.timelineDays = days;
       this.getChartData();
-      
-    
   }
 
   public getChartData() {
-    this.investorService.getHistoric(this.companySymbol, this.timelineDays).subscribe((data: any) => {
+
+    const previousDate = this.getHistoricalDate(this.timelineDays);
+    const currentDate = this.getCurrentDate();
+
+
+
+    this.investorService.getHistoric(this.companySymbol, previousDate, currentDate).subscribe((data: any) => {
+      console.warn(data)
       let priceTemp: number[] = []; 
       let lowTemp: number[] = [];
       let highTemp: number[] = [] ;
      this.lineChartLabels = [];
-        data.historical.reverse().map(day => {
-          this.lineChartLabels.push(day.date) 
+        data.historical.map((day, index) => {
+       
+         this.lineChartLabels.push(day.date); 
           priceTemp.push(day.close);
           lowTemp.push(day.low);
           highTemp.push(day.high);
@@ -176,6 +182,28 @@ export class CompanyComponent implements OnInit {
         this.timelineDays = 5;  
     })
   }
+
+
+
+  public getCurrentDate() {
+    const dateObj = new Date();
+    const month = dateObj.getUTCMonth() + 1;
+    const day = dateObj.getUTCDate();
+    const year = dateObj.getUTCFullYear();
+    const todaysDate = year + "-" + month + "-" + day;
+      return todaysDate;
+  }
+
+    public getHistoricalDate(timeLine: number) {
+      const historicDate = new Date();
+      historicDate.setDate(historicDate.getDate() - timeLine);
+      const month = historicDate.getUTCMonth() + 1;
+      const day = historicDate.getUTCDate();
+      const year = historicDate.getUTCFullYear();
+      const previousDate = year + "-" + month + "-" + day;
+      console.warn(previousDate)
+      return previousDate;
+    }
 
 
 }

@@ -36,7 +36,7 @@
                 position: relative;
                 width: 90%;
                 display: flex;
-                justify-content: fl
+                justify-content: center;
             }
             
             .companyDataContainer {
@@ -88,18 +88,20 @@
             }
             
             .chartContainer {
-                width: 40%;
+                width: 630px;
+                overflow: visible;
             }
             
             .chart {
-                width: 680px;
+                width: 100%;
+                border: solid black 5px;
             }
             
             .chartButton {
                 margin-right: 10px;
             }
             
-            @media only screen and (max-width: 950px) {
+            @media only screen and (max-width: 1000px) {
                 .companySector,
                 .companyDescription {
                     display: none;
