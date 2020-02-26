@@ -18,14 +18,14 @@ export class CompanyComponent implements OnInit {
   public companyProfile: Object[] = [];
   public keyMetrics: Object[] = [];
   //public historicPrices: Object[] = [];
-  public timelineDays: number = 30;
+  public timelineDays: number = 5;
 
 
 
   public lineChartData: ChartDataSets[] = [
-    { data: [55,55,55], label: 'Price' },
-   // { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
-   // { data: [180, 480, 770, 90, 1000, 270, 400], label: 'Series C', yAxisID: 'y-axis-1' }
+    { data: [], label: 'Price' },
+    { data: [], label: 'Low' },
+    { data: [], label: 'High' }
   ];
   public lineChartLabels: Label[] = [];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
@@ -70,20 +70,20 @@ export class CompanyComponent implements OnInit {
   };
   public lineChartColors: Color[] = [
     { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+      backgroundColor: 'rgba(3, 252, 28,0.2)',
+      borderColor: 'rgba(3, 252, 28,1)',
+      pointBackgroundColor: 'rgba(3, 252, 28,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+      pointHoverBorderColor: 'rgba(3, 252, 28,0.8)'
     },
     { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
+      backgroundColor: 'rgba(3, 148, 252,0.2)',
+      borderColor: 'rgba(3, 148, 252,1)',
+      pointBackgroundColor: 'rgba(3, 148, 252,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
+      pointHoverBorderColor: 'rgba(3, 148, 252,1)'
     },
     { // red
       backgroundColor: 'rgba(255,0,0,0.3)',
@@ -101,7 +101,7 @@ export class CompanyComponent implements OnInit {
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
-   
+  
     this.route.params.subscribe(routeParams => {
       this.companySymbol = routeParams.symbolId.substring(1);
 
@@ -115,16 +115,8 @@ export class CompanyComponent implements OnInit {
        
       });
 
-      this.investorService.getHistoric(this.companySymbol, this.timelineDays).subscribe((data: any) => {
-        let temp = [];
-        console.warn(data.historical)
-          data.historical.reverse().map(day => {
-            this.lineChartLabels.push(day.date) 
-            temp.push(day.close);
-          });
-          this.lineChartData[0].data = temp;
-      })
-
+      this.getChartData();
+        
    /*   this.investorService.getFinancialRatios(this.companySymbol).subscribe((data: any) => {
        // console.log(data)
       })*/
@@ -136,14 +128,6 @@ export class CompanyComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public randomize(): void {
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        this.lineChartData[i].data[j] = this.generateNumber(i);
-      }
-    }
-    this.chart.update();
-  }
 
   private generateNumber(i: number) {
     return Math.floor((Math.random() * (i < 2 ? 100 : 1000)) + 1);
@@ -158,28 +142,40 @@ export class CompanyComponent implements OnInit {
     console.log(event, active);
   }
 
-  public hideOne() {
-    const isHidden = this.chart.isDatasetHidden(1);
-    this.chart.hideDataset(1, !isHidden);
-  }
 
-  public pushOne() {
-    this.lineChartData.forEach((x, i) => {
-      const num = this.generateNumber(i);
-      const data: number[] = x.data as number[];
-      data.push(num);
-    });
-    this.lineChartLabels.push(`Label ${this.lineChartLabels.length}`);
-  }
+
+
 
   public changeColor() {
     this.lineChartColors[2].borderColor = 'green';
     this.lineChartColors[2].backgroundColor = `rgba(0, 255, 0, 0.3)`;
   }
 
-  public changeLabel() {
-    this.lineChartLabels[2] = ['1st Line', '2nd Line'];
-    // this.chart.update();
+  public setInterval(days: number) {
+      this.timelineDays = days;
+      this.getChartData();
+      
+    
   }
+
+  public getChartData() {
+    this.investorService.getHistoric(this.companySymbol, this.timelineDays).subscribe((data: any) => {
+      let priceTemp: number[] = []; 
+      let lowTemp: number[] = [];
+      let highTemp: number[] = [] ;
+     this.lineChartLabels = [];
+        data.historical.reverse().map(day => {
+          this.lineChartLabels.push(day.date) 
+          priceTemp.push(day.close);
+          lowTemp.push(day.low);
+          highTemp.push(day.high);
+        });
+        this.lineChartData[0].data = priceTemp;
+        this.lineChartData[1].data = lowTemp;
+        this.lineChartData[2].data = highTemp; 
+        this.timelineDays = 5;  
+    })
+  }
+
 
 }

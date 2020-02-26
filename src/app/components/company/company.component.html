@@ -105,11 +105,15 @@
     <div class="flex chartContainer">
         <div class="flex-item">
 
-            <button mat-button mat-raised-button color="primary" (click)="randomize()">Randomize</button>
-            <button mat-button mat-raised-button color="primary" (click)="pushOne()">Push</button>
-            <button mat-button mat-raised-button color="primary" (click)="changeColor()">Recolor</button>
-            <button mat-button mat-raised-button color="primary" (click)="hideOne()">Toggle Series B</button>
-            <button mat-button mat-raised-button color="primary" (click)="changeLabel()">Change Label</button>
+
+            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(5)">5d</button>
+            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(30)">1m</button>
+            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(180)">6m</button>
+            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(365)">1y</button>
+            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(1825)">5y</button>
+            <button mat-button mat-raised-button color="primary" class="chartButton">Recolor</button>
+
+
         </div>
         <div class="flex-item chart">
             <div style="display: block;">
