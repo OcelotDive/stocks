@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Component, OnInit, ViewChild, Input  } from '@angular/core';
 
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
 import { InvestorService } from '../../services/investor.service';
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-linechart',
@@ -13,6 +13,9 @@ import { ActivatedRoute } from '@angular/router';
   providers: [InvestorService]
 })
 export class LinechartComponent implements OnInit {
+   
+
+   @Input() companySymbol: string;
    public timelineDays: number = 5;
 
   public lineChartData: ChartDataSets[] = [
@@ -93,15 +96,11 @@ export class LinechartComponent implements OnInit {
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
-  
-    
+  constructor(public investorService: InvestorService) { 
+    console.log(this.companySymbol)
 
-      this.getChartData();
+     this.getChartData();
         
- 
-
-   
 
   }
 
