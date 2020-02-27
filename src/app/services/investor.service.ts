@@ -7,7 +7,7 @@ export class InvestorService {
   public companyStockList: string;
   public chosenUrl: string;
   public majorIndexes: string;
-  public newsSource: string = 'the-wall-street-journal';
+  public newsSource: string = ' the-wall-street-journal';
   public newsStories: string;
   public forex: string;
   public cryptos: string;

@@ -36,7 +36,6 @@
                 position: relative;
                 width: 90%;
                 display: flex;
-                justify-content: center;
             }
             
             .companyDataContainer {
@@ -45,7 +44,7 @@
                 display: flex;
                 position: relative;
                 width: 60%;
-                margin-right: 2%;
+                margin-right: 5%;
             }
             
             .headerSection {
@@ -88,19 +87,9 @@
             }
             
             .chartContainer {
-                width: 630px;
-            }
-            
-            .chart {
-                width: 100%;
-            }
-            
-            .chartButtonGroup {
-                margin-bottom: 1%;
-            }
-            
-            .chartButton {
-                margin-right: 10px;
+                width: 540px;
+                display: flex;
+                flex-direction: column;
             }
             
             @media only screen and (max-width: 1050px) {
@@ -113,7 +102,7 @@
                     justify-content: center;
                     align-items: center;
                 }
-                .chartContainer {
-                    width: 60%;
+                .companyDataContainer {
+                    margin-bottom: 5%;
                 }
             }
