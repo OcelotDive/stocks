@@ -68,6 +68,7 @@
                 .companyDescription {
                     overflow: hidden;
                     width: 50%;
+                    height: 80px;
                 }
                 
                 .infoBar {
