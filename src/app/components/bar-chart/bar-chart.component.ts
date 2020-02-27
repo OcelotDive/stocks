@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { Label } from 'ng2-charts';
 import { InvestorService } from '../../services/investor.service';
 import { ActivatedRoute } from '@angular/router';
@@ -14,6 +13,7 @@ export class BarChartComponent implements OnInit {
 
   public companySymbol: string;
   public timelineDays: number = 5;
+  @Output() chartTypeFromChild = new EventEmitter<string>();
 
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -27,7 +27,7 @@ export class BarChartComponent implements OnInit {
     }
   };
 
-  public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+  public barChartLabels: Label[] = [];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
 
@@ -39,7 +39,7 @@ export class BarChartComponent implements OnInit {
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
     this.route.params.subscribe(routeParams => {
-      
+
       this.companySymbol = routeParams.symbolId.substring(1);
 
      this.getChartData();
@@ -53,10 +53,12 @@ export class BarChartComponent implements OnInit {
 
 
   public setInterval(days: number) {
-
     this.timelineDays = days;
     this.getChartData();
 }
+  public setChartType(type: string) {
+    this.chartTypeFromChild.emit(type);
+  }
 
 public getChartData() {
 

@@ -88,11 +88,11 @@
             </div>
         </section>
     </div>
-    <!--div class="chartContainer">
-        <app-linechart></app-linechart>
-    </div-->
-    <div class="chartContainer">
-        <app-bar-chart></app-bar-chart>
+    <div class="chartContainer" *ngIf="chartSetType === 'line'">
+        <app-linechart (chartTypeFromChild)="getChartTypeFromChild($event)"></app-linechart>
+    </div>
+    <div class="chartContainer" *ngIf="chartSetType === 'bar'">
+        <app-bar-chart (chartTypeFromChild)="getChartTypeFromChild($event)"></app-bar-chart>
     </div>
 
 </section>

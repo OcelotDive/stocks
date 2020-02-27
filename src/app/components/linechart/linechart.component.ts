@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,  Output, EventEmitter } from '@angular/core';
 
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
@@ -18,6 +18,7 @@ export class LinechartComponent implements OnInit {
 
    public companySymbol: string;
    public timelineDays: number = 5;
+   @Output() chartTypeFromChild = new EventEmitter<string>();
 
   public lineChartData: ChartDataSets[] = [
     { data: [], label: 'Price' },
@@ -136,6 +137,10 @@ export class LinechartComponent implements OnInit {
   public setInterval(days: number) {
       this.timelineDays = days;
       this.getChartData();
+  }
+
+  public setChartType(type: string) {
+    this.chartTypeFromChild.emit(type);
   }
 
   public getChartData() {

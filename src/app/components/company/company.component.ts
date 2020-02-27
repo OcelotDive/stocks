@@ -15,6 +15,7 @@ export class CompanyComponent implements OnInit {
   public companySymbol: string = "";
   public companyProfile: Object[] = [];
   public keyMetrics: Object[] = [];
+  public chartSetType = 'line'
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
   
@@ -29,10 +30,13 @@ export class CompanyComponent implements OnInit {
       this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
         this.companyProfile = [data];
        
-      });
-   
+      });  
     });  
+  }
 
+  getChartTypeFromChild($event) {
+    this.chartSetType = $event;
+    console.log(this.chartSetType);
   }
 
   ngOnInit(): void {}
