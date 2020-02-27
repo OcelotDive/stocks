@@ -32,7 +32,7 @@
                 <div class="dataInfo">{{company.profile.beta | slice: 0 : 5}}</div>
             </div>
             <div class="infoBar">
-                <div class="dataName">Volume Avg</div>
+                <div class="dataName">Vol Avg</div>
                 <div class="dataInfo">{{(company.profile.volAvg / 1000000).toFixed(2)}}M</div>
             </div>
             <div class="infoBar">
@@ -59,7 +59,7 @@
                 <div class="dataInfo">{{keyMetrics['PB ratio'] | slice: 0 : 5}}</div>
             </div>
             <div class="infoBar">
-                <div class="dataName">Earnings Yield</div>
+                <div class="dataName">E/Yield</div>
                 <div class="dataInfo">{{keyMetrics['Earnings Yield'] | slice: 0 : 5}}</div>
             </div>
             <div class="infoBar">
@@ -71,7 +71,7 @@
                 <div class="dataInfo">{{((keyMetrics['ROE']) * 100).toFixed(2)}}%</div>
             </div>
             <div class="infoBar">
-                <div class="dataName">Working Capital</div>
+                <div class="dataName">W/Cap</div>
                 <div class="dataInfo">{{(keyMetrics['Working Capital'] / 1000000000).toFixed(2)}}B</div>
             </div>
             <div class="infoBar">
@@ -79,44 +79,15 @@
                 <div class="dataInfo">{{(keyMetrics['Tangible Asset Value'] / 1000000000).toFixed(2)}}B</div>
             </div>
             <div class="infoBar">
-                <div class="dataName">N/C Asset Value</div>
+                <div class="dataName">N/C AV</div>
                 <div class="dataInfo">{{(keyMetrics['Net Current Asset Value'] / 1000000000).toFixed(2)}}B</div>
             </div>
             <div class="infoBar">
-                <div class="dataName">Invested Capital</div>
+                <div class="dataName">Inv Cap</div>
                 <div class="dataInfo">{{(keyMetrics['Invested Capital'] / 1000000000).toFixed(2)}}B</div>
             </div>
         </section>
     </div>
-
-
-
-
-    <!--div class="chartContainer">
-        <div class="chart">
-            <div style="display: block">
-                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
-                </canvas>
-            </div>
-
-        </div>
-    </div-->
-
-    <!--div class="flex chartContainer">
-        <div class="flex-item chartButtonGroup">
-            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(5)">5d</button>
-            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(30)">1m</button>
-            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(180)">6m</button>
-            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(365)">1y</button>
-            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(1825)">5y</button>
-            <button mat-button mat-raised-button color="primary" class="chartButton" (click)="changeColor()">Recolor</button>
-        </div>
-        <div class="flex-item chart">
-            <div style="display: block;">
-                <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-            </div>
-        </div>
-    </div-->
     <div class="chartContainer">
         <app-linechart></app-linechart>
     </div>

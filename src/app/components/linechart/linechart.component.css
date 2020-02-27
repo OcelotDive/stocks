@@ -1,7 +1,9 @@
-.chartButtonGroup {
-    margin-bottom: 1%;
-}
-
-.chartButton {
-    margin-right: 10px;
-}
+    .chartButtonGroup {
+        margin-bottom: 1%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .chartButton {
+        margin-right: 10px;
+    }

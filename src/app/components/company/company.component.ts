@@ -1,8 +1,6 @@
-import { Component, OnInit, ViewChild, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ChartDataSets, ChartOptions } from 'chart.js';
-import { Color, BaseChartDirective, Label } from 'ng2-charts';
-import * as pluginAnnotations from 'chartjs-plugin-annotation';
+
 
 import { InvestorService } from '../../services/investor.service';
 import { ActivatedRoute } from '@angular/router';
@@ -32,9 +30,7 @@ export class CompanyComponent implements OnInit {
         this.companyProfile = [data];
        
       });
-
-      
-        
+   
     });  
 
   }
