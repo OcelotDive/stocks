@@ -21,9 +21,9 @@ export class LinechartComponent implements OnInit {
    @Output() chartTypeFromChild = new EventEmitter<string>();
 
   public lineChartData: ChartDataSets[] = [
-    { data: [], label: 'Price' },
-    { data: [], label: 'Low' },
-    { data: [], label: 'High' }
+    { data: [5,5,5], label: 'Price' },
+    { data: [5,5,5], label: 'Low' },
+    { data: [5,5,5], label: 'High' }
   ];
   public lineChartLabels: Label[] = [];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
