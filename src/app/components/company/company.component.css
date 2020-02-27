@@ -1,108 +1,111 @@
-            h1,
-            .companyTitle {
-                margin: 1%;
-                margin-left: 5%;
-                overflow: hidden;
-            }
-            
-            .companyTitle {
-                align-items: baseline;
-                display: flex;
-                margin-right: 20px;
-            }
-            
-            .companyImage {
-                border: 1px solid #dedfe1;
-                border-radius: 5px;
-                margin-right: 20px;
-            }
-            
-            .companyName,
-            .companySector {
-                margin-right: 20px;
-            }
-            
-            .companyDescription {
-                font-size: 8px;
-                font-weight: 900;
-                margin: -10px 0 10px 5%;
-                padding: 5px 5px 5px 5px;
-                width: 50%;
-            }
-            
-            .mainContent {
-                height: 80%;
-                margin-left: 5%;
-                position: relative;
-                width: 90%;
-                display: flex;
-            }
-            
-            .companyDataContainer {
-                position: relative;
-                top: 5%;
-                display: flex;
-                position: relative;
-                width: 60%;
-                margin-right: 5%;
-            }
-            
-            .headerSection {
-                background: #0f0c29;
-                display: flex;
-                height: 50px;
-                width: 100%;
-                color: #fff;
-                justify-content: flex-start;
-                align-items: center;
-                text-indent: 10px;
-            }
-            
-            .companyDataSectionOne {
-                display: flex;
-                flex-direction: column;
-                font-size: 16px;
-                width: 100%;
-            }
-            
-            .companyDescription {
-                height: 60px;
-                overflow: hidden;
-                width: 50%;
-            }
-            
-            .infoBar {
-                display: flex;
-                justify-content: space-between;
-                padding: 5px 10px 5px 10px;
-                width: 100%;
-            }
-            
-            .infoBar:nth-of-type(odd) {
-                background: #ddd;
-            }
-            
-            .dataName {
-                font-weight: 900;
-            }
-            
-            .chartContainer {
-                width: 540px;
-                display: flex;
-                flex-direction: column;
-            }
-            
-            @media only screen and (max-width: 1050px) {
-                .companySector,
+                h1,
+                .companyTitle {
+                    margin: 1%;
+                    margin-left: 5%;
+                    overflow: hidden;
+                }
+                
+                .companyTitle {
+                    align-items: baseline;
+                    display: flex;
+                    margin-right: 20px;
+                }
+                
+                .companyImage {
+                    border: 1px solid #dedfe1;
+                    border-radius: 5px;
+                    margin-right: 20px;
+                }
+                
+                .companyName,
+                .companySector {
+                    margin-right: 20px;
+                }
+                
                 .companyDescription {
-                    display: none;
+                    font-size: 8px;
+                    font-weight: 900;
+                    margin: -10px 0 10px 5%;
+                    padding: 5px 5px 5px 5px;
+                    width: 50%;
                 }
+                
                 .mainContent {
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
+                    height: 80%;
+                    margin-left: 5%;
+                    position: relative;
+                    width: 90%;
+                    display: flex;
                 }
+                
                 .companyDataContainer {
-                    margin-bottom: 5%;
+                    position: relative;
+                    top: 5%;
+                    display: flex;
+                    position: relative;
+                    width: 60%;
+                    margin-right: 4%;
                 }
-            }
+                
+                .headerSection {
+                    background: #0f0c29;
+                    display: flex;
+                    height: 50px;
+                    width: 100%;
+                    color: #fff;
+                    justify-content: flex-start;
+                    align-items: center;
+                    text-indent: 10px;
+                }
+                
+                .companyDataSectionOne {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 16px;
+                    width: 100%;
+                }
+                
+                .companyDescription {
+                    height: 60px;
+                    overflow: hidden;
+                    width: 50%;
+                }
+                
+                .infoBar {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 5px 10px 5px 10px;
+                    width: 100%;
+                }
+                
+                .infoBar:nth-of-type(odd) {
+                    background: #ddd;
+                }
+                
+                .dataName {
+                    font-weight: 900;
+                }
+                
+                .chartContainer {
+                    width: 35%;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                @media only screen and (max-width: 1050px) {
+                    .companySector,
+                    .companyDescription {
+                        display: none;
+                    }
+                    .mainContent {
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .companyDataContainer {
+                        margin-bottom: 5%;
+                    }
+                    .chartContainer {
+                        width: 520px;
+                    }
+                }
