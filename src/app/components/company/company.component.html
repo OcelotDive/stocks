@@ -102,7 +102,7 @@
         </div>
     </div-->
 
-    <!--div class="flex chartContainer">
+    <div class="flex chartContainer">
         <div class="flex-item chartButtonGroup">
             <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(5)">5d</button>
             <button mat-button mat-raised-button color="primary" class="chartButton" (click)="setInterval(30)">1m</button>
@@ -116,6 +116,6 @@
                 <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
             </div>
         </div>
-    </div-->
-    <app-linechart [companySymbol]="companySymbol"></app-linechart>
+    </div>
+
 </section>
