@@ -49,9 +49,7 @@ export class CompanyComponent implements OnInit {
     
   }
 
-  scroll() {
-    window.scrollTo(0,document.querySelector(".test").scrollHeight);
-  }
+
 
   ngOnInit(): void {}
 

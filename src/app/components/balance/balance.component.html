@@ -68,11 +68,11 @@
         </tr>
         <tr>
             <th>Long-term debt</th>
-            <td *ngFor="let item of balanceStatement">{{item["Long-term debt"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of balanceStatement">{{item["Long-term debt"] / 100000 | number: '1.2-2'}}</td>
         </tr>
         <tr>
             <th>Total debt</th>
-            <td *ngFor="let item of balanceStatement">{{item["Total debt"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of balanceStatement">{{item["Total debt"] / 1000000 | number: '1.2-2'}}</td>
         </tr>
         <tr>
             <th>Deferred revenue</th>
@@ -84,23 +84,23 @@
         </tr>
         <tr>
             <th>Deposit Liabilities</th>
-            <td *ngFor="let item of balanceStatement">{{item["Deposit Liabilities"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of balanceStatement">{{item["Deposit Liabilities"] / 1000000 | number: '1.2-2'}}</td>
         </tr>
         <tr>
             <th>Total non-current liabilities</th>
-            <td *ngFor="let item of balanceStatement">{{item["Total non-current liabilities"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of balanceStatement">{{item["Total non-current liabilities"] / 1000000 | number: '1.2-2'}}</td>
         </tr>
         <tr>
             <th>Total liabilities</th>
-            <td *ngFor="let item of balanceStatement">{{item["Total liabilities"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of balanceStatement">{{item["Total liabilities"] / 1000000 | number: '1.2-2'}}</td>
         </tr>
         <tr>
             <th>Other comprehensive income</th>
-            <td *ngFor="let item of balanceStatement">{{item["Other comprehensive income"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of balanceStatement">{{item["Other comprehensive income"] / 1000000 | number: '1.2-2'}}</td>
         </tr>
         <tr>
             <th>Retained earnings (deficit)</th>
-            <td *ngFor="let item of balanceStatement">{{item["Retained earnings (deficit)"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of balanceStatement">{{item["Retained earnings (deficit)"] / 1000000 | number: '1.2-2'}}</td>
         </tr>
         <tr>
             <th>Total shareholders equity</th>
@@ -120,7 +120,7 @@
         </tr>
         <tr>
             <th>Other Liabilities</th>
-            <td *ngFor="let item of balanceStatement">{{item["Earnings Before Tax Margin"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of balanceStatement">{{item["Other Liabilities"] / 1000000 | number: '1.2-2'}}</td>
         </tr>
 
 
