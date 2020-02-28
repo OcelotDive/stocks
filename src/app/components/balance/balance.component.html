@@ -1,0 +1,132 @@
+<h4>Balance Sheet</h4>
+
+<section class="tableContainer" id="test">
+    <table>
+        <tr>
+            <th>Year</th>
+            <th *ngFor="let item of IncomeStatement">{{item.date.substring(0,4)}}</th>
+        </tr>
+        <tr>
+            <th>Revenue</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Revenue"] / 1000000 | number: '1.2-2' }}</td>
+        </tr>
+        <tr>
+            <th>Cost of Revenue</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Cost of Revenue"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Gross Profit</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Gross Profit"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>R&D Expenses</th>
+            <td *ngFor="let item of IncomeStatement">{{item["R&D Expenses"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Sales & Admin Expense</th>
+            <td *ngFor="let item of IncomeStatement">{{item["SG&A Expense"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Operating Expenses</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Operating Expenses"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Operating Income</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Operating Income"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Interest Expense</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Interest Expense"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Earnings before Tax</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Earnings before Tax"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Income Tax Expense</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Income Tax Expense"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Net Income</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Net Income"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Net Income - Non-Controlling int</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Net Income - Non-Controlling int"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Net Income - Discontinued ops</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Net Income - Discontinued ops"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Net Income Com</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Net Income Com"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Preferred Dividends</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Preferred Dividends"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>EPS</th>
+            <td *ngFor="let item of IncomeStatement">{{item["EPS"] | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>EPS Diluted</th>
+            <td *ngFor="let item of IncomeStatement">{{item["EPS Diluted"] | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Weighted Av Shs Out</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Weighted Average Shs Out"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Weighted Av Shs Out (Dil)</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Weighted Average Shs Out (Dil)"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Dividend per Share</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Dividend per Share"] | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Gross Margin</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Gross Margin"] | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>EBITDA Margin</th>
+            <td *ngFor="let item of IncomeStatement">{{item["EBITDA Margin"] | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>EBIT Margin</th>
+            <td *ngFor="let item of IncomeStatement">{{item["EBIT Margin"] | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Profit Margin</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Profit Margin"] | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Free Cash Flow Margin</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Free Cash Flow margin"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>EBITDA</th>
+            <td *ngFor="let item of IncomeStatement">{{item["EBITDA"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>EBIT</th>
+            <td *ngFor="let item of IncomeStatement">{{item["EBIT"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Consolidated Income</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Consolidated Income"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Earnings Before Tax Margin</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Earnings Before Tax Margin"] | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Net Profit Margin</th>
+            <td *ngFor="let item of IncomeStatement">{{item["Net Profit Margin"] | number: '1.2-2'}}</td>
+        </tr>
+
+    </table>
+
+</section>
