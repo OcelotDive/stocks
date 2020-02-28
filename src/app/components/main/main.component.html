@@ -6,31 +6,31 @@
 
 <section class="mainPage-sectionContainer">
     <div class="subjectContainer">
-        <div class="subjectHeader" routerLink="newslist" routerLinkActive="active">Top Stories</div>
-        <div class="subjectList">
-            <div class="subjectListItem" *ngFor="let newsItem of topNewsStories">
-                <img class="subjectImage" src={{newsItem.urlToImage}} />
-                <div class="subjectNewsTitle">
-                    <a href={{newsItem.url}} target="#blank">
+        <div class="subjectHeader" routerLink="newslist" routerLinkActive="active">Top Stories <span class="fa fa-chevron-right"></span></div>
+        <div class=" subjectList ">
+            <div class="subjectListItem " *ngFor="let newsItem of topNewsStories ">
+                <img class="subjectImage " src={{newsItem.urlToImage}} />
+                <div class="subjectNewsTitle ">
+                    <a href={{newsItem.url}} target="#blank ">
                     {{newsItem.title}}
                     </a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="subjectContainer">
-        <div class="subjectHeader" routerLink="forex" routerLinkActive="active">Forex</div>
-        <div class="forexAndCryptoSubjectList">
-            <div class="subjectforexAndCryptoTitle" *ngFor="let currency of forexPrices">
-                <img src="./assets/flag/{{currency.ticker.replace('/', '')}}.png" class="mainPageFlagImage">
+    <div class="subjectContainer ">
+        <div class="subjectHeader " routerLink="forex" routerLinkActive="active">Forex <span class="fa fa-chevron-right"></span></div>
+        <div class="forexAndCryptoSubjectList ">
+            <div class="subjectforexAndCryptoTitle " *ngFor="let currency of forexPrices ">
+                <img src="./assets/flag/{{currency.ticker.replace( '/', '')}}.png " class="mainPageFlagImage ">
                 <div> {{currency.ticker}}</div>
                 <div> {{currency.ask | slice: 0:5}}</div>
-                <div [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(3)}}</div>
+                <div [class.negativeChange]="currency.changes < 0.01 " [class.positiveChange]="currency.changes> 0.01">{{currency.changes.toFixed(3)}}</div>
             </div>
         </div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader" routerLink="cryptocurrencies" routerLinkActive="active">Cryptocurrency</div>
+        <div class="subjectHeader" routerLink="cryptocurrencies" routerLinkActive="active">Cryptocurrency <span class="fa fa-chevron-right"></span></div>
         <div class="forexAndCryptoSubjectList">
             <div class="subjectforexAndCryptoTitle" *ngFor="let currency of cryptoPrices">
                 <img src="./assets/crypto/{{currency.ticker.toLowerCase()}}.svg" class="mainPageFlagImage">
@@ -41,13 +41,13 @@
         </div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader">heading</div>
+        <div class="subjectHeader">heading <span class="fa fa-chevron-right"></span></div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader">heading</div>
+        <div class="subjectHeader">heading <span class="fa fa-chevron-right"></span></div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader">heading</div>
+        <div class="subjectHeader">heading <span class="fa fa-chevron-right"></span></div>
     </div>
 
 
