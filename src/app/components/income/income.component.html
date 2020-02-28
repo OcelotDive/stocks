@@ -64,7 +64,7 @@
         </tr>
         <tr>
             <th>Preferred Dividends</th>
-            <td *ngFor="let item of IncomeStatement">{{item["Preferred Dividends"] | number: '1.2-2'}}</td>
+            <td *ngFor="let item of IncomeStatement">{{item["Preferred Dividends"] / 1000000 | number: '1.2-2'}}</td>
         </tr>
         <tr>
             <th>EPS</th>
