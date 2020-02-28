@@ -66,11 +66,10 @@ public getChartData() {
   const currentDate = this.getCurrentDate();
 
   this.investorService.getHistoric(this.companySymbol, previousDate, currentDate).subscribe((data: any) => {
-    console.warn(data)
     let priceTemp: number[] = []; 
     let lowTemp: number[] = [];
     let highTemp: number[] = [] ;
-   this.barChartLabels = [];
+    this.barChartLabels = [];
       data.historical.map((day, index) => {
      
         this.barChartLabels.push(day.date); 
@@ -103,7 +102,7 @@ public getCurrentDate() {
     const day = historicDate.getUTCDate();
     const year = historicDate.getUTCFullYear();
     const previousDate = year + "-" + month + "-" + day;
-    console.warn(previousDate)
+ 
     return previousDate;
   }
 

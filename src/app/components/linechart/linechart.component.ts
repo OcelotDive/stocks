@@ -140,7 +140,7 @@ export class LinechartComponent implements OnInit {
     const currentDate = this.getCurrentDate();
 
     this.investorService.getHistoric(this.companySymbol, previousDate, currentDate).subscribe((data: any) => {
-      console.warn(data)
+    
       let priceTemp: number[] = []; 
       let lowTemp: number[] = [];
       let highTemp: number[] = [] ;
@@ -177,7 +177,7 @@ export class LinechartComponent implements OnInit {
       const day = historicDate.getUTCDate();
       const year = historicDate.getUTCFullYear();
       const previousDate = year + "-" + month + "-" + day;
-      console.warn(previousDate)
+  
       return previousDate;
     }
 

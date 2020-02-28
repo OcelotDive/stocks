@@ -98,8 +98,10 @@
 
 </section>
 <section class="financialInfoButtonGroup">
-    <button class="financialInfoButton">Income Statement</button>
-    <button class="financialInfoButton">Balance Sheet</button>
-    <button class="financialInfoButton">Cash Flow</button>
-    <button class="financialInfoButton">Financial Ratios</button>
+    <button class="financialInfoButton" (click)="displayFinancial('income')">Income Statement</button>
+    <button class="financialInfoButton" (click)="displayFinancial('balance')">Balance Sheet</button>
+    <button class="financialInfoButton" (click)="displayFinancial('cash')">Cash Flow</button>
+    <button class="financialInfoButton" (click)="displayFinancial('ratio')">Financial Ratios</button>
 </section>
+
+<app-income *ngIf="displayFinancialInfoType === 'income'"></app-income>

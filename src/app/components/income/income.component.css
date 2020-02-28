@@ -1,0 +1,31 @@
+h4 {
+    margin: 1%;
+    margin-left: 5%;
+    overflow: hidden;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    margin-left: 5%;
+    width: 90%;
+    font-size: 16px;
+}
+
+table {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #ddd;
+}
+
+.positiveChange {
+    color: #00FF00;
+}
+
+.negativeChange {
+    color: #FF0000;
+}
