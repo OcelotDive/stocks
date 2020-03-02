@@ -16,7 +16,7 @@ export class CompanyComponent implements OnInit {
   public companyProfile: Object[] = [];
   public keyMetrics: Object[] = [];
   public chartSetType = 'line'
-  public displayFinancialInfoType = "";
+  public displayFinancialInfoType: string[] = [];
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
   
@@ -40,12 +40,19 @@ export class CompanyComponent implements OnInit {
   }
 
   displayFinancial(infoType: string) {
-    if(infoType === this.displayFinancialInfoType) {
+    if(this.displayFinancialInfoType.includes(infoType)) {
+      this.displayFinancialInfoType.splice(this.displayFinancialInfoType.indexOf(infoType), 1);
+    }
+    else {
+      this.displayFinancialInfoType.push(infoType);
+    }
+   /* if(infoType === this.displayFinancialInfoType) {
       this.displayFinancialInfoType = "";
     } 
     else {
       this.displayFinancialInfoType = infoType;
     }
+    */
     
   }
 

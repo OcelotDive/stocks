@@ -104,6 +104,6 @@
     <button class="financialInfoButton" (click)="displayFinancial('ratio')">Financial Ratios</button>
 </section>
 <section class="accountsContainer">
-    <app-income *ngIf="displayFinancialInfoType === 'income'"></app-income>
-    <app-balance *ngIf="displayFinancialInfoType === 'balance'"></app-balance>
+    <app-income *ngIf="displayFinancialInfoType.includes('income')"></app-income>
+    <app-balance *ngIf="displayFinancialInfoType.includes('balance')"></app-balance>
 </section>
