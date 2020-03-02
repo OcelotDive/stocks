@@ -19,6 +19,7 @@ export class InvestorService {
   public annualBalanceStatementUrl: string;
   public annualCashFlowStatement: string;
   public financialRatios: string;
+  public companyRatingUrl: string;
   public key: string;
 
     constructor(private http: HttpClient) {
@@ -34,7 +35,8 @@ export class InvestorService {
         this.annualIncomeStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/income-statement/';
         this.annualBalanceStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/';
         this.annualCashFlowStatement = 'https://financialmodelingprep.com/api/v3/financials/cash-flow-statement/';
-        this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/'
+        this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/';
+        this.companyRatingUrl = 'https://financialmodelingprep.com/api/v3/company/rating/';
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
@@ -80,6 +82,9 @@ export class InvestorService {
     }
      getFinancialRatios(symbol: string) {
         return this.http.get(`${this.ratioUrl}${symbol}`);
+    }
+    getCompanyRating(symbol: string) {
+        return this.http.get(`${this.companyRatingUrl}${symbol}`);
     }
 
 

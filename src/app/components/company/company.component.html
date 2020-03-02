@@ -14,6 +14,12 @@
 </div>
 <div class="companyDescription" *ngFor="let company of companyProfile">{{company.profile.description}}</div>
 
+<div class="companyRating" *ngFor="let rating of companyRating"><small>Recommendation: </small>
+    <span *ngIf="companyRating[0]">{{rating.rating.recommendation}}</span>
+    <span *ngIf="companyRating[0] === 'undefined'">None</span> &nbsp;&nbsp;&nbsp;
+    <small> Stock Performance Rating: </small> <i class="far fa-star" *ngFor="let star of companyStars"></i></div>
+
+
 <section class="mainContent" *ngFor="let company of companyProfile">
     <div class="companyDataContainer">
 

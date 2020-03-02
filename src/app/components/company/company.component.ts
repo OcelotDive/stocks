@@ -16,7 +16,10 @@ export class CompanyComponent implements OnInit {
   public companyProfile: Object[] = [];
   public keyMetrics: Object[] = [];
   public chartSetType = 'line'
+  public companyRating: Object[];
+  public companyStars: Object[] = [];
   public displayFinancialInfoType: string[] = [];
+
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
   
@@ -32,6 +35,14 @@ export class CompanyComponent implements OnInit {
         this.companyProfile = [data];
        
       });  
+
+      this.investorService.getCompanyRating(this.companySymbol).subscribe((data: any) => {
+        this.companyRating = [data];
+        console.log(data)
+        this.companyStars.length = data.rating.score;
+        
+        console.warn(data)
+      })
     });  
   }
 
@@ -48,13 +59,7 @@ export class CompanyComponent implements OnInit {
     }
    
       this.positionFooter();
-   /* if(infoType === this.displayFinancialInfoType) {
-      this.displayFinancialInfoType = "";
-    } 
-    else {
-      this.displayFinancialInfoType = infoType;
-    }
-    */
+
     
   }
 
