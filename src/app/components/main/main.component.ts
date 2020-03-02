@@ -29,8 +29,10 @@ export class MainComponent implements OnInit {
       this.cryptoPrices = data.cryptocurrenciesList.slice(0,8);
       console.log(this.cryptoPrices);
     })
-   
+ 
   }
+
+
 
 
   ngOnInit() {

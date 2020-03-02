@@ -23,6 +23,7 @@ import { IncomeComponent } from './components/income/income.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { CashflowComponent } from './components/cashflow/cashflow.component';
 import { RatiosComponent } from './components/ratios/ratios.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -46,6 +47,7 @@ import { RatiosComponent } from './components/ratios/ratios.component';
     BalanceComponent,
     CashflowComponent,
     RatiosComponent,
+    FooterComponent,
 
 
 
