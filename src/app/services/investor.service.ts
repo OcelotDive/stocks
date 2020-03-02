@@ -17,6 +17,7 @@ export class InvestorService {
   public historicalStockPrice: string;
   public annualIncomeStatementUrl: string;
   public annualBalanceStatementUrl: string;
+  public annualCashFlowStatement: string;
   public key: string;
 
     constructor(private http: HttpClient) {
@@ -25,20 +26,20 @@ export class InvestorService {
         this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.cryptos = 'https://financialmodelingprep.com/api/v3/cryptocurrencies';
-        this.newsStories = 'https://newsapi.org/v1/articles?source=';
+        this.newsStories = 'https://newsapi.org/v1/articles?source= ';
         this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/'
         this.companyProfile = 'https://financialmodelingprep.com/api/v3/company/profile/';
         this.keyMetrics = 'https://financialmodelingprep.com/api/v3/company-key-metrics/'
         this.historicalStockPrice = 'https://financialmodelingprep.com/api/v3/historical-price-full/';
         this.annualIncomeStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/income-statement/';
         this.annualBalanceStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/';
+        this.annualCashFlowStatement = 'https://financialmodelingprep.com/api/v3/financials/cash-flow-statement/';
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
     getSymbolsList() {
         return this.http.get(`${this.companyStockList}`)
     }
-
     getChosenInfo() {
         return this.http.get(`${this.chosenUrl}`);       
     }
@@ -75,6 +76,9 @@ export class InvestorService {
     }
     getAnnualBalance(symbol: string) {
         return this.http.get(`${this.annualBalanceStatementUrl}${symbol}`);
+    }
+    getAnnualCashFlow(symbol: string) {
+        return this.http.get(`${this.annualCashFlowStatement}${symbol}`);
     }
 
 

@@ -1,0 +1,72 @@
+<h4>Cash Flow Statement</h4>
+
+<section class="tableContainer" id="test">
+    <table>
+        <tr>
+            <th>Year</th>
+            <th *ngFor="let item of cashFlowStatement">{{item.date.substring(0,4)}}</th>
+        </tr>
+        <tr>
+            <th>Depreciation & Amortization</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Depreciation & Amortization"] / 1000000 | number: '1.2-2' }}</td>
+        </tr>
+        <tr>
+            <th>Stock-based Compensation</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Stock-based compensation"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Operating Cash Flow</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Operating Cash Flow"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Capital Expenditure</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Capital Expenditure"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Acquisitions and Disposals</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Acquisitions and disposals"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Investment Purchases and Sales</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Investment purchases and sales"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Investing Cash Flow</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Investing Cash flow"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Issuance (repayment) of Debt</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Issuance (repayment) of debt"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Issuance (buybacks) of Shares</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Issuance (buybacks) of shares"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Dividend Payments</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Dividend payments"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Financing Cash Flow</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Financing Cash Flow"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Effect of Forex Changes on Cash</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Effect of forex changes on cash"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Net Cash Flow / Change in Cash</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Net cash flow / Change in cash"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Free Cash Flow</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Free Cash Flow"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+            <th>Net Cash/Marketcap</th>
+            <td *ngFor="let item of cashFlowStatement">{{item["Net Cash/Marketcap"] / 1000000 | number: '1.2-2'}}</td>
+        </tr>
+
+    </table>
+
+</section>

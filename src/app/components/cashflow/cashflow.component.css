@@ -1,0 +1,49 @@
+h4 {
+    margin: 1%;
+    margin-left: 5%;
+    overflow: hidden;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    margin-left: 5%;
+    width: 90%;
+    font-size: 16px;
+}
+
+table {
+    text-align: center;
+}
+
+th {
+    text-align: left;
+}
+
+th:nth-of-type(2),
+th:nth-of-type(3),
+th:nth-of-type(4),
+th:nth-of-type(5),
+th:nth-of-type(6),
+th:nth-of-type(7),
+th:nth-of-type(8),
+th:nth-of-type(9),
+th:nth-of-type(10),
+th:nth-of-type(11),
+th:nth-of-type(12) {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #ddd;
+}
+
+.positiveChange {
+    color: #00FF00;
+}
+
+.negativeChange {
+    color: #FF0000;
+}

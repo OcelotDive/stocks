@@ -19,7 +19,7 @@ export class BalanceComponent implements OnInit {
     this.investorService.getAnnualBalance(this.companySymbol).subscribe((data: any) => {
     
       this.balanceStatement = data.financials.slice(0,11).reverse();
-      console.warn(this.balanceStatement)
+    
     })
   })
    }

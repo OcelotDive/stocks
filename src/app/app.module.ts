@@ -21,6 +21,8 @@ import { LinechartComponent } from './components/linechart/linechart.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { IncomeComponent } from './components/income/income.component';
 import { BalanceComponent } from './components/balance/balance.component';
+import { CashflowComponent } from './components/cashflow/cashflow.component';
+
 
 
 
@@ -41,6 +43,8 @@ import { BalanceComponent } from './components/balance/balance.component';
     BarChartComponent,
     IncomeComponent,
     BalanceComponent,
+    CashflowComponent,
+
 
 
     
