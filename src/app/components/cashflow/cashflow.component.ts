@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CashflowComponent implements OnInit {
   public cashFlowStatement: Object[];
   public companySymbol: string = "";
-  
+
   constructor(public investorService: InvestorService, public route: ActivatedRoute) {
     this.scroll();
     this.route.params.subscribe(routeParams => {
@@ -30,7 +30,7 @@ export class CashflowComponent implements OnInit {
 
   scroll() {
     setTimeout(() => {
-    window.scrollTo(0,1200);
+    window.scrollTo(0,1900);
     }, 0)
   }
 

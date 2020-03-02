@@ -110,6 +110,13 @@
                     margin-left: 20px;
                 }
                 
+                .financialInfoButtonClicked {
+                    background: #655da9;
+                    color: #fff;
+                    padding: 10px;
+                    margin-left: 20px;
+                }
+                
                 .financialInfoButton:nth-of-type(1) {
                     margin-left: 0;
                 }
@@ -117,6 +124,15 @@
                 .accountsContainer {
                     display: flex;
                     flex-direction: column;
+                    margin-bottom: 2%;
+                }
+                
+                footer {
+                    background: #0f0c29;
+                    width: 100%;
+                    bottom: 0;
+                    position: absolute;
+                    height: 3%;
                 }
                 
                 @media only screen and (max-width: 1100px) {

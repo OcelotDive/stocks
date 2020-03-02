@@ -98,10 +98,10 @@
 
 </section>
 <section class="financialInfoButtonGroup">
-    <button class="financialInfoButton" (click)="displayFinancial('income')">Income Statement</button>
-    <button class="financialInfoButton" (click)="displayFinancial('balance')">Balance Sheet</button>
-    <button class="financialInfoButton" (click)="displayFinancial('cash')">Cash Flow</button>
-    <button class="financialInfoButton" (click)="displayFinancial('ratio')">Financial Ratios</button>
+    <button class="financialInfoButton" [class.financialInfoButtonClicked]="displayFinancialInfoType.includes('income')" (click)="displayFinancial('income')">Income Statement</button>
+    <button class="financialInfoButton" [class.financialInfoButtonClicked]="displayFinancialInfoType.includes('balance')" (click)="displayFinancial('balance')">Balance Sheet</button>
+    <button class="financialInfoButton" [class.financialInfoButtonClicked]="displayFinancialInfoType.includes('cash')" (click)="displayFinancial('cash')">Cash Flow</button>
+    <button class="financialInfoButton" [class.financialInfoButtonClicked]="displayFinancialInfoType.includes('ratio')" (click)="displayFinancial('ratio')">Financial Ratios</button>
 </section>
 <section class="accountsContainer">
     <app-income *ngIf="displayFinancialInfoType.includes('income')"></app-income>
@@ -109,3 +109,4 @@
     <app-cashflow *ngIf="displayFinancialInfoType.includes('cash')"></app-cashflow>
     <app-ratios *ngIf="displayFinancialInfoType.includes('ratio')"></app-ratios>
 </section>
+<footer>&nbsp;</footer>

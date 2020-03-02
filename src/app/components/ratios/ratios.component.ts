@@ -30,7 +30,7 @@ export class RatiosComponent implements OnInit {
 
   scroll() {
     setTimeout(() => {
-    window.scrollTo(0,1200);
+    window.scrollTo(0,2800);
     }, 0)
   }
 
