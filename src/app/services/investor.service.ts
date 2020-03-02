@@ -18,6 +18,7 @@ export class InvestorService {
   public annualIncomeStatementUrl: string;
   public annualBalanceStatementUrl: string;
   public annualCashFlowStatement: string;
+  public financialRatios: string;
   public key: string;
 
     constructor(private http: HttpClient) {
@@ -27,13 +28,13 @@ export class InvestorService {
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.cryptos = 'https://financialmodelingprep.com/api/v3/cryptocurrencies';
         this.newsStories = 'https://newsapi.org/v1/articles?source= ';
-        this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/'
         this.companyProfile = 'https://financialmodelingprep.com/api/v3/company/profile/';
         this.keyMetrics = 'https://financialmodelingprep.com/api/v3/company-key-metrics/'
         this.historicalStockPrice = 'https://financialmodelingprep.com/api/v3/historical-price-full/';
         this.annualIncomeStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/income-statement/';
         this.annualBalanceStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/';
         this.annualCashFlowStatement = 'https://financialmodelingprep.com/api/v3/financials/cash-flow-statement/';
+        this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/'
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
@@ -62,9 +63,6 @@ export class InvestorService {
     getCompanyProfile(symbol: string) {
         return this.http.get(`${this.companyProfile}${symbol}`)
     }
-    getFinancialRatios(symbol: string) {
-        return this.http.get(`${this.ratioUrl}${symbol}`);
-    }
     getKeyMetrics(symbol: string) {
         return this.http.get(`${this.keyMetrics}${symbol}`);
     }
@@ -79,6 +77,9 @@ export class InvestorService {
     }
     getAnnualCashFlow(symbol: string) {
         return this.http.get(`${this.annualCashFlowStatement}${symbol}`);
+    }
+     getFinancialRatios(symbol: string) {
+        return this.http.get(`${this.ratioUrl}${symbol}`);
     }
 
 

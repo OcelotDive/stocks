@@ -8,9 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./cashflow.component.css']
 })
 export class CashflowComponent implements OnInit {
-  public companySymbol: string = "";
   public cashFlowStatement: Object[];
-
+  public companySymbol: string = "";
+  
   constructor(public investorService: InvestorService, public route: ActivatedRoute) {
     this.scroll();
     this.route.params.subscribe(routeParams => {
@@ -19,7 +19,7 @@ export class CashflowComponent implements OnInit {
       this.investorService.getAnnualCashFlow(this.companySymbol).subscribe((data: any) => {
     
         this.cashFlowStatement = data.financials.slice(0,11).reverse();
-        console.warn(this.cashFlowStatement)
+       
       
       })
     })

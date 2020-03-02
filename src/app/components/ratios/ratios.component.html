@@ -1,0 +1,307 @@
+<h4>Investment Valuation Ratios</h4>
+
+<section class="tableContainer" id="test">
+    <table>
+        <tr>
+            <th>Year</th>
+            <th *ngFor="let item of financialRatios">{{item.date.substring(0,4)}}</th>
+        </tr>
+        <tr>
+            <th>Price Book Value Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceBookValueRatio"] | number: '1.2-2' }}%</td>
+        </tr>
+        <tr>
+            <th>Price To Book Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceToBookRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Price To Sales Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceToSalesRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Price Earning Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceEarningsRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Receivables Turnover</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["receivablesTurnover"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Price To Free CashFlows Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceToFreeCashFlowsRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Price To Operating CashFlows Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceToOperatingCashFlowsRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Price CashFlow Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceCashFlowRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Price Earnings To Growth Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceEarningsToGrowthRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Price Sales Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceSalesRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Dividend Yield</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["dividendYield"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Enterprise Value Multiple</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["enterpriseValueMultiple"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Price Fair Value</th>
+            <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceFairValue"] | number: '1.2-2'}}%</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<h4>Profitability Indicator Ratios</h4>
+
+<section class="tableContainer" id="test">
+    <table>
+        <tr>
+            <th>Year</th>
+            <th *ngFor="let item of financialRatios">{{item.date.substring(0,4)}}</th>
+        </tr>
+        <tr>
+            <th>Ebt per EBIT</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["ebtperEBIT"] | number: '1.2-2' }}%</td>
+        </tr>
+        <tr>
+            <th>Ebit per Revenue</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["ebitperRevenue"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Niper EBT</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["niperEBT"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Gross Profit Margin</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["grossProfitMargin"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Operating Profit Margin</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["operatingProfitMargin"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Pretax Profit Margin</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["pretaxProfitMargin"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Net Profit Margin</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["netProfitMargin"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Effective Tax Rate</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["effectiveTaxRate"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Return On Assets</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["returnOnAssets"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Return On Equity</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["returnOnEquity"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Return On Capital Employed</th>
+            <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["returnOnCapitalEmployed"] | number: '1.2-2'}}%</td>
+        </tr>
+
+
+    </table>
+
+</section>
+
+<h4>Operating Performance Ratios</h4>
+
+<section class="tableContainer" id="test">
+    <table>
+        <tr>
+            <th>Year</th>
+            <th *ngFor="let item of financialRatios">{{item.date.substring(0,4)}}</th>
+        </tr>
+        <tr>
+            <th>Receivables Turnover</th>
+            <td *ngFor="let item of financialRatios">{{item["operatingPerformanceRatios"]["receivablesTurnover"] | number: '1.2-2' }}%</td>
+        </tr>
+        <tr>
+            <th>Payables Turnover</th>
+            <td *ngFor="let item of financialRatios">{{item["operatingPerformanceRatios"]["payablesTurnover"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Inventory Turnover</th>
+            <td *ngFor="let item of financialRatios">{{item["operatingPerformanceRatios"]["inventoryTurnover"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Fixed Asset Turnover</th>
+            <td *ngFor="let item of financialRatios">{{item["operatingPerformanceRatios"]["fixedAssetTurnover"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Asset Turnover</th>
+            <td *ngFor="let item of financialRatios">{{item["operatingPerformanceRatios"]["assetTurnover"] | number: '1.2-2'}}%</td>
+        </tr>
+
+
+    </table>
+
+</section>
+
+<h4>Liquidity Measurement Ratios</h4>
+
+<section class="tableContainer" id="test">
+    <table>
+        <tr>
+            <th>Year</th>
+            <th *ngFor="let item of financialRatios">{{item.date.substring(0,4)}}</th>
+        </tr>
+        <tr>
+            <th>Current Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["currentRatio"] | number: '1.2-2' }}%</td>
+        </tr>
+        <tr>
+            <th>Quick Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["quickRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Cash Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["cashRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Days of Sales Outstanding</th>
+            <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["daysOfSalesOutstanding"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Days of Inventory Outstanding</th>
+            <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["daysOfInventoryOutstanding"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Operating Cycle</th>
+            <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["operatingCycle"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Days Of Payables Outstanding</th>
+            <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["daysOfPayablesOutstanding"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Cash Conversion Cycle</th>
+            <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["cashConversionCycle"] | number: '1.2-2'}}%</td>
+        </tr>
+
+
+    </table>
+
+</section>
+
+<h4>Debt Ratios</h4>
+
+<section class="tableContainer" id="test">
+    <table>
+        <tr>
+            <th>Year</th>
+            <th *ngFor="let item of financialRatios">{{item.date.substring(0,4)}}</th>
+        </tr>
+        <tr>
+            <th>Debt Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["debtRatios"]["debtRatio"] | number: '1.2-2' }}%</td>
+        </tr>
+        <tr>
+            <th>Debt Equity Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["debtRatios"]["debtEquityRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Long term Debt to Capitalization</th>
+            <td *ngFor="let item of financialRatios">{{item["debtRatios"]["longtermDebtToCapitalization"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Total Debt to Capitalization</th>
+            <td *ngFor="let item of financialRatios">{{item["debtRatios"]["totalDebtToCapitalization"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Interest Coverage</th>
+            <td *ngFor="let item of financialRatios">{{item["debtRatios"]["interestCoverage"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Cash Flow to Debt Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["debtRatios"]["cashFlowToDebtRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Company Equity Multiplier</th>
+            <td *ngFor="let item of financialRatios">{{item["debtRatios"]["companyEquityMultiplier"] | number: '1.2-2'}}%</td>
+        </tr>
+
+
+
+    </table>
+
+</section>
+
+<h4>Cash Flow Indicator Ratios</h4>
+
+<section class="tableContainer" id="test">
+    <table>
+        <tr>
+            <th>Year</th>
+            <th *ngFor="let item of financialRatios">{{item.date.substring(0,4)}}</th>
+        </tr>
+        <tr>
+            <th>Operating Cash Flow Per Share</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["operatingCashFlowPerShare"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Free Cash Flow Per Share</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["freeCashFlowPerShare"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Cash Per Share</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["cashPerShare"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Payout Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["payoutRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Receivables Turnover</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["receivablesTurnover"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Operating Cash Flow Sales Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["operatingCashFlowSalesRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Free Cash Flow Operating Cash Flow Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["freeCashFlowOperatingCashFlowRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Cash Flow Coverage Ratios</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["cashFlowCoverageRatios"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Short Term Coverage Ratios</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["shortTermCoverageRatios"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Capital Expenditure Coverage Ratios</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["capitalExpenditureCoverageRatios"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Dividend Paid and Capex Coverage Ratios</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["dividendpaidAndCapexCoverageRatios"] | number: '1.2-2'}}%</td>
+        </tr>
+        <tr>
+            <th>Dividend Payout Ratio</th>
+            <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["dividendPayoutRatio"] | number: '1.2-2'}}%</td>
+        </tr>
+
+
+    </table>
+
+</section>

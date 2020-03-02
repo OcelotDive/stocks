@@ -22,6 +22,7 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { IncomeComponent } from './components/income/income.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { CashflowComponent } from './components/cashflow/cashflow.component';
+import { RatiosComponent } from './components/ratios/ratios.component';
 
 
 
@@ -44,6 +45,7 @@ import { CashflowComponent } from './components/cashflow/cashflow.component';
     IncomeComponent,
     BalanceComponent,
     CashflowComponent,
+    RatiosComponent,
 
 
 
