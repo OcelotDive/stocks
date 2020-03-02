@@ -18,6 +18,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CompanyComponent } from './components/company/company.component';
 import { LinechartComponent } from './components/linechart/linechart.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { IncomeComponent } from './components/income/income.component';
+import { BalanceComponent } from './components/balance/balance.component';
+
+
 
 
 @NgModule({
@@ -33,6 +38,10 @@ import { LinechartComponent } from './components/linechart/linechart.component';
     HeaderComponent,
     CompanyComponent,
     LinechartComponent,
+    BarChartComponent,
+    IncomeComponent,
+    BalanceComponent,
+
 
     
   ],
@@ -49,7 +58,9 @@ import { LinechartComponent } from './components/linechart/linechart.component';
      {path: 'main/newslist', component: NewsPageComponent},
      {path: 'main/forex', component: ForexComponent},
      {path: 'main/cryptocurrencies', component: CryptocurrenciesComponent},
-     {path: 'main/:symbolId',  component: CompanyComponent},
+     {path: 'main/:symbolId',  component: CompanyComponent}
+
+
   
      
 
