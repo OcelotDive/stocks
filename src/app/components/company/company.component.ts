@@ -37,6 +37,14 @@ export class CompanyComponent implements OnInit {
       });  
 
       this.investorService.getCompanyRating(this.companySymbol).subscribe((data: any) => {
+        if(Object.keys(data).length === 0 && data.constructor === Object) {
+          data = {
+            rating: {
+              score: 0,
+              recommendation: "None"
+            }
+          }
+        }
         this.companyRating = [data];
         console.log(data)
         this.companyStars.length = data.rating.score;
