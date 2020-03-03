@@ -24,6 +24,7 @@ import { BalanceComponent } from './components/balance/balance.component';
 import { CashflowComponent } from './components/cashflow/cashflow.component';
 import { RatiosComponent } from './components/ratios/ratios.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SectorsComponent } from './components/sectors/sectors.component';
 
 
 
@@ -48,6 +49,7 @@ import { FooterComponent } from './components/footer/footer.component';
     CashflowComponent,
     RatiosComponent,
     FooterComponent,
+    SectorsComponent,
 
 
 
@@ -65,6 +67,7 @@ import { FooterComponent } from './components/footer/footer.component';
      {path: 'main', component: MainComponent},
      {path: 'main/newslist', component: NewsPageComponent},
      {path: 'main/forex', component: ForexComponent},
+     {path: 'main/sectors', component: SectorsComponent},
      {path: 'main/cryptocurrencies', component: CryptocurrenciesComponent},
      {path: 'main/:symbolId',  component: CompanyComponent}
 

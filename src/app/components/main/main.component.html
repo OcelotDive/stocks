@@ -36,7 +36,7 @@
             <div class="subjectforexAndCryptoTitle" *ngFor="let currency of cryptoPrices">
                 <img src="./assets/crypto/{{currency.ticker.toLowerCase()}}.svg" class="mainPageFlagImage">
                 <div class="mainItemName"> {{currency.ticker}}</div>
-                <div class="mainItemPrice"> {{currency.price | number: '1.2-3'}}</div>
+                <div class="mainItemPrice"> {{currency.price | number: '1.2-2'}}</div>
                 <div class="mainItemChange" [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(3)}}</div>
             </div>
         </div>
@@ -81,7 +81,7 @@
         </div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader" routerLink="cryptocurrencies" routerLinkActive="active">Sector Performance <span class="fa fa-chevron-right"></span></div>
+        <div class="subjectHeader" routerLink="sectors" routerLinkActive="active">Sector Performance <span class="fa fa-chevron-right"></span></div>
         <div class="forexAndCryptoSubjectList">
             <div class="subjectforexAndCryptoTitle" *ngFor="let sect of sectors">
 
@@ -91,8 +91,17 @@
             </div>
         </div>
     </div>
-    <div class="subjectContainer">
-        <div class="subjectHeader">heading <span class="fa fa-chevron-right"></span></div>
+    <div class="subjectContainer ">
+        <div class="subjectHeader " routerLink="forex" routerLinkActive="active">Actives <span class="fa fa-chevron-right"></span></div>
+        <div class="forexAndCryptoSubjectList ">
+            <div class="subjectforexAndCryptoTitle " *ngFor="let act of actives">
+
+                <div class="mainItemName" *ngIf="act.companyName.length < 13"> {{act.companyName}}</div>
+                <div class="mainItemName" *ngIf="act.companyName.length > 12"> {{act.companyName | slice: 0:12}}...</div>
+                <div class="mainItemPrice">{{act.price}} </div>
+                <div class="mainItemChange" [class.negativeChange]="act.changesPercentage.includes('-')" [class.positiveChange]="act.changesPercentage.includes('+')">{{act.changesPercentage}}</div>
+            </div>
+        </div>
     </div>
 
 

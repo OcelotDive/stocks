@@ -22,7 +22,8 @@ export class InvestorService {
   public companyRatingUrl: string;
   public commoditiesUrl: string;
   public sectorUrl: string;
-  public key: string;
+  public activeUrl: string;
+  public newsk: string;
 
     constructor(private http: HttpClient) {
         this.companyStockList = 'https://financialmodelingprep.com/api/v3/company/stock/list';
@@ -41,7 +42,8 @@ export class InvestorService {
         this.companyRatingUrl = 'https://financialmodelingprep.com/api/v3/company/rating/';
         this.commoditiesUrl = 'https://financialmodelingprep.com/api/v3/quote/GCUSD,SIUSD,CLUSD,KCUSX,CUSX,SBUSX,NGUSD,LCUSX';
         this.sectorUrl = 'https://financialmodelingprep.com/api/v3/stock/sectors-performance';
-        this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
+        this.newsk = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';
+        this.activeUrl = 'https://financialmodelingprep.com/api/v3/stock/actives';    
     }
 
     getSymbolsList() {
@@ -54,11 +56,11 @@ export class InvestorService {
         return this.http.get(`${this.majorIndexes}`);
     }
     getTopStories() {
-        return this.http.get(`${this.newsStories}${this.newsSource}${this.key}`)
+        return this.http.get(`${this.newsStories}${this.newsSource}${this.newsk}`)
     }
     getTopStoriesFull(newsSourceChange: string) {
         this.newsSource = newsSourceChange;
-        return this.http.get(`${this.newsStories}${this.newsSource}${this.key}`);
+        return this.http.get(`${this.newsStories}${this.newsSource}${this.newsk}`);
     }
     getForex() {
         return this.http.get(`${this.forex}`);
@@ -96,7 +98,9 @@ export class InvestorService {
     getSectorPerformance() {
         return this.http.get(`${this.sectorUrl}`);
     }
-
+    getActives() {
+        return this.http.get(`${this.activeUrl}`);
+    }
 
 }
     

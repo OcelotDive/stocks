@@ -1,0 +1,20 @@
+<app-header></app-header>
+<app-ticker></app-ticker>
+<h4>Sectors Performance</h4>
+
+<section class="tableContainer">
+    <table>
+        <tr>
+
+            <th>Sector</th>
+            <th>Change(%)</th>
+        </tr>
+        <tr *ngFor="let sect of sectorsFullList">
+
+            <td>{{sect.sector}}</td>
+
+            <td [class.negativeChange]="sect.changesPercentage < 0.00" [class.positiveChange]="sect.changesPercentage > 0.00">{{sect.changesPercentage}}</td>
+
+        </tr>
+    </table>
+</section>

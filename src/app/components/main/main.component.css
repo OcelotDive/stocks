@@ -26,6 +26,7 @@ h4 {
     margin: 0.5%;
     position: relative;
     width: 450px;
+    overflow: hidden;
 }
 
 .subjectHeader {

@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   public cryptoPrices: Object[];
   public commodityPrices: Object[];
   public sectors: Object[];
+  public actives: Object[];
 
   constructor(public investorService: InvestorService) {
   
@@ -35,6 +36,7 @@ export class MainComponent implements OnInit {
     this.investorService.getCommodities().subscribe((data: any) => {
      
       this.commodityPrices = data;
+      
     })
 
     this.investorService.getSectorPerformance().subscribe((data: any) => {
@@ -43,6 +45,11 @@ export class MainComponent implements OnInit {
      });
       this.sectors = data.sectorPerformance.slice(0,8);
 
+    })
+
+    this.investorService.getActives().subscribe((data: any) => {
+      console.log(data.mostActiveStock)
+      this.actives = data.mostActiveStock.slice(0,8);
     })
  
   }
