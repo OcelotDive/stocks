@@ -81,6 +81,7 @@ a {
 .mainPageFlagImage {
     height: 30px;
     width: 40px;
+    margin-right: 50px;
 }
 
 .forexAndCryptoSubjectList {
@@ -99,6 +100,27 @@ a {
     justify-content: space-between;
     padding: 0 2% 0 2%;
     width: 100%;
+}
+
+.mainItemName {
+    width: 35%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mainItemPrice {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainItemChange {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .positiveChange {

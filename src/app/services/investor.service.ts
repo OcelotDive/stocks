@@ -20,6 +20,7 @@ export class InvestorService {
   public annualCashFlowStatement: string;
   public financialRatios: string;
   public companyRatingUrl: string;
+  public commoditiesUrl: string;
   public key: string;
 
     constructor(private http: HttpClient) {
@@ -37,6 +38,7 @@ export class InvestorService {
         this.annualCashFlowStatement = 'https://financialmodelingprep.com/api/v3/financials/cash-flow-statement/';
         this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/';
         this.companyRatingUrl = 'https://financialmodelingprep.com/api/v3/company/rating/';
+        this.commoditiesUrl = 'https://financialmodelingprep.com/api/v3/quote/GCUSD,SIUSD,CLUSD,KCUSX,CUSX,SBUSX,NGUSD,LCUSX'
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
@@ -86,7 +88,9 @@ export class InvestorService {
     getCompanyRating(symbol: string) {
         return this.http.get(`${this.companyRatingUrl}${symbol}`);
     }
-
+    getCommodities() {
+        return this.http.get(`${this.commoditiesUrl}`);
+    }
 
 
 }

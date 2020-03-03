@@ -24,9 +24,9 @@
         <div class="forexAndCryptoSubjectList ">
             <div class="subjectforexAndCryptoTitle " *ngFor="let currency of forexPrices ">
                 <img src="./assets/flag/{{currency.ticker.replace( '/', '')}}.png " class="mainPageFlagImage ">
-                <div> {{currency.ticker}}</div>
-                <div> {{currency.ask | slice: 0:5}}</div>
-                <div [class.negativeChange]="currency.changes < 0.01 " [class.positiveChange]="currency.changes> 0.01">{{currency.changes.toFixed(3)}}</div>
+                <div class="mainItemName"> {{currency.ticker}}</div>
+                <div class="mainItemPrice"> {{currency.ask | slice: 0:5}}</div>
+                <div class="mainItemChange" [class.negativeChange]="currency.changes < 0.01 " [class.positiveChange]="currency.changes> 0.01">{{currency.changes.toFixed(3)}}</div>
             </div>
         </div>
     </div>
@@ -35,14 +35,50 @@
         <div class="forexAndCryptoSubjectList">
             <div class="subjectforexAndCryptoTitle" *ngFor="let currency of cryptoPrices">
                 <img src="./assets/crypto/{{currency.ticker.toLowerCase()}}.svg" class="mainPageFlagImage">
-                <div> {{currency.ticker}}</div>
-                <div> {{currency.price | number: '1.2-3'}}</div>
-                <div [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(3)}}</div>
+                <div class="mainItemName"> {{currency.ticker}}</div>
+                <div class="mainItemPrice"> {{currency.price | number: '1.2-3'}}</div>
+                <div class="mainItemChange" [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(3)}}</div>
             </div>
         </div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader">heading <span class="fa fa-chevron-right"></span></div>
+        <div class="subjectHeader">Commodities</div>
+        <div class="forexAndCryptoSubjectList">
+            <div class="subjectforexAndCryptoTitle" *ngFor="let com of commodityPrices">
+
+                <div *ngIf="com.symbol === 'GCUSD'" class="mainItemName">Gold ({{com.symbol}})</div>
+                <div *ngIf="com.symbol === 'GCUSD'" class="mainItemPrice"> {{com.price | number: '1.2-2'}}</div>
+                <div *ngIf="com.symbol === 'GCUSD'" class="mainItemChange" [class.negativeChange]="com.change < 0.01" [class.positiveChange]="com.change > 0.01">{{com.change.toFixed(3)}}</div>
+
+                <div *ngIf="com.symbol === 'SIUSD'" class="mainItemName">Silver ({{com.symbol}})</div>
+                <div *ngIf="com.symbol === 'SIUSD'" class="mainItemPrice"> {{com.price | number: '1.2-2'}}</div>
+                <div *ngIf="com.symbol === 'SIUSD'" class="mainItemChange" [class.negativeChange]="com.change < 0.01" [class.positiveChange]="com.change > 0.01">{{com.change.toFixed(3)}}</div>
+
+                <div *ngIf="com.symbol === 'CLUSD'" class="mainItemName">Oil ({{com.symbol}})</div>
+                <div *ngIf="com.symbol === 'CLUSD'" class="mainItemPrice"> {{com.price | number: '1.2-2'}}</div>
+                <div *ngIf="com.symbol === 'CLUSD'" class="mainItemChange" [class.negativeChange]="com.change < 0.01" [class.positiveChange]="com.change > 0.01">{{com.change.toFixed(3)}}</div>
+
+                <div *ngIf="com.symbol === 'KCUSX'" class="mainItemName">Coffee ({{com.symbol}})</div>
+                <div *ngIf="com.symbol === 'KCUSX'" class="mainItemPrice"> {{com.price | number: '1.2-2'}}</div>
+                <div *ngIf="com.symbol === 'KCUSX'" class="mainItemChange" [class.negativeChange]="com.change < 0.01" [class.positiveChange]="com.change > 0.01">{{com.change.toFixed(3)}}</div>
+
+                <div *ngIf="com.symbol === 'CUSX'" class="mainItemName">Corn ({{com.symbol}})</div>
+                <div *ngIf="com.symbol === 'CUSX'" class="mainItemPrice"> {{com.price | number: '1.2-2'}}</div>
+                <div *ngIf="com.symbol === 'CUSX'" class="mainItemChange" [class.negativeChange]="com.change < 0.01" [class.positiveChange]="com.change > 0.01">{{com.change.toFixed(3)}}</div>
+
+                <div *ngIf="com.symbol === 'SBUSX'" class="mainItemName">Sugar ({{com.symbol}})</div>
+                <div *ngIf="com.symbol === 'SBUSX'" class="mainItemPrice"> {{com.price | number: '1.2-2'}}</div>
+                <div *ngIf="com.symbol === 'SBUSX'" class="mainItemChange" [class.negativeChange]="com.change < 0.01" [class.positiveChange]="com.change > 0.01">{{com.change.toFixed(3)}}</div>
+
+                <div *ngIf="com.symbol === 'NGUSD'" class="mainItemName">Gas ({{com.symbol}})</div>
+                <div *ngIf="com.symbol === 'NGUSD'" class="mainItemPrice"> {{com.price | number: '1.2-2'}}</div>
+                <div *ngIf="com.symbol === 'NGUSD'" class="mainItemChange" [class.negativeChange]="com.change < 0.01" [class.positiveChange]="com.change > 0.01">{{com.change.toFixed(3)}}</div>
+
+                <div *ngIf="com.symbol === 'LCUSX'" class="mainItemName">Cattle ({{com.symbol}})</div>
+                <div *ngIf="com.symbol === 'LCUSX'" class="mainItemPrice"> {{com.price | number: '1.2-2'}}</div>
+                <div *ngIf="com.symbol === 'LCUSX'" class="mainItemChange" [class.negativeChange]="com.change < 0.01" [class.positiveChange]="com.change > 0.01">{{com.change.toFixed(3)}}</div>
+            </div>
+        </div>
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader">heading <span class="fa fa-chevron-right"></span></div>

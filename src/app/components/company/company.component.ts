@@ -46,10 +46,9 @@ export class CompanyComponent implements OnInit {
           }
         }
         this.companyRating = [data];
-        console.log(data)
         this.companyStars.length = data.rating.score;
         
-        console.warn(data)
+     
       })
     });  
   }
