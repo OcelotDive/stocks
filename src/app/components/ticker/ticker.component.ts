@@ -13,7 +13,6 @@ export class TickerComponent implements OnInit {
   constructor(public investorService: InvestorService) {
     this.investorService.getChosenInfo().subscribe((data: any) => {
      this.chosenQuotes = data;
-    console.log(this.chosenQuotes)
      }); 
     
    }

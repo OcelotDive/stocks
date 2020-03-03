@@ -18,6 +18,7 @@ export class CompanyComponent implements OnInit {
   public chartSetType = 'line'
   public companyRating: Object[];
   public companyStars: Object[] = [];
+  public ratingsDetails: Object[];
   public displayFinancialInfoType: string[] = [];
 
 
@@ -47,8 +48,16 @@ export class CompanyComponent implements OnInit {
         }
         this.companyRating = [data];
         this.companyStars.length = data.rating.score;
-        
-     
+
+        for(let value in data.ratingDetails) {
+          data.ratingDetails[value]['name'] = value.toString();
+          data.ratingDetails[value]['scoreArray'] = new Array<any>(data.ratingDetails[value]['score']);
+          this.ratingsDetails = Object.values(data.ratingDetails);
+          
+          
+        }
+        console.log(this.ratingsDetails)
+    
       })
     });  
   }

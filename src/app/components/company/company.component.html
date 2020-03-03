@@ -18,6 +18,13 @@
     <span>{{rating.rating.recommendation}}</span> &nbsp;&nbsp;&nbsp;
     <small> Stock Performance Rating: </small> <i class="far fa-star" *ngFor="let star of companyStars"></i></div>
 
+<section class="ratingsCard">
+    <div class="cardInfoBar" *ngFor="let ratio of ratingsDetails">
+        <span class="cardDataName">{{ratio.name}}</span>
+        <i class="far fa-star" *ngFor="let score of ratio.scoreArray"></i>
+        <span class="cardDataInfo">{{ratio.recommendation}}</span>
+    </div>
+</section>
 
 <section class="mainContent" *ngFor="let company of companyProfile">
     <div class="companyDataContainer">
