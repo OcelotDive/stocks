@@ -9,7 +9,6 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    height: 80%;
     justify-content: space-around;
     top: 450px;
     margin-left: 10%;
@@ -18,15 +17,15 @@ h4 {
 }
 
 .subjectContainer {
-    background: #ADA996;
-    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
-    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
     height: 330px;
     margin: 0.5%;
+    margin-bottom: 3%;
     position: relative;
     width: 450px;
     overflow: hidden;
+    font-weight: bold;
 }
 
 .subjectHeader {
