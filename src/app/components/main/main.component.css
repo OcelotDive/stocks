@@ -109,6 +109,13 @@ a {
     align-items: center;
 }
 
+.mainItemNameSector {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .mainItemPrice {
     width: 30%;
     display: flex;

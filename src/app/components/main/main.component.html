@@ -81,7 +81,15 @@
         </div>
     </div>
     <div class="subjectContainer">
-        <div class="subjectHeader">heading <span class="fa fa-chevron-right"></span></div>
+        <div class="subjectHeader" routerLink="cryptocurrencies" routerLinkActive="active">Sector Performance <span class="fa fa-chevron-right"></span></div>
+        <div class="forexAndCryptoSubjectList">
+            <div class="subjectforexAndCryptoTitle" *ngFor="let sect of sectors">
+
+                <div class="mainItemNameSector"> {{sect.sector}}</div>
+                <div class="mainItemPrice"> </div>
+                <div class="mainItemChange" [class.negativeChange]="sect.changesPercentage < 0.00" [class.positiveChange]="sect.changesPercentage > 0.00">{{sect.changesPercentage}}%</div>
+            </div>
+        </div>
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader">heading <span class="fa fa-chevron-right"></span></div>

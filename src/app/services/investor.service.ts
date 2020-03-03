@@ -11,7 +11,7 @@ export class InvestorService {
   public newsStories: string;
   public forex: string;
   public cryptos: string;
-  public  companyProfile: string;
+  public companyProfile: string;
   public ratioUrl: string;
   public keyMetrics: string;
   public historicalStockPrice: string;
@@ -21,6 +21,7 @@ export class InvestorService {
   public financialRatios: string;
   public companyRatingUrl: string;
   public commoditiesUrl: string;
+  public sectorUrl: string;
   public key: string;
 
     constructor(private http: HttpClient) {
@@ -38,7 +39,8 @@ export class InvestorService {
         this.annualCashFlowStatement = 'https://financialmodelingprep.com/api/v3/financials/cash-flow-statement/';
         this.ratioUrl = 'https://financialmodelingprep.com/api/v3/financial-ratios/';
         this.companyRatingUrl = 'https://financialmodelingprep.com/api/v3/company/rating/';
-        this.commoditiesUrl = 'https://financialmodelingprep.com/api/v3/quote/GCUSD,SIUSD,CLUSD,KCUSX,CUSX,SBUSX,NGUSD,LCUSX'
+        this.commoditiesUrl = 'https://financialmodelingprep.com/api/v3/quote/GCUSD,SIUSD,CLUSD,KCUSX,CUSX,SBUSX,NGUSD,LCUSX';
+        this.sectorUrl = 'https://financialmodelingprep.com/api/v3/stock/sectors-performance';
         this.key = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';    
     }
 
@@ -90,6 +92,9 @@ export class InvestorService {
     }
     getCommodities() {
         return this.http.get(`${this.commoditiesUrl}`);
+    }
+    getSectorPerformance() {
+        return this.http.get(`${this.sectorUrl}`);
     }
 
 
