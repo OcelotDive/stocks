@@ -1,0 +1,39 @@
+h4 {
+    margin: 1%;
+    margin-left: 20%;
+    overflow: hidden;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-around;
+    margin-left: 15%;
+    width: 70%;
+    margin-bottom: 5%;
+}
+
+.cryptoAndFlagImage {
+    height: 50px;
+    padding: 10px 0 10px 0;
+    width: 50px;
+}
+
+table {
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background: #ddd;
+}
+
+.positiveChange {
+    color: #00FF00;
+}
+
+.negativeChange {
+    color: #FF0000;
+}
+
+@media only screen and (max-width: 1100px) {}
