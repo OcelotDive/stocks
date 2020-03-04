@@ -5,9 +5,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow-x: hidden;
 }
 
 body {
     background: #e5ecf3;
-    overflow-x: hidden;
 }
