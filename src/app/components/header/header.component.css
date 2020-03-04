@@ -119,6 +119,7 @@
     background: #fff;
     transition: all 0.5s linear;
     overflow-x: visible;
+    z-index: -3;
 }
 
 .navItem {

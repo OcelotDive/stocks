@@ -34,9 +34,11 @@ export class HeaderComponent implements OnInit {
     this.displayMenu = !this.displayMenu;
     if(this.displayMenu){
       this.elRef.nativeElement.style.opacity = 1;
+      this.elRef.nativeElement.style.zIndex = 9999;
     }
     else {
       this.elRef.nativeElement.style.opacity = 0;
+      this.elRef.nativeElement.style.zIndex = -3;
     }
    }
 
