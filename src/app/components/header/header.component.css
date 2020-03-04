@@ -118,4 +118,21 @@
     z-index: 9999;
     background: #fff;
     transition: all 0.5s linear;
+    overflow-x: visible;
+}
+
+.navItem {
+    font-size: 0.5em;
+    background: #ADA996;
+    background: -webkit-gradient(linear, left top, right top, from(#EAEAEA), color-stop(#DBDBDB), color-stop(#F2F2F2), to(#ADA996));
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 8px 10px;
+    border: solid 1px #ADA996;
+}
+
+.navItem:hover {
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, rgb(167, 160, 160), rgb(32, 32, 30));
 }

@@ -73,6 +73,7 @@ import { ActivesComponent } from './components/actives/actives.component';
      {path: 'main/actives', component: ActivesComponent},
      {path: 'main/cryptocurrencies', component: CryptocurrenciesComponent},
      {path: 'main/:symbolId',  component: CompanyComponent}
+    
 
 
   
