@@ -78,6 +78,11 @@ a {
     color: #000;
 }
 
+.fa-chevron-right {
+    position: absolute;
+    right: 20px;
+}
+
 .mainPageFlagImage {
     height: 30px;
     width: 40px;
