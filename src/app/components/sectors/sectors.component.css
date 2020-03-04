@@ -2,6 +2,7 @@ h4 {
     margin: 1%;
     margin-left: 20%;
     overflow: hidden;
+    font-size: 2em;
 }
 
 .tableContainer {
@@ -23,6 +24,7 @@ h4 {
 
 table {
     text-align: left;
+    width: 100%;
 }
 
 tr:nth-child(odd) {

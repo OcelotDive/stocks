@@ -20,10 +20,11 @@ export class CompanyComponent implements OnInit {
   public companyStars: Object[] = [];
   public ratingsDetails: Object[];
   public displayFinancialInfoType: string[] = [];
+  public displayRatingCard: boolean = true;
 
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
-  
+   
     this.route.params.subscribe(routeParams => {
       this.companySymbol = routeParams.symbolId.substring(1);
 
@@ -45,8 +46,11 @@ export class CompanyComponent implements OnInit {
               recommendation: "None"
             }
           }
+          this.displayRatingCard = false;
         }
         this.companyRating = [data];
+        
+        console.warn(this.companyRating)
         this.companyStars.length = data.rating.score;
 
         for(let value in data.ratingDetails) {
