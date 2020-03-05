@@ -1,7 +1,6 @@
 import { Component, OnInit,} from '@angular/core';
 import { InvestorService } from '../../services/investor.service';
 
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -51,14 +50,8 @@ export class MainComponent implements OnInit {
       console.log(data.mostActiveStock)
       this.actives = data.mostActiveStock.slice(0,8);
     })
- 
   }
-
-
-
-
   ngOnInit() {
    
   }
-
 }

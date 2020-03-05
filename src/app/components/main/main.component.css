@@ -8,24 +8,24 @@ h4 {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
     justify-content: space-around;
-    top: 450px;
     margin-left: 10%;
     overflow: hidden;
+    position: absolute;
+    top: 450px;
     width: 80%;
 }
 
 .subjectContainer {
     background-color: rgba(255, 255, 255, 1);
     border-radius: 10px;
+    font-weight: bold;
     height: 330px;
     margin: 0.5%;
     margin-bottom: 3%;
+    overflow: hidden;
     position: relative;
     width: 450px;
-    overflow: hidden;
-    font-weight: bold;
 }
 
 .subjectHeader {
@@ -39,8 +39,8 @@ h4 {
     height: 15%;
     left: 0;
     position: absolute;
-    top: 0;
     text-indent: 20px;
+    top: 0;
     width: 100%;
 }
 
@@ -85,8 +85,8 @@ a {
 
 .mainPageFlagImage {
     height: 30px;
-    width: 40px;
     margin-right: 50px;
+    width: 40px;
 }
 
 .forexAndCryptoSubjectList {
@@ -101,38 +101,38 @@ a {
 
 .subjectforexAndCryptoTitle {
     display: flex;
-    position: relative;
     justify-content: space-between;
     padding: 0 2% 0 2%;
+    position: relative;
     width: 100%;
 }
 
 .mainItemName {
-    width: 35%;
+    align-items: center;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    width: 35%;
 }
 
 .mainItemNameSector {
-    width: 60%;
+    align-items: center;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    width: 60%;
 }
 
 .mainItemPrice {
-    width: 30%;
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    width: 30%;
 }
 
 .mainItemChange {
-    width: 20%;
+    align-items: center;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    width: 20%;
 }
 
 .positiveChange {
@@ -145,8 +145,8 @@ a {
 
 footer {
     background: #0f0c29;
-    width: 100%;
     bottom: 0;
-    position: absolute;
     height: 3%;
+    position: absolute;
+    width: 100%;
 }
