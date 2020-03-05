@@ -126,7 +126,8 @@ export class LinechartComponent implements OnInit {
     const currentDate = this.getCurrentDate();
 
     this.investorService.getHistoric(this.companySymbol, previousDate, currentDate).subscribe((data: any) => {
-    
+      if(data.historical.length < 4)return;
+      console.log(data)
       let priceTemp: number[] = []; 
       let lowTemp: number[] = [];
       let highTemp: number[] = [] ;
