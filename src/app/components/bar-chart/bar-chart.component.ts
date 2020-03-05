@@ -17,7 +17,7 @@ export class BarChartComponent implements OnInit {
 
   public barChartOptions: ChartOptions = {
     responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
+   
     scales: { xAxes: [{}], yAxes: [{}] },
     plugins: {
       datalabels: {
@@ -38,19 +38,15 @@ export class BarChartComponent implements OnInit {
   ];
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
+
     this.route.params.subscribe(routeParams => {
-
       this.companySymbol = routeParams.symbolId.substring(1);
-
-     this.getChartData();
-        
+     this.getChartData();    
     });
   }
 
   ngOnInit() {
   }
-
-
 
   public setInterval(days: number) {
     this.timelineDays = days;
@@ -84,8 +80,6 @@ public getChartData() {
   })
 }
 
-
-
 public getCurrentDate() {
   const dateObj = new Date();
   const month = dateObj.getUTCMonth() + 1;
@@ -102,7 +96,6 @@ public getCurrentDate() {
     const day = historicDate.getUTCDate();
     const year = historicDate.getUTCFullYear();
     const previousDate = year + "-" + month + "-" + day;
- 
     return previousDate;
   }
 

@@ -13,6 +13,7 @@ export class BalanceComponent implements OnInit {
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) {
     this.scroll();
+    
     this.route.params.subscribe(routeParams => {
     this.companySymbol = routeParams.symbolId.substring(1);
 

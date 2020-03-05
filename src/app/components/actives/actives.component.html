@@ -5,7 +5,6 @@
 <section class="tableContainer">
     <table>
         <tr>
-
             <th>TICKER</th>
             <th>NAME</th>
             <th>PRICE</th>
@@ -13,13 +12,10 @@
             <th>CHANGE(%)</th>
         </tr>
         <tr *ngFor="let act of activesFullList">
-
             <td>{{act.ticker}}</td>
             <td>{{act.companyName}}</td>
             <td>{{act.price | number: '1.2-2'}}</td>
-
             <td [class.negativeChange]="act.changes < 0.00" [class.positiveChange]="act.changes > 0.00">{{act.changes.toFixed(2)}}</td>
-
             <td class="mainItemChange" [class.negativeChange]="act.changesPercentage.includes('-')" [class.positiveChange]="act.changesPercentage.includes('+')">{{act.changesPercentage}}</td>
         </tr>
     </table>

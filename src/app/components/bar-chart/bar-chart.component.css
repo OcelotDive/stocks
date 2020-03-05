@@ -1,13 +1,13 @@
 .chartButtonGroup {
-    margin-bottom: 1%;
     display: flex;
     justify-content: center;
+    margin-bottom: 1%;
 }
 
 .chartButton {
-    margin-right: 10px;
-    padding: 1% 1% 1% 1%;
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-right: 10px;
+    padding: 1% 1% 1% 1%;
 }
