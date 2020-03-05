@@ -1,7 +1,7 @@
     footer {
         background: #0f0c29;
-        width: 100%;
         bottom: 0;
-        position: fixed;
         height: 3%;
+        position: fixed;
+        width: 100%;
     }

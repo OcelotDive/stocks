@@ -7,8 +7,10 @@ import { InvestorService } from '../../services/investor.service';
   styleUrls: ['./forex.component.css'],
   providers: [InvestorService]
 })
+
 export class ForexComponent implements OnInit {
   public forexFullList: Object[];
+  
   constructor(public investorService: InvestorService) {
 
     this.investorService.getForex().subscribe((data: any) => {
