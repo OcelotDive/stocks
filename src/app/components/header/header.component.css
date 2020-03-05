@@ -4,18 +4,18 @@
     box-shadow: #000 5px 5px 5px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    flex-wrap: nowrap;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     font-style: italic;
     font-weight: 900;
     height: 100px;
+    justify-content: flex-end;
     min-height: 100px;
     overflow: hidden;
     padding: 0 20px 9 20px;
     text-transform: uppercase;
     width: 100%;
-    flex-wrap: nowrap;
 }
 
 .active-cyan-2 input[type=text]:focus:not([readonly]) {
@@ -34,18 +34,22 @@
 }
 
 .searchModal {
-    width: 300px;
-    height: 200px;
     background: #ADA996;
     background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
     background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
-    position: absolute;
-    top: 68px;
-    right: 45px;
-    z-index: 9999;
-    font-size: 14px;
     color: #000;
+    font-size: 14px;
+    height: 200px;
     list-style-type: none;
+    position: absolute;
+    right: 45px;
+    top: 68px;
+    width: 300px;
+    z-index: 9999;
+}
+
+form {
+    overflow: hidden;
 }
 
 .seachModalLI {
@@ -69,20 +73,20 @@
 }
 
 .BurgerContainer {
-    display: inline-block;
-    position: absolute;
-    left: 40px;
     cursor: pointer;
+    display: inline-block;
+    left: 40px;
+    position: absolute;
 }
 
 .bar1,
 .bar2,
 .bar3 {
-    width: 35px;
-    height: 5px;
     background-color: #333;
+    height: 5px;
     margin: 6px 0;
     transition: 0.4s;
+    width: 35px;
 }
 
 
@@ -109,32 +113,40 @@
 }
 
 .menuModal {
-    opacity: 0;
-    width: 250px;
-    height: 300px;
-    box-shadow: 5px 5px 5px;
-    position: fixed;
-    left: 2%;
-    top: 80px;
-    z-index: 9999;
     background: #fff;
-    transition: all 0.5s linear;
+    box-shadow: 5px 5px 5px;
+    height: 300px;
+    left: 2%;
+    opacity: 0;
     overflow-x: visible;
+    position: fixed;
+    top: 80px;
+    transition: all 0.5s linear;
+    width: 250px;
     z-index: -3;
 }
 
 .navItem {
-    font-size: 0.5em;
+    align-items: center;
     background: #ADA996;
     background: -webkit-gradient(linear, left top, right top, from(#EAEAEA), color-stop(#DBDBDB), color-stop(#F2F2F2), to(#ADA996));
     background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 10px 8px 10px;
     border: solid 1px #ADA996;
+    display: flex;
+    font-size: 0.5em;
+    justify-content: center;
+    padding: 10px 10px 8px 10px;
 }
 
 .navItem:hover {
     background: linear-gradient(to right, #EAEAEA, #DBDBDB, rgb(167, 160, 160), rgb(32, 32, 30));
+}
+
+@media only screen and (max-width: 410px) {
+    .mainHeader {
+        flex-direction: column-reverse;
+    }
+    .BurgerContainer {
+        left: 10px;
+    }
 }

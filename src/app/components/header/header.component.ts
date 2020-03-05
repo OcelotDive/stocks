@@ -17,10 +17,7 @@ export class HeaderComponent implements OnInit {
     
     this.investorService.getSymbolsList().subscribe((data: any) => {
       this.companyStockList = data.symbolsList;
-    
-   
-    })
-
+    });
    }
 
    handleCompanyClick(symbol: string) {
@@ -42,9 +39,7 @@ export class HeaderComponent implements OnInit {
     }
    }
 
-
   ngOnInit() {
    
   }
-
 }
