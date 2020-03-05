@@ -16,7 +16,6 @@
                 .companyTitle {
                     align-items: baseline;
                     display: flex;
-                    height: 70px;
                     margin-right: 20px;
                 }
                 
@@ -29,6 +28,12 @@
                 .companyName,
                 .companySector {
                     margin-right: 20px;
+                }
+                
+                .companyName {
+                    display: flex;
+                    flex-wrap: wrap;
+                    max-width: 60%;
                 }
                 
                 .companyDescription {
