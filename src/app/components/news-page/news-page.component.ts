@@ -15,14 +15,12 @@ export class NewsPageComponent implements OnInit {
   constructor(public investorService: InvestorService) {
     this.investorService.getTopStories().subscribe((data: any) => {
       this.storyList = data.articles;
-      console.log(data.articles)
     })
   }
 
   onRadioChange(inputValue: any) {
     this.investorService.getTopStoriesFull(inputValue.value).subscribe((data: any) => {
       this.storyList = data.articles;
-      console.log(data.articles)
     })
   }
 
