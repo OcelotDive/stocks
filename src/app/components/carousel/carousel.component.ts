@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestorService } from '../../services/investor.service';
 
-
 @Component({
   selector: 'carousel',
   templateUrl: './carousel.component.html',
@@ -14,7 +13,6 @@ export class CarouselComponent implements OnInit {
   public majorIndexesSecond: Object[];
   public majorIndexesThird: Object[];
 
-
   constructor(public investorService: InvestorService) {
     this.investorService.getMajorIndexes().subscribe((data: any) => {
       this.majorIndexes = data.majorIndexesList.slice(0,5);
@@ -22,12 +20,9 @@ export class CarouselComponent implements OnInit {
       this.majorIndexesThird = data.majorIndexesList.slice(10,15);
       console.log(data)
    })
-   
   }
-
 
   ngOnInit() {
    
   }
-
 }

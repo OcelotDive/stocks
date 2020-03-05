@@ -12,8 +12,8 @@
     height: 150px;
     justify-content: space-around;
     margin-left: 10%;
-    width: 80%;
     overflow: hidden;
+    width: 80%;
 }
 
 .card {
