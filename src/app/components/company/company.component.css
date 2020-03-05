@@ -16,8 +16,8 @@
                 .companyTitle {
                     align-items: baseline;
                     display: flex;
-                    margin-right: 20px;
                     height: 70px;
+                    margin-right: 20px;
                 }
                 
                 .companyImage {
@@ -40,33 +40,32 @@
                 }
                 
                 .mainContent {
+                    display: flex;
                     height: 80%;
                     margin-left: 5%;
                     margin-top: 1%;
                     margin-bottom: 1%;
                     position: relative;
                     width: 90%;
-                    display: flex;
                 }
                 
                 .companyDataContainer {
+                    display: flex;
+                    margin-right: 4%;
                     position: relative;
                     top: 5%;
-                    display: flex;
-                    position: relative;
                     width: 60%;
-                    margin-right: 4%;
                 }
                 
                 .headerSection {
+                    align-items: center;
                     background: #0f0c29;
+                    color: #fff;
                     display: flex;
                     height: 50px;
-                    width: 100%;
-                    color: #fff;
                     justify-content: flex-start;
-                    align-items: center;
                     text-indent: 10px;
+                    width: 100%;
                 }
                 
                 .companyDataSectionOne {
@@ -77,9 +76,9 @@
                 }
                 
                 .companyRating {
-                    width: 60%;
-                    margin-left: 5%;
                     font-weight: 900;
+                    margin-left: 5%;
+                    width: 60%;
                 }
                 
                 .companyRating:hover+.ratingsCard {
@@ -102,31 +101,31 @@
                 }
                 
                 .chartContainer {
-                    width: 35%;
                     display: flex;
                     flex-direction: column;
+                    width: 35%;
                 }
                 
                 .financialInfoButtonGroup {
+                    display: flex;
+                    font-size: 16px;
+                    justify-content: flex-start;
                     margin-left: 5%;
                     width: 54%;
-                    font-size: 16px;
-                    display: flex;
-                    justify-content: flex-start;
                 }
                 
                 .financialInfoButton {
                     background: #0f0c29;
                     color: #fff;
-                    padding: 10px;
                     margin-left: 20px;
+                    padding: 10px;
                 }
                 
                 .financialInfoButtonClicked {
                     background: #655da9;
                     color: #fff;
-                    padding: 10px;
                     margin-left: 20px;
+                    padding: 10px;
                 }
                 
                 .financialInfoButton:nth-of-type(1) {
@@ -140,19 +139,18 @@
                 }
                 
                 .ratingsCard {
-                    background: #ddd;
-                    position: fixed;
-                    left: 30%;
-                    width: 300px;
-                    height: 200px;
-                    box-shadow: 3px 3px 3px;
-                    z-index: 9999;
                     background: #fff;
+                    box-shadow: 3px 3px 3px;
                     font-size: 10px;
                     font-weight: bold;
-                    padding: 20px 10px 10px 10px;
+                    height: 200px;
+                    left: 30%;
                     opacity: 0;
+                    padding: 20px 10px 10px 10px;
+                    position: fixed;
                     transition: all 0.5s linear;
+                    width: 300px;
+                    z-index: 9999;
                 }
                 
                 .cardInfoBar {
@@ -161,9 +159,9 @@
                 }
                 
                 .cardDataInfo {
-                    text-align: right;
                     position: absolute;
                     right: 10px;
+                    text-align: right;
                 }
                 
                 .cardDataName,
@@ -180,22 +178,22 @@
                         display: none;
                     }
                     .mainContent {
+                        align-items: center;
                         flex-direction: column-reverse;
                         justify-content: center;
-                        align-items: center;
                     }
                     .companyDataContainer {
                         margin-bottom: 5%;
                         width: 80%;
                     }
                     .chartContainer {
-                        width: 80%;
                         margin-right: 5%;
+                        width: 80%;
                     }
                     .financialInfoButtonGroup {
-                        width: 80%;
-                        margin-left: 10%;
                         display: flex;
                         justify-content: space-around;
+                        margin-left: 10%;
+                        width: 80%;
                     }
                 }

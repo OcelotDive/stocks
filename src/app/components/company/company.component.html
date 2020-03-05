@@ -29,7 +29,6 @@
 
 <section class="mainContent" *ngFor="let company of companyProfile">
     <div class="companyDataContainer">
-
         <section class="companyDataSectionOne">
             <div class="headerSection">Financial Info</div>
             <div class="infoBar">
@@ -107,9 +106,8 @@
     <div class="chartContainer" *ngIf="chartSetType === 'bar'">
         <app-bar-chart (chartTypeFromChild)="getChartTypeFromChild($event)"></app-bar-chart>
     </div>
-
-
 </section>
+
 <section class="financialInfoButtonGroup">
     <button class="financialInfoButton" [class.financialInfoButtonClicked]="displayFinancialInfoType.includes('income')" (click)="displayFinancial('income')">Income Statement</button>
     <button class="financialInfoButton" [class.financialInfoButtonClicked]="displayFinancialInfoType.includes('balance')" (click)="displayFinancial('balance')">Balance Sheet</button>
@@ -121,5 +119,4 @@
     <app-balance *ngIf="displayFinancialInfoType.includes('balance')"></app-balance>
     <app-cashflow *ngIf="displayFinancialInfoType.includes('cash')"></app-cashflow>
     <app-ratios *ngIf="displayFinancialInfoType.includes('ratio')"></app-ratios>
-
 </section>

@@ -9,6 +9,7 @@ import { InvestorService } from '../../services/investor.service';
 })
 export class CryptocurrenciesComponent implements OnInit {
   public cryptoFullList: Object[];
+  
   constructor(public investorService: InvestorService) {
     
     this.investorService.getCryptos().subscribe((data: any) => {

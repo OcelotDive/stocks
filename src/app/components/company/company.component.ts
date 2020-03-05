@@ -22,19 +22,18 @@ export class CompanyComponent implements OnInit {
   public displayFinancialInfoType: string[] = [];
   public displayRatingCard: boolean = true;
 
-
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
    
     this.route.params.subscribe(routeParams => {
       this.companySymbol = routeParams.symbolId.substring(1);
 
       this.investorService.getKeyMetrics(this.companySymbol).subscribe((data: any) => {
-        this.keyMetrics = data.metrics[0];
+      this.keyMetrics = data.metrics[0];
      
       })
 
       this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
-        this.companyProfile = [data];
+      this.companyProfile = [data];
        
       });  
 
@@ -48,20 +47,15 @@ export class CompanyComponent implements OnInit {
           }
           this.displayRatingCard = false;
         }
+
         this.companyRating = [data];
-        
-        console.warn(this.companyRating)
         this.companyStars.length = data.rating.score;
 
         for(let value in data.ratingDetails) {
           data.ratingDetails[value]['name'] = value.toString();
           data.ratingDetails[value]['scoreArray'] = new Array<any>(data.ratingDetails[value]['score']);
-          this.ratingsDetails = Object.values(data.ratingDetails);
-          
-          
+          this.ratingsDetails = Object.values(data.ratingDetails);  
         }
-        console.log(this.ratingsDetails)
-    
       })
     });  
   }
@@ -77,10 +71,7 @@ export class CompanyComponent implements OnInit {
     else {
       this.displayFinancialInfoType.push(infoType);
     }
-   
-      this.positionFooter();
-
-    
+      this.positionFooter(); 
   }
 
   positionFooter() {
@@ -92,7 +83,4 @@ export class CompanyComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-
-
 }
