@@ -1,11 +1,9 @@
 import { Component, OnInit, ViewChild,  Output, EventEmitter } from '@angular/core';
-
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
 import { InvestorService } from '../../services/investor.service';
 import { ActivatedRoute } from '@angular/router';
-
 
 @Component({
   selector: 'app-linechart',
@@ -15,7 +13,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LinechartComponent implements OnInit {
    
-
    public companySymbol: string;
    public timelineDays: number = 5;
    @Output() chartTypeFromChild = new EventEmitter<string>();
@@ -25,11 +22,11 @@ export class LinechartComponent implements OnInit {
     { data: [5,5,5], label: 'Low' },
     { data: [5,5,5], label: 'High' }
   ];
+
   public lineChartLabels: Label[] = [];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
     scales: {
-      // We use this empty structure as a placeholder for dynamic theming.
       xAxes: [{}],
       yAxes: [
         {
@@ -91,20 +88,14 @@ export class LinechartComponent implements OnInit {
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
   
-
     this.route.params.subscribe(routeParams => {
-      this.companySymbol = routeParams.symbolId.substring(1);
-
-     this.getChartData();
-        
+    this.companySymbol = routeParams.symbolId.substring(1);
+    this.getChartData();    
     });
   }
 
   ngOnInit(): void {
   }
-
-
-
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
@@ -114,10 +105,6 @@ export class LinechartComponent implements OnInit {
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
-
-
-
-
 
   public changeColor() {
     // this can be deleted
@@ -135,7 +122,6 @@ export class LinechartComponent implements OnInit {
   }
 
   public getChartData() {
-
     const previousDate = this.getHistoricalDate(this.timelineDays);
     const currentDate = this.getCurrentDate();
 
@@ -144,7 +130,7 @@ export class LinechartComponent implements OnInit {
       let priceTemp: number[] = []; 
       let lowTemp: number[] = [];
       let highTemp: number[] = [] ;
-     this.lineChartLabels = [];
+      this.lineChartLabels = [];
         data.historical.map((day, index) => {
        
           this.lineChartLabels.push(day.date); 
@@ -159,15 +145,13 @@ export class LinechartComponent implements OnInit {
     })
   }
 
-
-
   public getCurrentDate() {
     const dateObj = new Date();
     const month = dateObj.getUTCMonth() + 1;
     const day = dateObj.getUTCDate();
     const year = dateObj.getUTCFullYear();
     const todaysDate = year + "-" + month + "-" + day;
-      return todaysDate;
+    return todaysDate;
   }
 
     public getHistoricalDate(timeLine: number) {
@@ -177,11 +161,8 @@ export class LinechartComponent implements OnInit {
       const day = historicDate.getUTCDate();
       const year = historicDate.getUTCFullYear();
       const previousDate = year + "-" + month + "-" + day;
-  
       return previousDate;
     }
-
-
 }
 
 
