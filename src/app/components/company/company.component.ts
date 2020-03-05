@@ -71,16 +71,10 @@ export class CompanyComponent implements OnInit {
     else {
       this.displayFinancialInfoType.push(infoType);
     }
-      this.positionFooter(); 
+ 
   }
 
-  positionFooter() {
-    const footer = document.querySelectorAll('footer')[0];
-    footer.style.position = 'relative';
-    if(this.displayFinancialInfoType.length === 0) {
-      footer.style.position = 'absolute';
-    }
-  }
+
 
   ngOnInit(): void {}
 }
