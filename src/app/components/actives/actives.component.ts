@@ -14,7 +14,6 @@ export class ActivesComponent implements OnInit {
   constructor(public investorService: InvestorService) { 
 
     this.investorService.getActives().subscribe((data: any) => {
-      console.log(data.mostActiveStock)
       this.activesFullList = data.mostActiveStock;
     })
   }

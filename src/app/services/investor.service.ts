@@ -31,7 +31,7 @@ export class InvestorService {
         this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.cryptos = 'https://financialmodelingprep.com/api/v3/cryptocurrencies';
-        this.newsStories = 'https://newsapi.org/v1/articles?source= ';
+        this.newsStories = 'https://newsapi.org/v1/articles?source=';
         this.companyProfile = 'https://financialmodelingprep.com/api/v3/company/profile/';
         this.keyMetrics = 'https://financialmodelingprep.com/api/v3/company-key-metrics/'
         this.historicalStockPrice = 'https://financialmodelingprep.com/api/v3/historical-price-full/';

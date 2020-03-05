@@ -10,12 +10,11 @@ import { InvestorService } from '../../services/investor.service';
 
 export class ForexComponent implements OnInit {
   public forexFullList: Object[];
-  
+
   constructor(public investorService: InvestorService) {
 
     this.investorService.getForex().subscribe((data: any) => {
       this.forexFullList = data.forexList;
-      console.warn(data); 
     })
    }
 

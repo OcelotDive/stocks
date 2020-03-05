@@ -31,10 +31,21 @@ h4 {
 
 .storyImage_newsPage {
     border-radius: 10px;
-    height: 50%;
+    height: 10%;
+    margin-left: 1.5%;
     width: 20%;
 }
 
 .newsTitleAndBodyContainer {
+    width: 80%;
+}
+
+.newsTitleAndBodyContainer {
     padding-left: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .storyImage_newsPage {
+        display: none
+    }
 }

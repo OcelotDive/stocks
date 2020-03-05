@@ -17,7 +17,9 @@
 </section>
 <section class="storyContainer">
     <div class="storyCard" *ngFor="let story of storyList">
+
         <img src={{story.urlToImage}} class="storyImage_newsPage" />
+
         <div class="newsTitleAndBodyContainer">
             <div class="subjectNewsTitle">
                 <a href={{story.url}} target="#blank">
