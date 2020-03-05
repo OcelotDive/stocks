@@ -28,7 +28,8 @@ export class CompanyComponent implements OnInit {
       this.companySymbol = routeParams.symbolId.substring(1);
 
       this.investorService.getKeyMetrics(this.companySymbol).subscribe((data: any) => {
-      this.keyMetrics = data.metrics[0];
+      this.keyMetrics = data['metrics'][0];
+      console.log(data['metrics'][0])
      
       })
 
