@@ -44,6 +44,7 @@ export class CompanyComponent implements OnInit {
       });  
 
       this.investorService.getCompanyRating(this.companySymbol).subscribe((data: any) => {
+        this.displayRatingCard = true;
         if(Object.keys(data).length === 0 && data.constructor === Object) {
           data = {
             rating: {
