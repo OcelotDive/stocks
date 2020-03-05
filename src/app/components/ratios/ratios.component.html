@@ -58,9 +58,7 @@
             <th>Price Fair Value</th>
             <td *ngFor="let item of financialRatios">{{item["investmentValuationRatios"]["priceFairValue"] | number: '1.2-2'}}%</td>
         </tr>
-
     </table>
-
 </section>
 
 <h4>Profitability Indicator Ratios</h4>
@@ -115,10 +113,7 @@
             <th>Return On Capital Employed</th>
             <td *ngFor="let item of financialRatios">{{item["profitabilityIndicatorRatios"]["returnOnCapitalEmployed"] | number: '1.2-2'}}%</td>
         </tr>
-
-
     </table>
-
 </section>
 
 <h4>Operating Performance Ratios</h4>
@@ -149,10 +144,7 @@
             <th>Asset Turnover</th>
             <td *ngFor="let item of financialRatios">{{item["operatingPerformanceRatios"]["assetTurnover"] | number: '1.2-2'}}%</td>
         </tr>
-
-
     </table>
-
 </section>
 
 <h4>Liquidity Measurement Ratios</h4>
@@ -195,10 +187,7 @@
             <th>Cash Conversion Cycle</th>
             <td *ngFor="let item of financialRatios">{{item["liquidityMeasurementRatios"]["cashConversionCycle"] | number: '1.2-2'}}%</td>
         </tr>
-
-
     </table>
-
 </section>
 
 <h4>Debt Ratios</h4>
@@ -237,11 +226,7 @@
             <th>Company Equity Multiplier</th>
             <td *ngFor="let item of financialRatios">{{item["debtRatios"]["companyEquityMultiplier"] | number: '1.2-2'}}%</td>
         </tr>
-
-
-
     </table>
-
 </section>
 
 <h4>Cash Flow Indicator Ratios</h4>
@@ -299,10 +284,6 @@
         <tr>
             <th>Dividend Payout Ratio</th>
             <td *ngFor="let item of financialRatios">{{item["cashFlowIndicatorRatios"]["dividendPayoutRatio"] | number: '1.2-2'}}%</td>
-
         </tr>
-
-
     </table>
-
 </section>

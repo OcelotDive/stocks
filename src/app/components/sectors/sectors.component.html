@@ -5,16 +5,12 @@
 <section class="tableContainer">
     <table>
         <tr>
-
             <th>SECTOR</th>
             <th>CHANGE(%)</th>
         </tr>
         <tr *ngFor="let sect of sectorsFullList">
-
             <td>{{sect.sector}}</td>
-
             <td [class.negativeChange]="sect.changesPercentage < 0.00" [class.positiveChange]="sect.changesPercentage > 0.00">{{sect.changesPercentage}}</td>
-
         </tr>
     </table>
 </section>

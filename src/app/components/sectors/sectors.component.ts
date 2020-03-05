@@ -17,10 +17,8 @@ export class SectorsComponent implements OnInit {
       data.sectorPerformance.forEach(element => {
         element.changesPercentage = element.changesPercentage.substring(0, element.changesPercentage.length - 1);
       });
-      this.sectorsFullList = data.sectorPerformance;
-      console.warn(data); 
-    })
-   
+      this.sectorsFullList = data.sectorPerformance; 
+    }); 
   }
 
   ngOnInit() {
