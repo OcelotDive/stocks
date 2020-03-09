@@ -61,7 +61,7 @@ export class CompanyComponent implements OnInit {
         for(let value in data.ratingDetails) {
           data.ratingDetails[value]['name'] = value.toString();
           data.ratingDetails[value]['scoreArray'] = new Array<any>(data.ratingDetails[value]['score']);
-          this.ratingsDetails = Object.values(data.ratingDetails);  
+          this.ratingsDetails = Object.keys(data.ratingDetails).map((val => data.ratingDetails[val]));
         }
       })
     });  
