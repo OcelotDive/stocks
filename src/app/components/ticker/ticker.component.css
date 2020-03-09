@@ -30,7 +30,8 @@
     cursor: pointer;
     font-size: 1vw;
     margin-right: 30px;
-    align-self: center;
+    position: relative;
+    top: inherit;
 }
 
 .positiveChange {
