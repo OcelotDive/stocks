@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {enableProdMode} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -28,7 +28,16 @@ import { ActivesComponent } from './components/actives/actives.component';
 
 enableProdMode();
 
-
+const routes: Routes = [
+  {path: '', redirectTo: 'main', pathMatch: 'full' },
+  {path: 'main', component: MainComponent},
+  {path: 'main/newslist', loadChildren: () => import('./components/news-page/news-page.component').then(m => m.NewsPageComponent)},
+  {path: 'main/forex', loadChildren: () => import('./components/forex/forex.component').then(m => m.ForexComponent)},
+  {path: 'main/sectors', loadChildren: () => import('./components/sectors/sectors.component').then(m => m.SectorsComponent)},
+  {path: 'main/actives', loadChildren: () => import('./components/actives/actives.component').then(m => m.ActivesComponent)},
+  {path: 'main/cryptocurrencies', loadChildren: () => import('./components/cryptocurrencies/cryptocurrencies.component').then(m => m.CryptocurrenciesComponent)},
+  {path: 'main/:symbolId', loadChildren: () => import('./components/company/company.component').then(m => m.CompanyComponent)},
+ ]
 
 @NgModule({
   declarations: [
@@ -76,7 +85,7 @@ enableProdMode();
 
 
   
-     
+  
 
      
     
