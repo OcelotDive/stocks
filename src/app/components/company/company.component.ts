@@ -40,7 +40,7 @@ export class CompanyComponent implements OnInit {
 
       this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
       this.companyProfile = [data];
-       console.log(data)
+       
       });  
 
       this.investorService.getCompanyRating(this.companySymbol).subscribe((data: any) => {
@@ -72,7 +72,7 @@ export class CompanyComponent implements OnInit {
   }
 
   displayFinancial(infoType: string) {
-    if(this.displayFinancialInfoType.includes(infoType)) {
+    if(this.displayFinancialInfoType.indexOf(infoType) !== -1) {
       this.displayFinancialInfoType.splice(this.displayFinancialInfoType.indexOf(infoType), 1);
     }
     else {
