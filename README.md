@@ -5,7 +5,7 @@ Live trading prices for U.S stocks, commodities, exchange rates, cryptocurrencie
 
 Search by stock symbol or company name.
 
-[Demo](https://eco-stocks.netlify.com/main)
+[Demo](https://eco-stocks.netlify.com/)
 
 ### Main Page
 ![preview](https://github.com/OcelotDive/stocks/blob/master/images/mainPage.PNG)
