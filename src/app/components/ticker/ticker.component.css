@@ -28,10 +28,9 @@
 .stockQuote {
     color: #fff;
     cursor: pointer;
+    display: block;
     font-size: 1vw;
     margin-right: 30px;
-    position: relative;
-    top: inherit;
 }
 
 .positiveChange {
