@@ -3,7 +3,6 @@
 .tickerWrapper2 {
     align-items: center;
     background: #0f0c29;
-    flex-wrap: nowrap;
     flex-direction: row;
     display: flex;
     height: 60px;
@@ -28,7 +27,6 @@
 .stockQuote {
     color: #fff;
     cursor: pointer;
-    display: block;
     font-size: 1vw;
     margin-right: 30px;
 }
