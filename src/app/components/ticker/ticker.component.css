@@ -15,7 +15,6 @@
 
 .tickerWrapper {
     animation: ticker 45s infinite linear;
-    position: absolute;
 }
 
 .tickerWrapper2 {
