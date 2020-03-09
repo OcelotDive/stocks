@@ -25,7 +25,7 @@ export class CompanyComponent implements OnInit {
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
    
     this.route.params.subscribe(routeParams => {
-      this.companySymbol = routeParams.symbolId.substring(1);
+      this.companySymbol = routeParams.symbolId.substring(1).toString();
 
       this.investorService.getKeyMetrics(this.companySymbol).subscribe((data: any) => {
         if(data['metrics'] === undefined) {
