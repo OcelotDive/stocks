@@ -2,6 +2,7 @@
 .tickerWrapper,
 .tickerWrapper2 {
     align-items: center;
+    align-self: center;
     background: #0f0c29;
     flex-direction: row;
     display: flex;
@@ -24,7 +25,6 @@
 }
 
 .stockQuote {
-    align-self: center;
     color: #fff;
     cursor: pointer;
     font-size: 1vw;
