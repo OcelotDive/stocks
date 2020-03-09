@@ -5,6 +5,8 @@ Live trading prices for U.S stocks, commodities, exchange rates, cryptocurrencie
 
 Search by stock symbol or company name.
 
+![preview](https://github.com/OcelotDive/stocks/blob/master/images/mainPage.PNG)
+
 
 
 
