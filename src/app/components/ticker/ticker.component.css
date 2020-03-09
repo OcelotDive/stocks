@@ -4,6 +4,7 @@
     align-items: center;
     background: #0f0c29;
     flex-wrap: nowrap;
+    flex-direction: row;
     display: flex;
     height: 60px;
     justify-content: space-around;
