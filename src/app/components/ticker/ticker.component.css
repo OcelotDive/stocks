@@ -22,6 +22,7 @@
     animation: ticker 45s infinite linear;
     left: 100%;
     position: absolute;
+    top: inherit
 }
 
 .stockQuote {
