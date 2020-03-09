@@ -40,7 +40,7 @@ export class CompanyComponent implements OnInit {
 
       this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
       this.companyProfile = [data];
-       
+       alert('test')
       });  
 
       this.investorService.getCompanyRating(this.companySymbol).subscribe((data: any) => {
