@@ -23,7 +23,7 @@ export class CompanyComponent implements OnInit {
   public displayRatingCard: boolean = true;
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
-   
+    
     this.route.params.subscribe(routeParams => {
       this.companySymbol = routeParams.symbolId.substring(1).toString();
       
@@ -40,7 +40,7 @@ export class CompanyComponent implements OnInit {
 
       this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {
       this.companyProfile = [data];
-       console.log(this.companyProfile)
+       console.log(data)
       });  
 
       this.investorService.getCompanyRating(this.companySymbol).subscribe((data: any) => {
