@@ -8,6 +8,8 @@
     height: 60px;
     justify-content: space-around;
     overflow: hidden;
+    position: absolute;
+    top: inherit;
     width: 100%;
 }
 
