@@ -28,7 +28,20 @@ import { ActivesComponent } from './components/actives/actives.component';
 
 enableProdMode();
 
-const routes: Routes = [
+
+const oldRoutes = [               
+    {path: '', redirectTo: 'main', pathMatch: 'full' },
+    {path: 'main', component: MainComponent},
+    {path: 'main/newslist', component: NewsPageComponent},
+    {path: 'main/forex', component: ForexComponent},
+    {path: 'main/sectors', component: SectorsComponent},
+    {path: 'main/actives', component: ActivesComponent},
+    {path: 'main/cryptocurrencies', component: CryptocurrenciesComponent},
+    {path: 'main/:symbolId',  component: CompanyComponent}
+   ]
+
+
+const lazyRoutes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full' },
   {path: 'main', component: MainComponent},
   {path: 'main/newslist', loadChildren: () => import('./components/news-page/news-page.component').then(m => m.NewsPageComponent)},
@@ -60,10 +73,6 @@ const routes: Routes = [
     FooterComponent,
     SectorsComponent,
     ActivesComponent,
-
-
-
-    
   ],
   imports: [
     BrowserModule,
@@ -71,27 +80,11 @@ const routes: Routes = [
     HttpClientModule,
     MDBBootstrapModule,
     ChartsModule,
-    RouterModule.forRoot([
-                    
-     {path: '', redirectTo: 'main', pathMatch: 'full' },
-     {path: 'main', component: MainComponent},
-     {path: 'main/newslist', component: NewsPageComponent},
-     {path: 'main/forex', component: ForexComponent},
-     {path: 'main/sectors', component: SectorsComponent},
-     {path: 'main/actives', component: ActivesComponent},
-     {path: 'main/cryptocurrencies', component: CryptocurrenciesComponent},
-     {path: 'main/:symbolId',  component: CompanyComponent}
-    
-
-
-  
-  
-
-     
-    
-    ])
+    RouterModule.forRoot(oldRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
