@@ -17,6 +17,7 @@ h4 {
 table {
     text-align: center;
     width: 100%;
+    overflow: hidden;
 }
 
 th {
@@ -47,4 +48,15 @@ tr:nth-child(even) {
 
 .negativeChange {
     color: #FF0000;
+}
+
+.noData {
+    color: #FF0000;
+    font-size: 3em;
+    opacity: 0.8;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -200px;
+    transform: rotate(-50deg);
 }

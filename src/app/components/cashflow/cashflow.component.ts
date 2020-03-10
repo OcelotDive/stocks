@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CashflowComponent implements OnInit {
   public cashFlowStatement: Object[];
   public companySymbol: string = "";
+  public noData: boolean = true;
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) {
 
@@ -17,6 +18,10 @@ export class CashflowComponent implements OnInit {
     this.route.params.subscribe(routeParams => {
     this.companySymbol = routeParams.symbolId.substring(1);  
     this.investorService.getAnnualCashFlow(this.companySymbol).subscribe((data: any) => {
+      if(data.financials === undefined) {
+        this.noData = false;
+        return;
+      } 
     this.cashFlowStatement = data.financials.slice(0,11).reverse();
       })
     })

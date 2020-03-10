@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class RatiosComponent implements OnInit {
   public financialRatios: Object[];
   public companySymbol: string = "";
+  public noData: boolean = true;
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) { 
 
@@ -19,7 +20,10 @@ export class RatiosComponent implements OnInit {
     this.companySymbol = routeParams.symbolId.substring(1);
 
     this.investorService.getFinancialRatios(this.companySymbol).subscribe((data: any) => {
-    
+      if(data.ratios === undefined) {
+        this.noData = false;
+        return;
+      } 
       this.financialRatios = data.ratios.slice(0,11).reverse();
     });
   });

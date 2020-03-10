@@ -11,13 +11,18 @@ import { ActivatedRoute } from '@angular/router';
 export class IncomeComponent implements OnInit {
   public IncomeStatement: Object[];
   public companySymbol: string = "";
+  public noData: boolean = true;
 
   constructor(public investorService: InvestorService, public route: ActivatedRoute) {
-
+      
     this.scroll();
     this.route.params.subscribe(routeParams => {
     this.companySymbol = routeParams.symbolId.substring(1);
     this.investorService.getAnnualIncome(this.companySymbol).subscribe((data: any) => {
+      if(data.financials === undefined) {
+        this.noData = false;
+        return;
+      } 
       this.IncomeStatement = data.financials.slice(0,11).reverse();
     });
   });
