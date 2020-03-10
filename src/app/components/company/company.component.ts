@@ -35,7 +35,7 @@ export class CompanyComponent implements OnInit {
         else {
       this.keyMetrics = data['metrics'][0];
         }
-     
+        
       })
 
       this.investorService.getCompanyProfile(this.companySymbol).subscribe((data: any) => {

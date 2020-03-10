@@ -8,7 +8,7 @@ import { InvestorService } from '../../services/investor.service';
   providers: [InvestorService]
 })
 export class HeaderComponent implements OnInit {
-  public companyStockList: Object[];
+  public companyStockList: any[];
   public companySearchText: string = "";
   public companyLookUp: string ="";
   public displayMenu: boolean = false;

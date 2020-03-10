@@ -132,6 +132,7 @@ form {
     background: -webkit-gradient(linear, left top, right top, from(#EAEAEA), color-stop(#DBDBDB), color-stop(#F2F2F2), to(#ADA996));
     background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
     border: solid 1px #ADA996;
+    cursor: pointer;
     display: flex;
     font-size: 0.5em;
     justify-content: center;
