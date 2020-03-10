@@ -26,6 +26,7 @@ export class LinechartComponent implements OnInit {
   public lineChartLabels: Label[] = [];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     responsive: true,
+    
     scales: {
       xAxes: [{}],
       yAxes: [
@@ -36,6 +37,11 @@ export class LinechartComponent implements OnInit {
      
       ]
     },
+
+    hover: {
+      mode: 'nearest',
+      intersect: true
+   },
     annotation: {
       annotations: [
         {
