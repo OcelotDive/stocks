@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+
 
 @Injectable()
 export class InvestorService {
@@ -27,7 +27,7 @@ export class InvestorService {
 
     constructor(private http: HttpClient) {
         this.companyStockList = 'https://financialmodelingprep.com/api/v3/company/stock/list';
-        this.chosenUrl = 'https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOGL,AMZN,JPM,MSFT,NVDA';
+        this.chosenUrl = 'https://financialmodelingprep.com/api/v3/quote/AAPL,FB,GOOGL,AMZN,MSFT,NVDA';
         this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.cryptos = 'https://financialmodelingprep.com/api/v3/cryptocurrencies';
