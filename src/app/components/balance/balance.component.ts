@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestorService } from '../../services/investor.service';
 import { ActivatedRoute } from '@angular/router';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-balance',
@@ -58,28 +59,43 @@ export class BalanceComponent implements OnInit {
 
  export_table_to_csv(html, filename) {
 	var csv = [];
-	var rows = document.querySelectorAll("tr");
+  var rows = Array.from(document.querySelectorAll("th, td"));
+  var tableData = Array.from(document.querySelectorAll("th"));
+  var table = Array.from(document.querySelectorAll("table"));
+
+
 	
-    for (var i = 0; i < rows.length; i++) {
-		var row = [], headers = rows[i].querySelectorAll("th"), data = rows[i].querySelectorAll('td, th');
-		
-        for (var j = 0; j < headers.length; j++) 
-          var tableText = <HTMLElement> headers[j];
-     
-          console.log(tableText)
-         
-         let formatText = tableText.innerText.replace(',', '')
-          row.push(formatText);
-        
-		csv.push(row.join(","));		
+    
+    for (var i = 0; i < table.length; i++) {
+      
+      for(let j = 0; j < 10; j++) { 
+       var formatedText = "";
+    
+    
+     rows.forEach(element => {
+      if(element.tagName == 'TH') {
+        formatedText += '\n' + (element.textContent.replace(/,/g, '') + ',').split(" ").join(' ');
+      }
+      else {
+       formatedText += (element.textContent.replace(/,/g, '') + ',').split(" ").join(',');
+      }
+      // row.push(formatedText);
+    
+      // return formatedText;
+   
+    })
+   
+    csv.push(formatedText)
+     }
+       
 	}
 
     // Download CSV
-    this.download_csv(csv.join("\n"), filename);
+    this.download_csv(csv.join(""), filename);
 }
 
 testClick() {
-  alert("click")
+  
   var html = document.querySelector("table").outerHTML;
 	this.export_table_to_csv(html, "table.csv");
 };

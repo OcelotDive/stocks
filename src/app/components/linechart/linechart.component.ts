@@ -38,10 +38,6 @@ export class LinechartComponent implements OnInit {
       ]
     },
 
-    hover: {
-      mode: 'nearest',
-      intersect: true
-   },
     annotation: {
       annotations: [
         {

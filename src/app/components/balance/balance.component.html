@@ -4,8 +4,8 @@
     <table>
 
         <tr>
-            <th>Year</th>
-            <th *ngFor="let item of balanceStatement">{{item.date.substring(0,4)}}</th>
+            <th class="yearTh">Year</th>
+            <td class="thData" *ngFor="let item of balanceStatement">{{item.date.substring(0,4)}}</td>
         </tr>
         <tr>
             <th>Cash and cash equivalents</th>
