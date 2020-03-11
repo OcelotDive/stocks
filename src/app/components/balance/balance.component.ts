@@ -66,9 +66,9 @@ export class BalanceComponent implements OnInit {
 
 	
     
-    for (var i = 0; i < table.length; i++) {
+    
       
-      for(let j = 0; j < 10; j++) { 
+      for(let j = 0; j < table.length; j++) { 
        var formatedText = "";
     
     
@@ -88,7 +88,7 @@ export class BalanceComponent implements OnInit {
     csv.push(formatedText)
      }
        
-	}
+	
 
     // Download CSV
     this.download_csv(csv.join(""), filename);
