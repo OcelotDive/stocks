@@ -53,7 +53,7 @@ export class CashflowComponent implements OnInit {
     downloadLink.click();
 }
 
- export_table_to_csv(html, filename) {
+ export_table_to_csv(filename) {
 	var csv = [];
   var rows = Array.from(document.querySelectorAll("h4, th, td"));
   var table = [document.querySelector("table")];
@@ -82,8 +82,8 @@ export class CashflowComponent implements OnInit {
 
 handleCsvClick() {
   
-  var html = document.querySelector("table").outerHTML;
-	this.export_table_to_csv(html, "table.csv");
+  
+	this.export_table_to_csv("table.csv");
 };
 
   ngOnInit() {

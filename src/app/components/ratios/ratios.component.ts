@@ -55,7 +55,7 @@ export class RatiosComponent implements OnInit {
     downloadLink.click();
 }
 
- export_table_to_csv(ratioTable, filename) {
+ export_table_to_csv(filename) {
 	var csv = [];
   var rows = Array.from(document.querySelectorAll("h4, th, td"));
   var table = [document.querySelector("table")];
@@ -82,10 +82,10 @@ export class RatiosComponent implements OnInit {
     this.download_csv(csv.join(""), filename);
 } 
 
-handleCsvClick(ratioTable: string) {
+handleCsvClick() {
   
  
-	this.export_table_to_csv(ratioTable,"table.csv");
+	this.export_table_to_csv("table.csv");
 };
 
   ngOnInit() {
