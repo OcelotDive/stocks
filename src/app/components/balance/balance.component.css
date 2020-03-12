@@ -54,6 +54,12 @@ tr:nth-child(even) {
     color: #FF0000;
 }
 
+.downloadToCsv {
+    align-self: flex-end;
+    font-size: 1vw;
+    width: 15%;
+}
+
 .noData {
     color: #FF0000;
     font-size: 3em;

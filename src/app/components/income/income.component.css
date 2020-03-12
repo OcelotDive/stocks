@@ -24,6 +24,10 @@ th {
     text-align: left;
 }
 
+.thData {
+    font-weight: bold;
+}
+
 th:nth-of-type(2),
 th:nth-of-type(3),
 th:nth-of-type(4),
@@ -48,6 +52,12 @@ tr:nth-child(even) {
 
 .negativeChange {
     color: #FF0000;
+}
+
+.downloadToCsv {
+    align-self: flex-end;
+    font-size: 1vw;
+    width: 15%;
 }
 
 .noData {

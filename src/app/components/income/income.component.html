@@ -1,10 +1,11 @@
 <h4>Income Statement</h4>
 
 <section class="tableContainer" id="test">
+    <button class="downloadToCsv" (click)="handleCsvClick('table1')">DownLoad To Csv</button>
     <table>
         <tr>
             <th>Year</th>
-            <th *ngFor="let item of IncomeStatement">{{item.date.substring(0,4)}}</th>
+            <td class="thData" *ngFor="let item of IncomeStatement">{{item.date.substring(0,4)}}</td>
         </tr>
         <tr>
             <th>Revenue</th>
