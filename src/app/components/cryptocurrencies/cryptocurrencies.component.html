@@ -14,7 +14,7 @@
         <tr *ngFor="let currency of cryptoFullList">
             <img src="./assets/crypto/{{currency.ticker.toLowerCase()}}.svg" class="cryptoAndFlagImage">
             <td>{{currency.ticker}}</td>
-            <td>{{currency.price}}</td>
+            <td>{{currency.price}}$</td>
             <td [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(4)}}</td>
             <td [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{((currency.changes.toFixed(4) / (currency.price)) * 100).toFixed(2)}}%</td>
         </tr>

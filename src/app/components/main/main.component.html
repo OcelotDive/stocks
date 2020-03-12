@@ -36,7 +36,7 @@
             <div class="subjectforexAndCryptoTitle" *ngFor="let currency of cryptoPrices">
                 <img src="./assets/crypto/{{currency.ticker.toLowerCase()}}.svg" class="mainPageFlagImage">
                 <div class="mainItemName"> {{currency.ticker}}</div>
-                <div class="mainItemPrice"> {{currency.price | number: '1.2-2'}}</div>
+                <div class="mainItemPrice"> {{currency.price | number: '1.2-2'}}$</div>
                 <div class="mainItemChange" [class.negativeChange]="currency.changes < 0.01" [class.positiveChange]="currency.changes > 0.01">{{currency.changes.toFixed(3)}}</div>
             </div>
         </div>
