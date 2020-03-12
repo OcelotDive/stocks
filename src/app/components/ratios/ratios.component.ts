@@ -66,7 +66,7 @@ export class RatiosComponent implements OnInit {
      rows.forEach(element => {
 
       if(element.tagName == 'H4') {
-        formatedText += '\n' + (element.textContent.replace(/,/g, '') + ',').split(" ").join(' ');
+        formatedText += '\n' + '\n' + (element.textContent.replace(/,/g, '') + ',').split(" ").join(' ') + '\n';
       }
      else if(element.tagName == 'TH') {
         formatedText += '\n' + (element.textContent.replace(/,/g, '') + ',').split(" ").join(' ');
