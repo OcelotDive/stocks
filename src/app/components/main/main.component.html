@@ -8,7 +8,7 @@
 <section class="mainPage-sectionContainer">
     <div class="subjectContainer">
         <div class="subjectHeader" routerLink="newslist" routerLinkActive="active">Top Stories <span class="fa fa-chevron-right"></span></div>
-        <div class=" subjectList ">
+        <div class="subjectList">
             <div class="subjectListItem " *ngFor="let newsItem of topNewsStories ">
                 <img class="subjectImage " src={{newsItem.urlToImage}} />
                 <div class="subjectNewsTitle ">
@@ -19,9 +19,9 @@
             </div>
         </div>
     </div>
-    <div class="subjectContainer ">
-        <div class="subjectHeader " routerLink="forex" routerLinkActive="active">Forex <span class="fa fa-chevron-right"></span></div>
-        <div class="forexAndCryptoSubjectList ">
+    <div class="subjectContainer">
+        <div class="subjectHeader" routerLink="forex" routerLinkActive="active">Forex <span class="fa fa-chevron-right"></span></div>
+        <div class="forexAndCryptoSubjectList" *ngIf="forexPrices">
             <div class="subjectforexAndCryptoTitle " *ngFor="let currency of forexPrices ">
                 <img src="./assets/flag/{{currency.ticker.replace( '/', '')}}.png " class="mainPageFlagImage ">
                 <div class="mainItemName"> {{currency.ticker}}</div>
@@ -32,7 +32,7 @@
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader" routerLink="cryptocurrencies" routerLinkActive="active">Cryptocurrency <span class="fa fa-chevron-right"></span></div>
-        <div class="forexAndCryptoSubjectList">
+        <div class="forexAndCryptoSubjectList" *ngIf="cryptoPrices">
             <div class="subjectforexAndCryptoTitle" *ngFor="let currency of cryptoPrices">
                 <img src="./assets/crypto/{{currency.ticker.toLowerCase()}}.svg" class="mainPageFlagImage">
                 <div class="mainItemName"> {{currency.ticker}}</div>
@@ -43,7 +43,7 @@
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader">Commodities</div>
-        <div class="forexAndCryptoSubjectList">
+        <div class="forexAndCryptoSubjectList" *ngIf="commodityPrices">
             <div class="subjectforexAndCryptoTitle" *ngFor="let com of commodityPrices">
 
                 <div *ngIf="com.symbol === 'GCUSD'" class="mainItemName">Gold ({{com.symbol}})</div>
@@ -82,7 +82,7 @@
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader" routerLink="sectors" routerLinkActive="active">Sector Performance <span class="fa fa-chevron-right"></span></div>
-        <div class="forexAndCryptoSubjectList">
+        <div class="forexAndCryptoSubjectList" *ngIf="sectors">
             <div class="subjectforexAndCryptoTitle" *ngFor="let sect of sectors">
 
                 <div class="mainItemNameSector"> {{sect.sector}}</div>
@@ -93,8 +93,8 @@
     </div>
     <div class="subjectContainer">
         <div class="subjectHeader" routerLink="actives" routerLinkActive="active">Actives <span class="fa fa-chevron-right"></span></div>
-        <div class="forexAndCryptoSubjectList ">
-            <div class="subjectforexAndCryptoTitle " *ngFor="let act of actives">
+        <div class="forexAndCryptoSubjectList" *ngIf="actives">
+            <div class="subjectforexAndCryptoTitle" *ngFor="let act of actives">
 
                 <div class="mainItemName" *ngIf="act.companyName.length < 13"> {{act.companyName}}</div>
                 <div class="mainItemName" *ngIf="act.companyName.length > 12"> {{act.companyName | slice: 0:12}}...</div>

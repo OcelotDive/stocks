@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   public commodityPrices: Object[];
   public sectors: Object[];
   public actives: Object[];
+  
 
   constructor(public investorService: InvestorService) {
   

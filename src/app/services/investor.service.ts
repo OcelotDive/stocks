@@ -14,6 +14,8 @@ export class InvestorService {
   public companyProfile: string;
   public ratioUrl: string;
   public keyMetrics: string;
+  public fmpk: string;
+  public fmpk2: string;
   public historicalStockPrice: string;
   public annualIncomeStatementUrl: string;
   public annualBalanceStatementUrl: string;
@@ -43,17 +45,20 @@ export class InvestorService {
         this.commoditiesUrl = 'https://financialmodelingprep.com/api/v3/quote/GCUSD,SIUSD,CLUSD,KCUSX,CUSX,SBUSX,NGUSD,LCUSX';
         this.sectorUrl = 'https://financialmodelingprep.com/api/v3/stock/sectors-performance';
         this.newsk = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';
+        // replace api keys
+        this.fmpk = '?apikey=xxxxxx';
+        this.fmpk2 = '&apikey=xxxxx';
         this.activeUrl = 'https://financialmodelingprep.com/api/v3/stock/actives';    
     }
 
     getSymbolsList() {
-        return this.http.get(`${this.companyStockList}`)
+        return this.http.get(`${this.companyStockList}${this.fmpk}`)
     }
     getChosenInfo() {
-        return this.http.get(`${this.chosenUrl}`);       
+        return this.http.get(`${this.chosenUrl}${this.fmpk}`);       
     }
     getMajorIndexes() {
-        return this.http.get(`${this.majorIndexes}`);
+        return this.http.get(`${this.majorIndexes}${this.fmpk}`);
     }
     getTopStories() {
         return this.http.get(`${this.newsStories}${this.newsSource}${this.newsk}`)
@@ -63,43 +68,43 @@ export class InvestorService {
         return this.http.get(`${this.newsStories}${this.newsSource}${this.newsk}`);
     }
     getForex() {
-        return this.http.get(`${this.forex}`);
+        return this.http.get(`${this.forex}${this.fmpk}`);
     }
     getCryptos() {
-        return this.http.get(`${this.cryptos}`);
+        return this.http.get(`${this.cryptos}${this.fmpk}`);
     }
     getCompanyProfile(symbol: string) {
-        return this.http.get(`${this.companyProfile}${symbol}`)
+        return this.http.get(`${this.companyProfile}${symbol}${this.fmpk}`)
     }
     getKeyMetrics(symbol: string) {
-        return this.http.get(`${this.keyMetrics}${symbol}`);
+        return this.http.get(`${this.keyMetrics}${symbol}${this.fmpk}`);
     }
     getHistoric(symbol: string, previousDate: string, currentDate: string) {
-        return this.http.get(`${this.historicalStockPrice}${symbol}?from=${previousDate}&to=${currentDate}`);
+        return this.http.get(`${this.historicalStockPrice}${symbol}?from=${previousDate}&to=${currentDate}${this.fmpk2}`);
     }
     getAnnualIncome(symbol: string) {
-        return this.http.get(`${this.annualIncomeStatementUrl}${symbol}`);
+        return this.http.get(`${this.annualIncomeStatementUrl}${symbol}${this.fmpk}`);
     }
     getAnnualBalance(symbol: string) {
-        return this.http.get(`${this.annualBalanceStatementUrl}${symbol}`);
+        return this.http.get(`${this.annualBalanceStatementUrl}${symbol}${this.fmpk}`);
     }
     getAnnualCashFlow(symbol: string) {
-        return this.http.get(`${this.annualCashFlowStatement}${symbol}`);
+        return this.http.get(`${this.annualCashFlowStatement}${symbol}${this.fmpk}`);
     }
      getFinancialRatios(symbol: string) {
-        return this.http.get(`${this.ratioUrl}${symbol}`);
+        return this.http.get(`${this.ratioUrl}${symbol}${this.fmpk}`);
     }
     getCompanyRating(symbol: string) {
-        return this.http.get(`${this.companyRatingUrl}${symbol}`);
+        return this.http.get(`${this.companyRatingUrl}${symbol}${this.fmpk}`);
     }
     getCommodities() {
-        return this.http.get(`${this.commoditiesUrl}`);
+        return this.http.get(`${this.commoditiesUrl}${this.fmpk}`);
     }
     getSectorPerformance() {
-        return this.http.get(`${this.sectorUrl}`);
+        return this.http.get(`${this.sectorUrl}${this.fmpk}`);
     }
     getActives() {
-        return this.http.get(`${this.activeUrl}`);
+        return this.http.get(`${this.activeUrl}${this.fmpk}`);
     }
 
 }
