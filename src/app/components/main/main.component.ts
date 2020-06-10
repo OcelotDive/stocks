@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
   constructor(public investorService: InvestorService) {
   
     this.investorService.getTopStories().subscribe((data: any) => {
-      this.topNewsStories = data.articles.slice(0,3);
+      this.topNewsStories = data.results.slice(0,3);
     })
 
     this.investorService.getForex().subscribe((data: any) => {

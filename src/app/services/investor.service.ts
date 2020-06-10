@@ -7,7 +7,7 @@ export class InvestorService {
   public companyStockList: string;
   public chosenUrl: string;
   public majorIndexes: string;
-  public newsSource: string = 'the-wall-street-journal';
+  public newsSource: string = 'business.json?';
   public newsStories: string;
   public forex: string;
   public cryptos: string;
@@ -33,10 +33,11 @@ export class InvestorService {
         this.majorIndexes = 'https://financialmodelingprep.com/api/v3/majors-indexes';
         this.forex = 'https://financialmodelingprep.com/api/v3/forex';
         this.cryptos = 'https://financialmodelingprep.com/api/v3/cryptocurrencies';
-        this.newsStories = 'https://newsapi.org/v1/articles?source=';
+       
+        this.newsStories = 'https://api.nytimes.com/svc/topstories/v2/'
         this.companyProfile = 'https://financialmodelingprep.com/api/v3/company/profile/';
         this.keyMetrics = 'https://financialmodelingprep.com/api/v3/company-key-metrics/'
-        this.historicalStockPrice = 'https://financialmodelingprep.com/api/v3/historical-price-full/';
+        this.historicalStockPrice = 'https://financialmodeingprep.com/api/v3/historical-price-full/';
         this.annualIncomeStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/income-statement/';
         this.annualBalanceStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/';
         this.annualCashFlowStatement = 'https://financialmodelingprep.com/api/v3/financials/cash-flow-statement/';
@@ -44,10 +45,10 @@ export class InvestorService {
         this.companyRatingUrl = 'https://financialmodelingprep.com/api/v3/company/rating/';
         this.commoditiesUrl = 'https://financialmodelingprep.com/api/v3/quote/GCUSD,SIUSD,CLUSD,KCUSX,CUSX,SBUSX,NGUSD,LCUSX';
         this.sectorUrl = 'https://financialmodelingprep.com/api/v3/stock/sectors-performance';
-        this.newsk = '&sortBy=top&apiKey=ca9303cd118242fd94495589428e10ad';
+        this.newsk = 'api-key='; //api key here
         // replace api keys
-        this.fmpk = '?apikey=xxxxxx';
-        this.fmpk2 = '&apikey=xxxxx';
+        this.fmpk = '?apikey='; //api key here
+        this.fmpk2 = '&apikey='; //api key here
         this.activeUrl = 'https://financialmodelingprep.com/api/v3/stock/actives';    
     }
 

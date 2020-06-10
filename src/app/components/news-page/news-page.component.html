@@ -3,22 +3,22 @@
 <h4>Market News</h4>
 <section class="checkContainer">
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="the-wall-street-journal" checked="true" #option1 (change)="onRadioChange(option1)">
-        <label class="form-check-label" for="inlineRadio1">Wall St Journal</label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="business.json?" checked="true" #option1 (change)="onRadioChange(option1)">
+        <label class="form-check-label" for="inlineRadio1">Business</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="financial-times" #option2 (change)="onRadioChange(option2)">
-        <label class="form-check-label" for="inlineRadio2">Financial Times</label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="technology.json?" #option2 (change)="onRadioChange(option2)">
+        <label class="form-check-label" for="inlineRadio2">Tech</label>
     </div>
     <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="techradar" #option3 (change)="onRadioChange(option3)">
-        <label class="form-check-label" for="inlineRadio3">Tech Radar</label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="science.json?" #option3 (change)="onRadioChange(option3)">
+        <label class="form-check-label" for="inlineRadio3">Science</label>
     </div>
 </section>
 <section class="storyContainer">
     <div class="storyCard" *ngFor="let story of storyList">
 
-        <img src={{story.urlToImage}} class="storyImage_newsPage" />
+        <img src={{story.multimedia[0].url}} class="storyImage_newsPage" />
 
         <div class="newsTitleAndBodyContainer">
             <div class="subjectNewsTitle">

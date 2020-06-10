@@ -10,7 +10,7 @@
         <div class="subjectHeader" routerLink="newslist" routerLinkActive="active">Top Stories <span class="fa fa-chevron-right"></span></div>
         <div class="subjectList">
             <div class="subjectListItem " *ngFor="let newsItem of topNewsStories ">
-                <img class="subjectImage " src={{newsItem.urlToImage}} />
+                <img class="subjectImage " src={{newsItem.multimedia[0].url}} />
                 <div class="subjectNewsTitle ">
                     <a href={{newsItem.url}} target="#blank ">
                     {{newsItem.title}}
