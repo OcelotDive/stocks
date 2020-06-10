@@ -37,7 +37,7 @@ export class InvestorService {
         this.newsStories = 'https://api.nytimes.com/svc/topstories/v2/'
         this.companyProfile = 'https://financialmodelingprep.com/api/v3/company/profile/';
         this.keyMetrics = 'https://financialmodelingprep.com/api/v3/company-key-metrics/'
-        this.historicalStockPrice = 'https://financialmodeingprep.com/api/v3/historical-price-full/';
+        this.historicalStockPrice = 'https://financialmodelingprep.com/api/v3/historical-price-full/';
         this.annualIncomeStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/income-statement/';
         this.annualBalanceStatementUrl = 'https://financialmodelingprep.com/api/v3/financials/balance-sheet-statement/';
         this.annualCashFlowStatement = 'https://financialmodelingprep.com/api/v3/financials/cash-flow-statement/';
@@ -45,10 +45,11 @@ export class InvestorService {
         this.companyRatingUrl = 'https://financialmodelingprep.com/api/v3/company/rating/';
         this.commoditiesUrl = 'https://financialmodelingprep.com/api/v3/quote/GCUSD,SIUSD,CLUSD,KCUSX,CUSX,SBUSX,NGUSD,LCUSX';
         this.sectorUrl = 'https://financialmodelingprep.com/api/v3/stock/sectors-performance';
-        this.newsk = 'api-key='; //api key here
+       
+        this.newsk = 'api-key=';
         // replace api keys
-        this.fmpk = '?apikey='; //api key here
-        this.fmpk2 = '&apikey='; //api key here
+        this.fmpk = '?apikey=';
+        this.fmpk2 = '&apikey=';
         this.activeUrl = 'https://financialmodelingprep.com/api/v3/stock/actives';    
     }
 
@@ -81,7 +82,7 @@ export class InvestorService {
         return this.http.get(`${this.keyMetrics}${symbol}${this.fmpk}`);
     }
     getHistoric(symbol: string, previousDate: string, currentDate: string) {
-        return this.http.get(`${this.historicalStockPrice}${symbol}?from=${previousDate}&to=${currentDate}${this.fmpk2}`);
+        return this.http.get(`${this.historicalStockPrice}${symbol}?from=${previousDate}&to=${currentDate}&${this.fmpk2}`);
     }
     getAnnualIncome(symbol: string) {
         return this.http.get(`${this.annualIncomeStatementUrl}${symbol}${this.fmpk}`);

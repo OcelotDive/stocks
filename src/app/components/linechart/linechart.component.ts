@@ -92,6 +92,7 @@ export class LinechartComponent implements OnInit {
   
     this.route.params.subscribe(routeParams => {
     this.companySymbol = routeParams.symbolId.substring(1);
+    
     this.getChartData();    
     });
   }
@@ -124,7 +125,7 @@ export class LinechartComponent implements OnInit {
 
     this.investorService.getHistoric(this.companySymbol, previousDate, currentDate).subscribe((data: any) => {
       if(Object.keys(data).length === 0 && data.constructor === Object) return;
-    
+    console.warn(data)
       let priceTemp: number[] = []; 
       let lowTemp: number[] = [];
       let highTemp: number[] = [] ;
