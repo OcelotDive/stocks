@@ -25,6 +25,8 @@ import { RatiosComponent } from './components/ratios/ratios.component';
 import { SectorsComponent } from './components/sectors/sectors.component';
 import { ActivesComponent } from './components/actives/actives.component';
 
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+
 enableProdMode();
 
 
@@ -40,7 +42,7 @@ const oldRoutes = [
    ]
 
 
-const lazyRoutes: Routes = [
+/*const lazyRoutes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full' },
   {path: 'main', component: MainComponent},
   {path: 'main/newslist', loadChildren: () => import('./components/news-page/news-page.component').then(m => m.NewsPageComponent)},
@@ -49,7 +51,7 @@ const lazyRoutes: Routes = [
   {path: 'main/actives', loadChildren: () => import('./components/actives/actives.component').then(m => m.ActivesComponent)},
   {path: 'main/cryptocurrencies', loadChildren: () => import('./components/cryptocurrencies/cryptocurrencies.component').then(m => m.CryptocurrenciesComponent)},
   {path: 'main/:symbolId', loadChildren: () => import('./components/company/company.component').then(m => m.CompanyComponent)},
- ]
+ ]*/
 
 @NgModule({
   declarations: [
@@ -80,7 +82,7 @@ const lazyRoutes: Routes = [
     ChartsModule,
     RouterModule.forRoot(oldRoutes)
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
