@@ -143,6 +143,21 @@ form {
     background: linear-gradient(to right, #EAEAEA, #DBDBDB, rgb(167, 160, 160), rgb(32, 32, 30));
 }
 
+.logoContainer {
+    position: absolute;
+    width: 400px;
+    height: 220px;
+    left: 150px;
+}
+
+.logoImage {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
 @media only screen and (max-width: 410px) {
     .mainHeader {
         flex-direction: column-reverse;
