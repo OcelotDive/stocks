@@ -32,13 +32,14 @@ export class MainComponent implements OnInit {
       this.cryptoPrices = data.cryptocurrenciesList.slice(0,8);
    
     })
-
+    setTimeout(() => {
     this.investorService.getCommodities().subscribe((data: any) => {
      
       this.commodityPrices = data;
       
     })
-
+  }, 1000)
+   setTimeout(() => {
     this.investorService.getSectorPerformance().subscribe((data: any) => {
      data.sectorPerformance.forEach(element => {
        element.changesPercentage = element.changesPercentage.substring(0, element.changesPercentage.length - 1);
@@ -46,10 +47,12 @@ export class MainComponent implements OnInit {
       this.sectors = data.sectorPerformance.slice(0,8);
 
     })
-
-    this.investorService.getActives().subscribe((data: any) => {
+    }, 1000)
+   /*this.investorService.getActives().subscribe((data: any) => {
       this.actives = data.mostActiveStock.slice(0,8);
-    })
+      console.log(this.actives)
+    })*/
+  
   }
   ngOnInit() {
    
