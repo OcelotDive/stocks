@@ -80,7 +80,8 @@ a {
 
 .fa-chevron-right {
     position: absolute;
-    right: 20px;
+    right: 10px;
+    top: 15px;
 }
 
 .mainPageFlagImage {
