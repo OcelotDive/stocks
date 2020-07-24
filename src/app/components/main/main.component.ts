@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   public commodityPrices: Object[];
   public sectors: Object[];
   public actives: Object[];
-  
+
 
   constructor(public investorService: InvestorService) {
   
@@ -45,14 +45,14 @@ export class MainComponent implements OnInit {
        element.changesPercentage = element.changesPercentage.substring(0, element.changesPercentage.length - 1);
      });
       this.sectors = data.sectorPerformance.slice(0,8);
-
+      
     })
     }, 1000)
    /*this.investorService.getActives().subscribe((data: any) => {
       this.actives = data.mostActiveStock.slice(0,8);
       console.log(this.actives)
     })*/
-  
+
   }
   ngOnInit() {
    
