@@ -16,6 +16,7 @@ export class MainComponent implements OnInit {
   public commodityPrices: Object[];
   public sectors: Object[];
   public actives: Object[];
+  public dataReceived: boolean = false;
 
 
   constructor(public investorService: InvestorService) {
@@ -45,7 +46,7 @@ export class MainComponent implements OnInit {
        element.changesPercentage = element.changesPercentage.substring(0, element.changesPercentage.length - 1);
      });
       this.sectors = data.sectorPerformance.slice(0,8);
-      
+      this.dataReceived = true;
     })
     }, 1000)
    /*this.investorService.getActives().subscribe((data: any) => {

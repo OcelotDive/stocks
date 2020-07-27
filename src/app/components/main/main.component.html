@@ -1,13 +1,34 @@
-<app-header>
+<app-header *ngIf="dataReceived">
 </app-header>
 
-<app-ticker></app-ticker>
-<h4>Major Indexes</h4>
-<carousel></carousel>
+<app-ticker *ngIf="dataReceived"></app-ticker>
+<h4 *ngIf="dataReceived">Major Indexes</h4>
+<carousel *ngIf="dataReceived"></carousel>
 
 
+<div class="loadingDataDiv" *ngIf="!dataReceived">
+     <div class='spinnerContainer'>
 
-<section class="mainPage-sectionContainer">
+            <div class='dash-spinner'>
+                <div class='dash-spinner__bottom'>
+                    <div class='dash-bar dash-bar__one'></div>
+                    <div class='dash-bar dash-bar__two'></div>
+                    <div class='dash-bar dash-bar__three'></div>
+                </div>
+                <div class='dash-dot dash-dot__one'></div>
+                <div class='dash-dot dash-dot__two'></div>
+                <div class='dash-dot dash-dot__three'></div>
+                <div class='triangle'></div>
+            </div>
+            <div class='dash-spinner__bottom'>
+                <div class='dash-spinner-title'>
+                    <p>Loading...
+                        <p>
+                </div>
+            </div>
+        </div>
+</div>
+<section class="mainPage-sectionContainer" *ngIf="dataReceived">
     <div class="subjectContainer">
         <div class="subjectHeader" routerLink="newslist" routerLinkActive="active">Top Stories <span class="fa fa-chevron-right"></span></div>
         <div class="subjectList">
