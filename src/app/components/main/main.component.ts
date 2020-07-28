@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   public commodityPrices: Object[];
   public sectors: Object[];
   public actives: Object[];
-  public dataReceived: boolean = false;
+
 
 
   constructor(public investorService: InvestorService) {
@@ -28,32 +28,34 @@ export class MainComponent implements OnInit {
     this.investorService.getForex().subscribe((data: any) => {
       this.forexPrices = data.forexList.slice(0,8);
     })
-
-    this.investorService.getCryptos().subscribe((data: any) => {
-      this.cryptoPrices = data.cryptocurrenciesList.slice(0,8);
+  
+      this.investorService.getCryptos().subscribe((data: any) => {
+        this.cryptoPrices = data.cryptocurrenciesList.slice(0, 8);
    
-    })
-    setTimeout(() => {
+      })
+  
+
     this.investorService.getCommodities().subscribe((data: any) => {
      
       this.commodityPrices = data;
       
     })
-  }, 1000)
-   setTimeout(() => {
+
+
     this.investorService.getSectorPerformance().subscribe((data: any) => {
      data.sectorPerformance.forEach(element => {
        element.changesPercentage = element.changesPercentage.substring(0, element.changesPercentage.length - 1);
      });
       this.sectors = data.sectorPerformance.slice(0,8);
-      this.dataReceived = true;
+    
     })
-    }, 1000)
-   /*this.investorService.getActives().subscribe((data: any) => {
+
+
+   this.investorService.getActives().subscribe((data: any) => {
       this.actives = data.mostActiveStock.slice(0,8);
       console.log(this.actives)
-    })*/
-
+    })
+ 
   }
   ngOnInit() {
    
