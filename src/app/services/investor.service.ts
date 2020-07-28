@@ -46,10 +46,10 @@ export class InvestorService {
         this.commoditiesUrl = 'https://financialmodelingprep.com/api/v3/quote/GCUSD,SIUSD,CLUSD,KCUSX,CUSX,SBUSX,NGUSD,LCUSX';
         this.sectorUrl = 'https://financialmodelingprep.com/api/v3/stock/sectors-performance';
        
-        this.newsk = 'api-key=';
+        this.newsk = '';
         // replace api keys
-        this.fmpk = '?apikey=';
-        this.fmpk2 = '&apikey=';
+        this.fmpk = '';
+        this.fmpk2 = '';
         this.activeUrl = 'https://financialmodelingprep.com/api/v3/stock/actives';    
     }
 

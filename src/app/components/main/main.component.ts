@@ -51,8 +51,8 @@ export class MainComponent implements OnInit {
     })
 
 
- /*  this.investorService.getActives().subscribe((data: any) => {
-      this.actives = data.mostActiveStock.slice(0,8);
+  /* this.investorService.getActives().subscribe((data: any) => {
+      this.actives = data.mostActiveStock.slice(0,1);
       console.log(this.actives)
     }) */
  
