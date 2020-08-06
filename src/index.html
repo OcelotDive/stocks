@@ -36,19 +36,29 @@
                 </div>
             </div>
         </div-->
-        <div class="loadingDataDiv">Loading...</div>
+        <img class="backLoadingImage" src="assets/default.png" />
+        <div class="loadingDataDiv">Loading May Take Several Seconds...</div>
     </app-root>
 </body>
 
 </html>
 
 <style>
+.backLoadingImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
     .loadingDataDiv {
         position: absolute;
+        margin-top: 17%;
         font-weight: 900;
         height: 100%;
         width: 100%;
-        font-size: 150%;
+        font-size: 110%;
         display: flex;
         justify-content: center;
         align-items: center;
